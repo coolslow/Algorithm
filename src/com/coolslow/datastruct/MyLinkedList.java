@@ -63,15 +63,19 @@ public class MyLinkedList<T> {
 
     public T remove(int idx) {
         Node curr = searchNode(idx);
-        Node pred =  curr.prev;
-        Node next =  curr.next;
+        Node prev = curr.prev;
+        Node next = curr.next;
 
-        if(pred != null){
-            pred.next = next;
+        if (prev != null) {
+            prev.next = next;
+        } else {
+            head = next;
         }
 
-        if(next != null){
-            next.prev = pred;
+        if (next != null) {
+            next.prev = prev;
+        } else {
+            tail = prev;
         }
         return curr.data;
 
