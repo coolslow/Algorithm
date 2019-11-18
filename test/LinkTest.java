@@ -12,6 +12,8 @@ public class LinkTest {
             linkedList.addLast(String.valueOf(i));
         }
         foreach(linkedList);
+        linkedList.remove(8);
+        foreach(linkedList);
         MyUtils.printEndLine();
     }
 

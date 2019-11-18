@@ -49,7 +49,6 @@ public class MyLinkedList<T> {
             addLast(data);
             return;
         }
-
         Node curr = searchNode(idx);
         Node newNode = new Node(curr.prev, data, curr);
         if (curr.prev != null) {
@@ -62,23 +61,24 @@ public class MyLinkedList<T> {
     }
 
     public T remove(int idx) {
+        if (!isValidIndex(idx)) {
+            return null;
+        }
         Node curr = searchNode(idx);
         Node prev = curr.prev;
         Node next = curr.next;
-
         if (prev != null) {
             prev.next = next;
         } else {
             head = next;
         }
-
         if (next != null) {
             next.prev = prev;
         } else {
             tail = prev;
         }
+        size--;
         return curr.data;
-
     }
 
     public void set(int idx, T data) {
@@ -140,8 +140,6 @@ public class MyLinkedList<T> {
             this.data = data;
             this.next = next;
         }
-
     }
-
 
 }
