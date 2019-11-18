@@ -1,5 +1,3 @@
-package com.coolslow.test;
-
 import com.coolslow.datastruct.MyArrayList;
 import com.coolslow.utils.MyUtils;
 
