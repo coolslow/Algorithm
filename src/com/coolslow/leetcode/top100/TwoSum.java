@@ -1,5 +1,8 @@
 package com.coolslow.leetcode.top100;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 1、两数之和
  * 给定一个整数数组 nums 和一个目标值 target, 请在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标
@@ -13,9 +16,9 @@ package com.coolslow.leetcode.top100;
  *  相关标签：数组、哈希表
  */
 
-public class SumTwoNum {
+public class TwoSum {
     // 暴力解决办法， 时间复杂度为O(n^2)
-    public static int[] sumTwoNum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         for(int i = 0; i < nums.length; i++) {
             for(int j = i + 1; j < nums.length; j++) {
                 if(nums[j] == target - nums[i]) {
@@ -23,6 +26,25 @@ public class SumTwoNum {
                 }
             }
         }
+        return new int[] {};
+    }
+
+    // 利用hash map空间换时间
+    public static int[] twoSumWithHashMap(int[] nums, int target) {
+        // 声明一个HashMap
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++ ) {
+            map.put(nums[i], i);
+        }
+
+        for(int i = 0; i < nums.length; i++) {
+            int tmp = target - nums[i];
+            if(map.containsKey(tmp) && map.get(tmp) !=i ) {
+                return new int[] { i, map.get(tmp) };
+            }
+        }
+
         return new int[] {};
     }
 }
