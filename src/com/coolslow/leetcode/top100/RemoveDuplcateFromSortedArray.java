@@ -23,7 +23,7 @@ public class RemoveDuplcateFromSortedArray {
         int count = 0;
         for(int i = 1; i < nums.length; i++) {
             // 当两数不等时，计数器自增，并指定对应下标的数组值
-            if(nums[i] != nums[count]) {
+            if(nums[count] != nums[i]) {
                 count++;
                 nums[count] = nums[i];
             }
