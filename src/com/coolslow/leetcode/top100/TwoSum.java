@@ -29,7 +29,7 @@ public class TwoSum {
         return new int[] {};
     }
 
-    // 利用hash map空间换时间
+    // 利用hash map空间换时间，时间复杂度为O(n),但空间复杂度也为O(n)
     public static int[] twoSumWithHashMap(int[] nums, int target) {
         // 声明一个HashMap
         Map<Integer, Integer> map = new HashMap<>();
@@ -40,7 +40,7 @@ public class TwoSum {
 
         for(int i = 0; i < nums.length; i++) {
             int tmp = target - nums[i];
-            if(map.containsKey(tmp) && map.get(tmp) !=i ) {
+            if(map.containsKey(tmp) && map.get(tmp) != i ) {
                 return new int[] { i, map.get(tmp) };
             }
         }
