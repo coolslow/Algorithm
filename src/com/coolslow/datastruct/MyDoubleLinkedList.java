@@ -7,13 +7,13 @@ import com.coolslow.utils.MyIterator;
  * By MrZ
  * 2019-11-18
  */
-public class MyLinkedList<T> {
+public class MyDoubleLinkedList<T> {
 
     private Node head;
     private Node tail;
     private int size;
 
-    public MyLinkedList() {
+    public MyDoubleLinkedList() {
         size = 0;
     }
 
