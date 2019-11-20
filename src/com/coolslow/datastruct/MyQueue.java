@@ -2,46 +2,51 @@ package com.coolslow.datastruct;
 
 import com.coolslow.utils.MyIterator;
 
-public class MyStack<T> {
+public class MyQueue<T> {
+
 
     private Node head;
+    private Node tail;
     private int size;
 
-    public MyStack() {
+    public MyQueue() {
     }
 
-    public void push(T data) {
+    public void add(T data) {
         Node newNode = new Node(data);
+        Node temp = tail;
+        tail = newNode;
         if (head == null) {
             head = newNode;
         } else {
-            Node curr = head;
-            newNode.next = curr;
-            head = newNode;
+            temp.next = newNode;
         }
         size++;
     }
 
     public T peek() {
-        return head.data;
+        if (head == null) {
+            return null;
+        }
+        Node node = head;
+        return node.data;
     }
 
-    public T pop() {
-        if(head == null){
+    public T remove() {
+        if (head == null) {
             return null;
         }
         Node result = head;
         head = result.next;
-        size--;
         return result.data;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
     }
 
     public int size() {
         return size;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
     }
 
     public void iterator(MyIterator<T> iterator) {
@@ -58,8 +63,8 @@ public class MyStack<T> {
         T data;
         Node next;
 
-        public Node(T d) {
-            this.data = d;
+        Node(T data) {
+            this.data = data;
         }
     }
 
