@@ -12,6 +12,8 @@ public class AppTest {
         int target = 9;
 
         int[] result = TwoSum.twoSum(nums, target);
+        int[] result1 = TwoSum.twoSumWithHashMap(nums, target);
         Assert.assertArrayEquals(new int[] {0, 1,}, result);
+        Assert.assertArrayEquals(new int[] {0, 1,}, result1);
     }
 }
