@@ -14,7 +14,9 @@ public class TwoSumTest {
         int[] result = TwoSum.twoSum(nums, target);
         // 利用HashMap，空间换时间，时间复杂度O(n)，空间复杂度O(n)
         int[] result1 = TwoSum.twoSumWithHashMap(nums, target);
-        Assert.assertArrayEquals(new int[] {0, 1,}, result);
-        Assert.assertArrayEquals(new int[] {0, 1,}, result1);
+        int[] result2 = TwoSum.twoSumWithOnePassHashMap(nums, target);
+        Assert.assertArrayEquals(new int[] {0, 1}, result);
+        Assert.assertArrayEquals(new int[] {0, 1}, result1);
+        Assert.assertArrayEquals(new int[] {0, 1}, result2);
     }
 }

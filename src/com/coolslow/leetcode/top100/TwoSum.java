@@ -47,4 +47,20 @@ public class TwoSum {
 
         return new int[] {};
     }
+
+    // 一趟 Hash 遍历实现查找
+    public static int[] twoSumWithOnePassHashMap(int[] nums, int target) {
+        // 声明一个HashMap
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++) {
+            int tmp = target - nums[i];
+            if(map.containsKey(tmp)) {
+                return new int[] { map.get(tmp), i };
+            }
+
+            map.put(nums[i], i);
+        }
+        return new int[] {};
+    }
 }
