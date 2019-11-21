@@ -1,5 +1,8 @@
 package com.coolslow.leetcode.top100;
 
+import com.coolslow.common.Playground;
+
+@Playground
 public class RemoveDuplicateFromSortedArrayPlayground {
 
     // 数组去除重复数，返回不重复的数组项的总数
