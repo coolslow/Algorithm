@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.top100;
 
+import com.coolslow.datastruct.ListNode;
+
 /**
  * 2. 两数相加
  * 给定两个 [非空] 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 [逆序] 的方式存储的，
@@ -17,5 +19,33 @@ package com.coolslow.leetcode.top100;
  */
 
 public final class AddTwoNumbers {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode p = l1, q = l2, curr = head; // 将当前指针指向head，即新创建的链表的头部
+        int carry = 0; // 进位
 
+        while(p!= null || q != null) {
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+
+            if(p != null) {
+                p = p.next;
+            }
+
+            if(q != null) {
+                q = q.next;
+            }
+        }
+
+        if(carry > 0) {
+            curr.next = new ListNode(carry);
+        }
+
+        return head.next;
+    }
 }
