@@ -7,7 +7,10 @@ public class Main {
     public static void main(String[] args) {
 	    // write your code here
 
-        RemoveDuplicateFromSortedArray.removeDuplicatesWithHashMap(new int[] {0, 1, 1, 2, 4});
+        String s = "hello world";
+        s.charAt(1);
+
+        System.out.println(s.charAt(2));
     }
 }
 

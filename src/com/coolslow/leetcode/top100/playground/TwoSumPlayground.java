@@ -1,4 +1,4 @@
-package com.coolslow.leetcode.top100;
+package com.coolslow.leetcode.top100.playground;
 
 import com.coolslow.common.Playground;
 import com.coolslow.common.Solution;
