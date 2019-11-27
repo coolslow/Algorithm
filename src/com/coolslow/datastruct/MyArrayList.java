@@ -13,7 +13,10 @@ public class MyArrayList<T> {
     private int size = 0;
 
     public MyArrayList() {
-        elementData = new Object[DEFAULT_CAPACITY];
+        this(DEFAULT_CAPACITY);
+    }
+    public MyArrayList(int capacity) {
+        elementData = new Object[capacity];
     }
 
     private void ensureCapacity() {

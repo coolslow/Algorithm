@@ -38,7 +38,7 @@ public class MyUtils {
 
     public static void endTime(String mark) {
         long duration = System.currentTimeMillis() - performanceTime;
-        printMarkLine(mark + " = " + duration);
+        printMarkLine(mark + duration + "毫秒");
     }
 
 }

@@ -38,6 +38,7 @@ public class MyQueue<T> {
         }
         Node result = head;
         head = result.next;
+        size--;
         return result.data;
     }
 
