@@ -1,9 +1,14 @@
+package com.coolslow.struct;
+
 import com.coolslow.datastruct.MyArrayList;
 import com.coolslow.utils.MyUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ArrayTest {
 
-    public static void test() {
+    @Test
+    public void test() {
 
         MyArrayList<String> arrayList = new MyArrayList<>();
 
@@ -24,6 +29,7 @@ public class ArrayTest {
 
         MyUtils.endTime("foreach 10000 times");
 
+        Assert.assertTrue(true);
     }
 
 

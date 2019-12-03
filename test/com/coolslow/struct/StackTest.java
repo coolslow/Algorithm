@@ -1,11 +1,16 @@
+package com.coolslow.struct;
+
 import com.coolslow.datastruct.MyStack;
 import com.coolslow.utils.MyUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class StackTest {
 
-    public static void test() {
+    @Test
+    public void test() {
         MyUtils.printStartLine();
         MyUtils.startTime();
         MyStack<String> stack = new MyStack<>();
@@ -21,11 +26,10 @@ public class StackTest {
 
         MyUtils.endTime("stack foreach cost ");
         MyUtils.printEndLine();
-
+        Assert.assertTrue(true);
     }
 
-
-    public static void foreach(MyStack<String> list) {
+    public void foreach(MyStack<String> list) {
         list.iterator(s -> {
             MyUtils.print(s + " , ");
         });

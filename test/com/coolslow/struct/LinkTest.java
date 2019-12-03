@@ -1,10 +1,15 @@
+package com.coolslow.struct;
+
 import com.coolslow.datastruct.MyDoubleLinkedList;
 import com.coolslow.datastruct.MySingleLinkedList;
 import com.coolslow.utils.MyUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class LinkTest {
 
-    public static void test1() {
+    @Test
+    public void test1() {
 
         MyUtils.printStartLine();
 
@@ -16,9 +21,11 @@ public class LinkTest {
         linkedList.remove(8);
         foreach1(linkedList);
         MyUtils.printEndLine();
+        Assert.assertTrue(true);
     }
 
-    public static void test2() {
+    @Test
+    public void test2() {
 
         MyUtils.printStartLine();
 
@@ -29,15 +36,15 @@ public class LinkTest {
         foreach2(linkedList);
 
         MyUtils.printEndLine();
+        Assert.assertTrue(true);
     }
 
-
-    public static void foreach1(MyDoubleLinkedList<String> linkedList) {
+    public void foreach1(MyDoubleLinkedList<String> linkedList) {
         linkedList.iterator(s -> MyUtils.print(s + " , "));
         MyUtils.printLine();
     }
 
-    public static void foreach2(MySingleLinkedList<String> linkedList) {
+    public void foreach2(MySingleLinkedList<String> linkedList) {
         linkedList.iterator(s -> MyUtils.print(s + " , "));
         MyUtils.printLine();
     }
