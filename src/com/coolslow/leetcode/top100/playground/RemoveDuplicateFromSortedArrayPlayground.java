@@ -18,10 +18,9 @@ public class RemoveDuplicateFromSortedArrayPlayground {
         return count + 1;
     }
 
-    public static int removeDuplicateNumFromArray(int[] nums) {
-        if(nums.length == 0) {
-            return 0;
-        }
+    public static int removeDuplicateNumsInSortedArray(int[] nums) {
+        if(nums.length == 0) return 0;
+
         int count = 0;
         for(int i = 1; i < nums.length; i++) {
             if(nums[count] != nums[i]) {
@@ -31,6 +30,38 @@ public class RemoveDuplicateFromSortedArrayPlayground {
         }
         return count + 1;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

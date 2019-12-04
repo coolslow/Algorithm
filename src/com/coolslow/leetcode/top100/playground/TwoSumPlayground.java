@@ -60,7 +60,7 @@ public class TwoSumPlayground {
      * @param target
      * @return
      */
-    @Solution(desc = "解法3：两数之和 - HasMap两次for循环")
+    @Solution(desc = "解法3：两数之和 - HasMap一次for循环")
     @Topics(tags = Topics.Tags.Array)
     public static int[] twoSumWithOnePassHashMap(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -74,24 +74,6 @@ public class TwoSumPlayground {
         }
         return new int[] {};
     }
-    
-    public static int[] twoNumSum(int[] nums, int target) {
-        for(int i = 0; i < nums.length; i++) {
-            for(int j = i + 1; j < nums.length; j++) {
-                if(nums[j] == target - nums[i]) {
-                    return new int[] {i, j};
-                }
-            }
-        }
-        return new int[] {};
-    }
-    
-    
-    
-    
-    
-    
-    
     
     
     

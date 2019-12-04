@@ -30,10 +30,10 @@ public class TwoSumTest {
         int[] nums1 = new int[] {0, 1, 3, 8, 7, 11, 12, 13};
         int target1 = 4;
 
-        int[] result = TwoSumPlayground.twoNumSum(nums, target);
+        int[] result = TwoSumPlayground.twoSum(nums, target);
         Assert.assertArrayEquals(new int[] {}, result);
 
-        int[] result1 = TwoSumPlayground.twoNumSum(nums1, target1);
+        int[] result1 = TwoSumPlayground.twoSumWithHashMap(nums1, target1);
         Assert.assertArrayEquals(new int[] {1, 2}, result1);
     }
 }
