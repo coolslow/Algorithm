@@ -1,6 +1,10 @@
+package com.coolslow.struct;
+
 import com.coolslow.datastruct.MyQueue;
 import com.coolslow.datastruct.MyStack;
 import com.coolslow.utils.MyUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Condition;
@@ -8,7 +12,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class QueueTest {
 
-    public static void test() throws InterruptedException {
+    @Test
+    public  void test() throws InterruptedException {
 
         MyUtils.printStartLine();
         MyUtils.startTime();
@@ -25,11 +30,11 @@ public class QueueTest {
         MyUtils.endTime("queue foreach cost ");
 
         MyUtils.printEndLine();
-
+        Assert.assertTrue(true);
     }
 
 
-    public static void foreach(MyQueue<String> list) {
+    public  void foreach(MyQueue<String> list) {
         list.iterator(s -> {
             MyUtils.print(s + " , ");
         });

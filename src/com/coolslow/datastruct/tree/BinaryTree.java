@@ -25,25 +25,29 @@ import java.util.Stack;
  * 树集合生产器 done
  *
  * <p>
- * 搜索二插树
+ * 搜索二插树 done
  * 哈夫曼树
- * 平衡树AVL
+ * 平衡树AVL done
  * 红黑树
  * b树
  * b+树
  * 堆树
+ * <p>
+ * <p>
+ * 深度：对于任意节点n,n的深度为从根到n的唯一路径长，根的深度为0；
+ * 高度：对于任意节点n,n的高度为从n到一片树叶的最长路径长，所有树叶的高度为0；
  */
 public class BinaryTree<T extends Comparable<T>> {
 
-    private Node root;
+    private Node<T> root;
     private int size;
 
     public BinaryTree() {
     }
 
     public void add(T data) {
-        Node target = find(data, true);
-        Node node = new Node(data, target, null, null);
+        Node<T> target = find(data, true);
+        Node<T> node = new Node<>(data, target, null, null);
         if (root == null) {
             root = node;
             size++;
@@ -63,18 +67,17 @@ public class BinaryTree<T extends Comparable<T>> {
         if (data == null) {
             return;
         }
-        for (int i = 0; i < data.length; i++) {
-            add(data[i]);
+        for (T datum : data) {
+            add(datum);
         }
     }
 
-    public Node find(T data, boolean isFindMount) {
+    public Node<T> find(T data, boolean isFindMount) {
         if (data == null) {
             return null;
         }
-        Node temp = root;
-        Node target = temp;
-        boolean isMatch = false;
+        Node<T> temp = root;
+        Node<T> target = temp;
         while (temp != null) {
             if (data.compareTo(temp.data) > 0) {
                 target = temp;
@@ -86,20 +89,14 @@ public class BinaryTree<T extends Comparable<T>> {
                 if (isFindMount) {
                     return null;
                 } else {
-                    isMatch = true;
-                    target = temp;
-                    temp = null;
+                    return temp;
                 }
             }
         }
         if (isFindMount) {
             return target;
         } else {
-            if (isMatch) {
-                return target;
-            } else {
-                return null;
-            }
+            return null;
         }
     }
 
@@ -107,52 +104,88 @@ public class BinaryTree<T extends Comparable<T>> {
         if (data == null) {
             return;
         }
-        Node curr = find(data, false);
+        Node<T> curr = find(data, false);
         if (curr == null) {
             return;
         }
         if (curr.left == null && curr.right == null) {
             Node parent = curr.parent;
-            if (parent.left == curr) {
-                parent.left = null;
+            if (parent != null) {
+                if (parent.left == curr) {
+                    parent.left = null;
+                    curr.parent = null;
+                } else {
+                    parent.right = null;
+                    curr.parent = null;
+                }
             } else {
-                parent.right = null;
+                root = null;
+                curr.parent = null;
             }
-        } else if (curr.left == null) {
-            Node parent = curr.parent;
-            Node node = curr.right;
-            parent.right = node;
-            node.parent = parent;
-        } else if (curr.right == null) {
-            Node parent = curr.parent;
-            Node node = curr.left;
-            parent.left = node;
-            node.parent = parent;
-        } else {
-            Node parent = curr.parent;
-            Node left = curr.left;
-            Node right = curr.right;
-            Node max = curr.left;
 
+        } else if (curr.left == null) {
+            Node<T> parent = curr.parent;
+            Node<T> right = curr.right;
+            if (parent != null) {
+                if (parent.left == curr) {
+                    parent.left = right;
+                    right.parent = parent;
+                } else {
+                    parent.right = right;
+                    right.parent = parent;
+                }
+            } else {
+                root = right;
+                right.parent = null;
+            }
+
+        } else if (curr.right == null) {
+            Node<T> parent = curr.parent;
+            Node<T> left = curr.left;
+            if (parent != null) {
+                if (parent.left == curr) {
+                    parent.left = left;
+                    left.parent = parent;
+                } else {
+                    parent.right = left;
+                    left.parent = parent;
+                }
+            } else {
+                root = left;
+                left.parent = null;
+            }
+        } else {
+
+            Node<T> parent = curr.parent;
+            Node<T> left = curr.left;
+            Node<T> right = curr.right;
+            Node<T> max = curr.left;
             while (max.right != null) {
                 max = max.right;
             }
             Node maxParent = max.parent;
             Node maxLeft = max.left;
 
-            if (parent.left == curr) {
-                parent.left = max;
-                max.parent = parent;
+            if (parent != null) {
+                if (parent.left == curr) {
+                    parent.left = max;
+                    max.parent = parent;
+                } else {
+                    parent.right = max;
+                    max.parent = parent;
+                }
             } else {
-                parent.right = max;
-                max.parent = parent;
+                root = max;
+                max.parent = null;
             }
+
             max.right = right;
             right.parent = max;
 
             if (max != left) {
                 max.left = left;
                 left.parent = max;
+
                 maxParent.right = maxLeft;
                 if (maxLeft != null) {
                     maxLeft.parent = maxParent;
@@ -164,9 +197,9 @@ public class BinaryTree<T extends Comparable<T>> {
 
     public int getTreeHeight() {
         if (root == null) {
-            return 0;
+            return -1;
         }
-        int height = 1;
+        int height = 0;
         MyStack<Node> stack = new MyStack<>();
         Node temp = root;
         Node visited = null;
@@ -222,10 +255,10 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public void iteratorPre(MyIterator<T> iterator) {
-        MyStack<Node> stack = new MyStack<>();
+        MyStack<Node<T>> stack = new MyStack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
-            Node temp = stack.pop();
+            Node<T> temp = stack.pop();
             if (temp != null) {
                 if (iterator != null) {
                     iterator.call(temp.data);
@@ -241,8 +274,8 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public void iteratorIn(MyIterator<T> iterator) {
-        MyStack<Node> stack = new MyStack<>();
-        Node temp = root;
+        MyStack<Node<T>> stack = new MyStack<>();
+        Node<T> temp = root;
         while (temp != null || !stack.isEmpty()) {
             while (temp != null) {
                 stack.push(temp);
@@ -257,9 +290,9 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public void iteratorPost(MyIterator<T> iterator) {
-        MyStack<Node> stack = new MyStack<>();
-        Node visited = null;
-        Node temp = root;
+        MyStack<Node<T>> stack = new MyStack<>();
+        Node<T> visited = null;
+        Node<T> temp = root;
         while (temp != null || !stack.isEmpty()) {
             while (temp != null) {
                 stack.push(temp);
@@ -279,14 +312,14 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
-    MyIterator<T> iterator;
+    private MyIterator<T> iterator;
 
     public void recursivePre(MyIterator<T> iterator) {
         this.iterator = iterator;
         recursivePre(root);
     }
 
-    private void recursivePre(Node node) {
+    private void recursivePre(Node<T> node) {
         if (node != null) {
             if (iterator != null) {
                 iterator.call(node.data);
@@ -301,7 +334,7 @@ public class BinaryTree<T extends Comparable<T>> {
         recursiveIn(root);
     }
 
-    private void recursiveIn(Node node) {
+    private void recursiveIn(Node<T> node) {
         if (node != null) {
             recursiveIn(node.left);
             if (iterator != null) {
@@ -316,7 +349,7 @@ public class BinaryTree<T extends Comparable<T>> {
         recursivePost(root);
     }
 
-    private void recursivePost(Node node) {
+    private void recursivePost(Node<T> node) {
         if (node != null) {
             recursivePost(node.left);
             recursivePost(node.right);
@@ -327,10 +360,10 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     public void iteratorBfs(MyIterator<T> iterator) {
-        MyQueue<Node> queue = new MyQueue<>();
+        MyQueue<Node<T>> queue = new MyQueue<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            Node temp = queue.remove();
+            Node<T> temp = queue.remove();
             if (iterator != null) {
                 iterator.call(temp.data);
             }
@@ -347,13 +380,13 @@ public class BinaryTree<T extends Comparable<T>> {
         return size;
     }
 
-    public final class Node {
+    public final static class Node<T> {
         public T data;
-        public Node parent;
-        public Node left;
-        public Node right;
+        public Node<T> parent;
+        public Node<T> left;
+        public Node<T> right;
 
-        Node(T data, Node parent, Node left, Node right) {
+        Node(T data, Node<T> parent, Node<T> left, Node<T> right) {
             this.data = data;
             this.parent = parent;
             this.left = left;

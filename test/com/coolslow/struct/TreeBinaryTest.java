@@ -1,15 +1,17 @@
-import com.coolslow.datastruct.MySingleLinkedList;
+package com.coolslow.struct;
+
 import com.coolslow.datastruct.tree.BinaryTree;
-import com.coolslow.utils.MyData;
 import com.coolslow.utils.MyUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TreeTest {
+public class TreeBinaryTest {
 
-
-    public static void test1() {
+    @Test
+    public void test1() {
 
 
         BinaryTree<String> tree = new BinaryTree<>();
@@ -27,24 +29,26 @@ public class TreeTest {
         tree.add("M");
 
         MyUtils.printMarkLine("pre order iterator");
-        iteratorPre(tree);
+        tree.iteratorPre(data -> MyUtils.print(data + ", "));
+
+
         MyUtils.printLine();
-        recursivePre(tree);
+        tree.recursivePre(data -> MyUtils.print(data + ", "));
 
         MyUtils.printMarkLine("in order iterator");
-        iteratorIn(tree);
+        tree.iteratorIn(data -> MyUtils.print(data + ", "));
         MyUtils.printLine();
-        recursiveIn(tree);
+        tree.recursiveIn(data -> MyUtils.print(data + ", "));
 
         MyUtils.printMarkLine("post order iterator");
-        iteratorPost(tree);
+        tree.iteratorPost(data -> MyUtils.print(data + ", "));
         MyUtils.printLine();
-        recursivePost(tree);
+        tree.recursivePost(data -> MyUtils.print(data + ", "));
 
     }
 
-
-    public static void test2() {
+    @Test
+    public void test2() {
 
 //        BinaryTree<Integer> tree = new BinaryTree<>();
 //        iteratorIn(tree);
@@ -104,49 +108,50 @@ public class TreeTest {
         tree.addAll(data);
 
         MyUtils.printMarkLine("in order iterator before");
-        iteratorIn(tree);
+        tree.iteratorIn(source -> MyUtils.print(source + ", "));
 
         int remove = 50;
         MyUtils.printMarkLine("remove " + remove);
         tree.remove(remove);
 
         List<Integer> nodes = new ArrayList<>();
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] != remove) {
-                nodes.add(data[i]);
+        for (Integer datum : data) {
+            if (datum != remove) {
+                nodes.add(datum);
             }
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < nodes.size(); i++) {
-            int node = nodes.get(i);
+        for (int node : nodes) {
             BinaryTree.Node temp = tree.find(node, false);
             if (temp != null) {
                 if (temp.parent != null) {
-                    sb.append(node + " parent = " + temp.parent.data + "       ");
+                    sb.append(node).append(" parent = ").append(temp.parent.data).append("       ");
                 } else {
-                    sb.append(node + " parent = null       ");
+                    sb.append(node).append(" parent = null       ");
                 }
                 if (temp.left != null) {
-                    sb.append(node + " leftchild = " + temp.left.data + "       ");
+                    sb.append(node).append(" leftchild = ").append(temp.left.data).append("       ");
                 } else {
-                    sb.append(node + " leftchild = null       ");
+                    sb.append(node).append(" leftchild = null       ");
                 }
                 if (temp.right != null) {
-                    sb.append(node + " rightchild = " + temp.right.data + "       ");
+                    sb.append(node).append(" rightchild = ").append(temp.right.data).append("       ");
                 } else {
-                    sb.append(node + " rightchild = null       ");
+                    sb.append(node).append(" rightchild = null       ");
                 }
                 sb.append("\n");
             }
         }
         MyUtils.println(sb.toString());
         MyUtils.printMarkLine("in order iterator finish");
-        iteratorIn(tree);
+        tree.iteratorIn(source -> MyUtils.print(source + ", "));
+
+        Assert.assertTrue(true);
 
     }
 
-
-    public static void test3() {
+    @Test
+    public void test3() {
 
         Integer[] data = new Integer[]{//
                 100, //
@@ -157,59 +162,16 @@ public class TreeTest {
         tree.addAll(data);
 
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("tree  count = " + tree.size() + "\n");
-        sb.append("tree leaf count = " + tree.getTreeLeafCount() + "\n");
-        sb.append("tree node count = " + tree.getTreeNodeCount() + "\n");
-        sb.append("tree height  = " + tree.getTreeHeight() + "\n");
-        MyUtils.println(sb.toString());
-
+        String msg = "tree  count = " + tree.size() + "\n" +
+                "tree leaf count = " + tree.getTreeLeafCount() + "\n" +
+                "tree node count = " + tree.getTreeNodeCount() + "\n" +
+                "tree height  = " + tree.getTreeHeight() + "\n";
+        MyUtils.println(msg);
         MyUtils.printMarkLine("in order iterator finish");
-        iteratorIn(tree);
+        tree.iteratorIn(source -> MyUtils.print(source + ", "));
+
+        Assert.assertTrue(true);
 
     }
-
-    public static void iteratorPre(BinaryTree tree) {
-        tree.iteratorPre(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void iteratorIn(BinaryTree tree) {
-        tree.iteratorIn(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void iteratorPost(BinaryTree tree) {
-        tree.iteratorPost(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void recursivePre(BinaryTree tree) {
-        tree.recursivePre(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void recursiveIn(BinaryTree tree) {
-        tree.recursiveIn(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void recursivePost(BinaryTree tree) {
-        tree.recursivePost(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
-    public static void iteratorBfs(BinaryTree tree) {
-        tree.iteratorBfs(data -> {
-            MyUtils.print(data + ", ");
-        });
-    }
-
 
 }
