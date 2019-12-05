@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.top100;
 
+import com.coolslow.common.Solution;
+
 /**
  * 7. 整数反转
  *
