@@ -26,6 +26,12 @@ public class AddTwoNumbersPlayground {
         return new int[] {};
     }
 
+    /**
+     * 通过HashMap方式
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] twoSumWithHashMap(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
