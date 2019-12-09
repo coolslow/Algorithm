@@ -1,6 +1,6 @@
 package com.coolslow;
 
-import com.coolslow.datastruct.ListNode;
+import com.coolslow.leetcode.struct.ListNode;
 import com.coolslow.leetcode.top100.playground.AddTwoNumbersPlayground;
 import org.junit.Assert;
 import org.junit.Test;
