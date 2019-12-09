@@ -31,7 +31,7 @@ public class RemoveDuplicateFromSortedArray {
                 nums[count] = nums[i];
             }
         }
-        // 必须是count + 1, 不能是 count++
+        // 必须是count + 1, 不能是 count 或 count++
         return count + 1;
     }
 }
