@@ -300,43 +300,62 @@ public class AVLTree<T extends Comparable<T>> {
             }
             target = parent;
         } else {
-            Node<T> parent = curr.parent;
-            Node<T> left = curr.left;
-            Node<T> right = curr.right;
-
-            Node<T> max = curr.left;
-            while (max.right != null) {
-                max = max.right;
+            Node<T> maxNode = curr.left;
+            while (maxNode.right != null) {
+                maxNode = maxNode.right;
             }
-            Node<T> maxParent = max.parent;
-            Node<T> maxLeft = max.left;
-
-            if (parent != null) {
-                if (parent.left == curr) {
-                    parent.left = max;
-                    max.parent = parent;
-                } else {
-                    parent.right = max;
-                    max.parent = parent;
+            Node<T> maxParent = maxNode.parent;
+            curr.data = maxNode.data;
+            if (maxNode == curr.left) {
+                curr.left = maxNode.left;
+                if (maxNode.left != null) {
+                    maxNode.left.parent = curr;
                 }
             } else {
-                root = max;
-                max.parent = null;
-            }
-
-            max.right = right;
-            right.parent = max;
-
-            if (max != left) {
-                max.left = left;
-                left.parent = max;
-
-                maxParent.right = maxLeft;
-                if (maxLeft != null) {
-                    maxLeft.parent = maxParent;
+                maxParent.right = maxNode.left;
+                if (maxNode.left != null) {
+                    maxNode.left.parent = maxParent;
                 }
             }
             target = maxParent;
+
+//            Node<T> parent = curr.parent;
+//            Node<T> left = curr.left;
+//            Node<T> right = curr.right;
+//
+//            Node<T> max = curr.left;
+//            while (max.right != null) {
+//                max = max.right;
+//            }
+//            Node<T> maxParent = max.parent;
+//            Node<T> maxLeft = max.left;
+//
+//            if (parent != null) {
+//                if (parent.left == curr) {
+//                    parent.left = max;
+//                    max.parent = parent;
+//                } else {
+//                    parent.right = max;
+//                    max.parent = parent;
+//                }
+//            } else {
+//                root = max;
+//                max.parent = null;
+//            }
+//
+//            max.right = right;
+//            right.parent = max;
+//
+//            if (max != left) {
+//                max.left = left;
+//                left.parent = max;
+//
+//                maxParent.right = maxLeft;
+//                if (maxLeft != null) {
+//                    maxLeft.parent = maxParent;
+//                }
+//            }
+//            target = maxParent;
 
         }
         size--;

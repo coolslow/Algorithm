@@ -1,6 +1,6 @@
 package com.coolslow.leetcode.top100;
 
-import com.coolslow.datastruct.ListNode;
+import com.coolslow.leetcode.top100.datastructure.ListNode;
 
 /**
  * 2. 两数相加
@@ -17,7 +17,6 @@ import com.coolslow.datastruct.ListNode;
  *
  * 相关标签：链表、数字
  */
-
 public final class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

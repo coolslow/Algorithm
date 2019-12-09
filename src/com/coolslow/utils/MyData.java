@@ -164,4 +164,37 @@ public class MyData {
         return list;
     }
 
+    public static void print(Integer[] data) {
+        if (data == null) {
+            return;
+        }
+        for (Integer i : data) {
+            MyUtils.print(i + ", ");
+        }
+        MyUtils.printLine();
+    }
+
+    public static void verify(Integer[] data) {
+        if (data == null) {
+            return;
+        }
+        boolean success = true;
+        Set<Integer> repeat = new HashSet<>();
+        for (Integer i : data) {
+            if (!repeat.contains(i)) {
+                repeat.add(i);
+            } else {
+                success = false;
+                break;
+            }
+        }
+
+        if (success) {
+            MyUtils.println(data.length + "个数，没有重复值");
+        } else {
+            MyUtils.println("重复值");
+        }
+
+    }
+
 }
