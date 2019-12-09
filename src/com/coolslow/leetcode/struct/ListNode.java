@@ -1,4 +1,4 @@
-package com.coolslow.datastruct;
+package com.coolslow.leetcode.struct;
 
 /**
  * 定义单链表

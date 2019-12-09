@@ -12,7 +12,7 @@ public class TreeAVLTest {
      * ll rotate
      */
     @Test
-    public void test4() {
+    public void test1() {
         Integer[] data = new Integer[]{//
                 100,
                 50,
@@ -26,7 +26,7 @@ public class TreeAVLTest {
      * rr rotate
      */
     @Test
-    public void test5() {
+    public void test2() {
         Integer[] data = new Integer[]{//
                 25,
                 50,
@@ -40,7 +40,7 @@ public class TreeAVLTest {
      * lr rotate
      */
     @Test
-    public void test6() {
+    public void test3() {
         Integer[] data = new Integer[]{//
                 100,
                 50,
@@ -54,7 +54,7 @@ public class TreeAVLTest {
      * rl rotate
      */
     @Test
-    public void test7() {
+    public void test4() {
         Integer[] data = new Integer[]{//
                 50,
                 100,
@@ -67,7 +67,7 @@ public class TreeAVLTest {
      * avl tree test
      */
     @Test
-    public void test8() {
+    public void test5() {
         Integer[] data = new Integer[]{//
                 100,
                 50,
@@ -88,7 +88,7 @@ public class TreeAVLTest {
     }
 
     @Test
-    public void test9() {
+    public void test6() {
         int count = 100;
         Integer[] data = new Integer[count];
         for (int i = 0; i < count; i++) {
@@ -130,7 +130,7 @@ public class TreeAVLTest {
      * remove
      */
     @Test
-    public void test10() {
+    public void test7() {
         Integer[] data = new Integer[]{//
                 100,
                 50,

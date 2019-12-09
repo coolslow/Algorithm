@@ -164,4 +164,14 @@ public class MyData {
         return list;
     }
 
+    public static void print(Integer[] data) {
+        if (data == null) {
+            return;
+        }
+        for (Integer i : data) {
+            MyUtils.print(i + ", ");
+        }
+        MyUtils.printLine();
+    }
+
 }

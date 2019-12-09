@@ -1,6 +1,6 @@
 package com.coolslow.leetcode.top100;
 
-import com.coolslow.datastruct.ListNode;
+import com.coolslow.leetcode.struct.ListNode;
 
 /**
  * 2. 两数相加
