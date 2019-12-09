@@ -87,13 +87,24 @@ public class TreeRBTest {
     // rb random
     @Test
     public void test7() {
-        RBTree<Integer> tree = new RBTree<>();
+
 //        Integer[] data = new Integer[]{100, 150, 50, 25, 75, 37, 40, 39};
         Integer[] data = MyData.generateRandomData(20);
-        MyData.print(data);
+        MyData.verify(data);
+
+        MyUtils.startTime();
+        RBTree<Integer> tree = new RBTree<>();
         tree.addAll(data);
+        MyUtils.endTime("创建" + tree.size() + "个节点，耗时");
         String msg = verifyInfo(tree);
         MyUtils.println(msg);
+        MyUtils.endTime("验证创建是否正确，耗时");
+
+        int remove = 524288;
+        tree.remove(remove);
+        MyUtils.endTime("删除节点"+remove+"，耗时");
+
+
     }
 
 
@@ -164,9 +175,9 @@ public class TreeRBTest {
 
             progress.getAndIncrement();
             int curr = progress.get();
-            if (curr % 1000 == 0) {
+            if (curr % 10000 == 0) {
                 MyUtils.println("curr=" + curr + "  total=" + size);
-            }else{
+            } else {
                 if (curr == size) {
                     MyUtils.println("curr=" + curr + "  total=" + size);
                 }
