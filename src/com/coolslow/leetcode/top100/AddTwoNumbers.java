@@ -17,7 +17,6 @@ import com.coolslow.leetcode.struct.ListNode;
  *
  * 相关标签：链表、数字
  */
-
 public final class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

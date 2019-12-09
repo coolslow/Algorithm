@@ -33,7 +33,12 @@ package com.coolslow.leetcode.top100;
  */
 public class RotateArray {
 
-    // 暴力解法，时间复杂度O(n^2)
+    /**
+     * 暴力解法，时间复杂度O(n^2)
+     * @param nums 输入的数组
+     * @param k 指定的下标k
+     * @return 返回一个旋转后的数组
+     */
     public static int[] rotateArrayWithBruteForce(int[] nums, int k) {
         int temp, previous;
         for(int i = 0; i < k; i ++) {
@@ -47,7 +52,12 @@ public class RotateArray {
         return nums;
     }
 
-    // 利用额外的数组，时间复杂度O(n)，空间复杂度O(n)
+    /**
+     * 利用额外的数组，时间复杂度O(n)，空间复杂度O(n)
+     * @param nums 输入的数组
+     * @param k 指定的下标k
+     * @return 返回一个旋转后的数组
+     */
     public static int[] rotateArrayWithExtraArray(int[] nums, int k) {
         int[] a = new int[nums.length];
         for(int i = 0; i < nums.length; i++) {
@@ -65,6 +75,9 @@ public class RotateArray {
      * 我们可以将数组中的每一个数值直接放置所需的正确位置上。但这样做会破坏原来的数组。
      * 因此，需要将替换的数字存储在temp变量中。然后，我们可以将替换的数字（temp）放置在正确的位置上，一次类推。
      * 执行n次，n的大小为数组的长度。
+     * @param nums 输入的数组
+     * @param k 输入的数组
+     * @return 返回一个旋转后的数组
      */
     public static int[] rotateArrayWithCycleReplacement(int[] nums, int k) {
         k = k % nums.length;
