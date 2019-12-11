@@ -90,7 +90,7 @@ public class TreeRBTest {
 
 //        Integer[] data = new Integer[]{100, 150, 50, 25, 75, 37, 40, 39};
         Integer[] data = MyData.generateRandomData(20);
-        MyData.verify(data);
+        MyData.verifyDataNoRepeat(data);
 
         MyUtils.startTime();
         RBTree<Integer> tree = new RBTree<>();

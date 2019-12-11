@@ -105,10 +105,40 @@ public class MyData {
     }
 
     /**
+     * 2的n次幂个节点升序排列
+     *
+     * @param powerBy2 2的n次幂
+     * @return Integer[]
+     */
+    public static Integer[] generateDataAscending(int powerBy2) {
+        int capacity = (int) Math.pow(2, powerBy2);
+        Integer[] list = new Integer[capacity];
+        for (int i = 0; i < capacity; i++) {
+            list[i] = i;
+        }
+        return list;
+    }
+
+    /**
+     * 2的n次幂个节点降序排列
+     *
+     * @param powerBy2 2的n次幂
+     * @return Integer[]
+     */
+    public static Integer[] generateDataDescending(int powerBy2) {
+        int capacity = (int) Math.pow(2, powerBy2);
+        Integer[] list = new Integer[capacity];
+        for (int i = 0; i < capacity; i++) {
+            list[i] = capacity - i;
+        }
+        return list;
+    }
+
+    /**
      * 2的n次幂个节点的随机
      *
      * @param powerBy2 2的n次幂
-     * @return MyArrayList<Integer>
+     * @return Integer[]
      */
     public static Integer[] generateRandomData(int powerBy2) {
         return generateRandomData(powerBy2, false, false);
@@ -174,7 +204,7 @@ public class MyData {
         MyUtils.printLine();
     }
 
-    public static void verify(Integer[] data) {
+    public static void verifyDataNoRepeat(Integer[] data) {
         if (data == null) {
             return;
         }
@@ -196,5 +226,27 @@ public class MyData {
         }
 
     }
+
+    public static void verifySortRight(Integer[] data) {
+        if (data == null) {
+            return;
+        }
+        boolean success = true;
+        int lastData = -1;
+        for (Integer i : data) {
+            if (i < lastData) {
+                success = false;
+                break;
+            }
+            lastData = i;
+        }
+        if (success) {
+            MyUtils.println("排序正确");
+        } else {
+            MyUtils.println("排序错误");
+        }
+
+    }
+
 
 }

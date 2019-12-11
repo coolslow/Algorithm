@@ -42,4 +42,19 @@ public class MyUtils {
         performanceTime = System.currentTimeMillis();
     }
 
+
+    public static void printProgressing(int curr, int total) {
+        int per = total / 100;
+        if(per == 0){
+            return;
+        }
+        curr = (curr + 1);
+        if (curr % per == 0) {
+            MyUtils.println("curr=" + curr + "   total=" + total);
+        } else if (curr == total) {
+            MyUtils.println("curr=" + curr + "   total=" + total);
+        }
+
+    }
+
 }
