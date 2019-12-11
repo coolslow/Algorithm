@@ -2,7 +2,7 @@ package com.coolslow.sort.inplace;
 
 import com.coolslow.utils.MyUtils;
 
-class ShellSort {
+public class ShellSort {
 
 
     /**
@@ -12,7 +12,7 @@ class ShellSort {
      * 3 当 h = 1 时，也就是此时数组中任意间隔为1的元素有序，此时的数组就是有序的了。
      */
 
-    static <T extends Comparable<T>> void sort(T[] data) {
+    public static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null) {
             return;
         }

@@ -3,7 +3,7 @@ package com.coolslow.sort.inplace;
 
 import com.coolslow.utils.MyUtils;
 
-class BubbleSort {
+public class BubbleSort {
 
 
     /**
@@ -11,7 +11,7 @@ class BubbleSort {
      * 2 我们对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样一趟比较交换下来之后，排在最右的元素就会是最大的数。
      * 3 除去最右的元素，我们对剩余的元素做同样的工作，如此重复下去，直到排序完成
      */
-    static <T extends Comparable<T>> void sort(T[] data) {
+    public  static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null) {
             return;
         }

@@ -3,7 +3,7 @@ package com.coolslow.sort.inplace;
 
 import com.coolslow.utils.MyUtils;
 
-class InsertSort {
+public class InsertSort {
 
 
     /**
@@ -11,7 +11,7 @@ class InsertSort {
      * 2、把它与左边第一个元素比较，如果左边第一个元素比它大，则继续与左边第二个元素比较下去，直到遇到不比它大的元素，然后插到这个元素的右边。
      * 3、继续选取第3，4，….n个元素,重复步骤 2 ，选择适当的位置插入。
      */
-    static <T extends Comparable<T>> void sort(T[] data) {
+    public  static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null || data.length == 1) {
             return;
         }

@@ -13,7 +13,7 @@ public class SelectSort {
      * 4 如此往复，直到将整个数组排序。这种方法我们称之为选择排序。
      */
 
-    static <T extends Comparable<T>> void sort(T[] data) {
+    public static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null) {
             return;
         }

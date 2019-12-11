@@ -1,7 +1,6 @@
 package com.coolslow.sort.inplace;
 
 import com.coolslow.datastruct.MyQueue;
-import com.coolslow.utils.MyUtils;
 
 import java.util.Random;
 
@@ -13,7 +12,7 @@ public class QuickSort {
      * 3 从中轴元素那里开始把大的数组切割成两个小的数组(两个数组都不包含中轴元素)，
      * 4 接着我们通过递归的方式，让中轴元素左边的数组和右边的数组也重复同样的操作，直到数组的大小为1，此时每个元素都处于有序的位置。
      */
-    static <T extends Comparable<T>> void sort(T[] data) {
+    public static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null) {
             return;
         }
@@ -59,7 +58,7 @@ public class QuickSort {
         int start;
         int end;
 
-        public KV(int start, int end) {
+        KV(int start, int end) {
             this.start = start;
             this.end = end;
         }
