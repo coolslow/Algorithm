@@ -5,7 +5,7 @@ import com.coolslow.utils.MyData;
 import com.coolslow.utils.MyUtils;
 import org.junit.Test;
 
-public class Sort {
+public class SortInPlace {
 
     /**
      * 选择排序
@@ -140,7 +140,7 @@ public class Sort {
     }
 
     /**
-     * 希尔排序
+     * 希尔排序 百万级
      */
     @Test
     public void test8() {
@@ -209,6 +209,45 @@ public class Sort {
         MyData.verifySortRight(data);
         MyUtils.endTime("排序正确性验证 耗时");
 
+    }
+
+    /**
+     * 堆排序
+     */
+    @Test
+    public void test11() {
+        Integer[] data = MyData.generateRandomData(6);
+        MyData.print(data);
+        HeapSort.sort(data);
+        MyData.print(data);
+    }
+
+    /**
+     * 堆排序 百万级
+     */
+    @Test
+    public void test12() {
+
+        MyUtils.startTime();
+
+        MyUtils.printMarkLine("开始创建百万级(1048576个)数据");
+
+        Integer[] data;
+//        data = MyData.generateDataAscending(20);  //升序。耗时 281毫秒。
+//        data = MyData.generateDataDescending(20); //降序。 耗时 329毫秒。
+        data = MyData.generateRandomData(20);// 随机。耗时 570毫秒。
+        MyUtils.endTime("创建百万级(1048576个)数据 耗时");
+
+        MyUtils.printMarkLine("开始验证数据");
+        MyData.verifyDataNoRepeat(data);
+        MyUtils.endTime("验证数据 耗时");
+
+        MyUtils.printMarkLine("开始堆排序");
+        HeapSort.sort(data);
+        MyUtils.endTime("堆排序 耗时");
+        MyUtils.printMarkLine("开始排序正确性验证");
+        MyData.verifySortRight(data);
+        MyUtils.endTime("排序正确性验证 耗时");
     }
 
 }

@@ -243,7 +243,7 @@ public class MyData {
         if (success) {
             MyUtils.println("排序正确");
         } else {
-            MyUtils.println("排序错误");
+            MyUtils.println("排序错误"+lastData);
         }
 
     }
