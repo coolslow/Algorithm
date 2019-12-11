@@ -1,5 +1,6 @@
 package com.coolslow.sort;
 
+import com.coolslow.sort.inplace.*;
 import com.coolslow.utils.MyData;
 import com.coolslow.utils.MyUtils;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.coolslow.sort;
+package com.coolslow.sort.inplace;
 
 import com.coolslow.datastruct.MyQueue;
 import com.coolslow.utils.MyUtils;
