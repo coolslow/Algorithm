@@ -64,9 +64,11 @@ public class RotateArray {
             a[(i + k) % nums.length] = nums[i];
         }
 
+        // TODO 数组赋值可优化
         for(int i = 0; i < nums.length; i++) {
             nums[i] = a[i];
         }
+
         return nums;
     }
 

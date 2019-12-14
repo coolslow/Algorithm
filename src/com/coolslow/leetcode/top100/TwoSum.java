@@ -40,6 +40,7 @@ public class TwoSum {
 
         for(int i = 0; i < nums.length; i++) {
             int tmp = target - nums[i];
+            // 之所以需要添加 map.get(tmp) != i 的逻辑是防止一种情况，即所判断的数组中只有一个数。
             if(map.containsKey(tmp) && map.get(tmp) != i ) {
                 return new int[] { i, map.get(tmp) };
             }
