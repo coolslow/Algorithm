@@ -1,4 +1,4 @@
-package com.coolslow.datastruct.doc;
+package com.coolslow.datastruct.tree.doc;
 
 public class Concepts {
 
