@@ -2,8 +2,13 @@ package com.coolslow.sort.inplace;
 
 import com.coolslow.utils.MyUtils;
 
-public class ShellSort {
 
+/**
+ * 希尔排序
+ * <p>
+ * by MrThanksgiving
+ */
+public class ShellSort {
 
     /**
      * 希尔排序的思想是采用插入排序的方法，

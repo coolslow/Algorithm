@@ -4,8 +4,9 @@ package com.coolslow.datastruct;
 import com.coolslow.utils.MyIterator;
 
 /**
- * By MrZ
- * 2019-11-18
+ * 双链表
+ * <p>
+ * by MrThanksgiving
  */
 public class MyDoubleLinkedList<T> {
 
@@ -61,7 +62,7 @@ public class MyDoubleLinkedList<T> {
     }
 
     public T remove(int idx) {
-        if (!isValidIndex(idx)) {
+        if (isIndexValid(idx)) {
             return null;
         }
         Node curr = searchNode(idx);
@@ -87,7 +88,7 @@ public class MyDoubleLinkedList<T> {
     }
 
     public T get(int idx) {
-        if (!isValidIndex(idx)) {
+        if (isIndexValid(idx)) {
             return null;
         }
         Node curr = searchNode(idx);
@@ -114,8 +115,8 @@ public class MyDoubleLinkedList<T> {
         return index >= 0 && index <= size;
     }
 
-    private boolean isValidIndex(int index) {
-        return index >= 0 && index < size;
+    private boolean isIndexValid(int index) {
+        return index < 0 || index >= size;
     }
 
     public void iterator(MyIterator<T> iterator) {

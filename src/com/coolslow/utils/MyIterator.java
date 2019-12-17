@@ -1,8 +1,9 @@
 package com.coolslow.utils;
 
 /**
- * By MrZ
- * 2019-11-15
+ * 遍历协议
+ * <p>
+ * by MrThanksgiving
  */
 public interface MyIterator<T> {
     void call(T t);

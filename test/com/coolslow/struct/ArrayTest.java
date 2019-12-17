@@ -5,6 +5,12 @@ import com.coolslow.utils.MyUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+
+/**
+ * 数组 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class ArrayTest {
 
     @Test

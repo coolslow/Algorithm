@@ -3,6 +3,12 @@ package com.coolslow.sort.inplace;
 
 import com.coolslow.utils.MyUtils;
 
+
+/**
+ * 选择排序
+ * <p>
+ * by MrThanksgiving
+ */
 public class SelectSort {
 
 

@@ -3,7 +3,11 @@ package com.coolslow.datastruct.tree;
 import com.coolslow.datastruct.MyStack;
 import com.coolslow.utils.MyIterator;
 
-
+/**
+ * AVL树
+ * <p>
+ * by MrThanksgiving
+ */
 public class AVLTree<T extends Comparable<T>> {
 
     private Node<T> root;
@@ -110,7 +114,7 @@ public class AVLTree<T extends Comparable<T>> {
         MyStack<Node<T>> stack = new MyStack<>();
         Node<T> temp = node;
         Node<T> visited = null;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -368,7 +372,7 @@ public class AVLTree<T extends Comparable<T>> {
         MyStack<Node<T>> stack = new MyStack<>();
         Node<T> temp = root;
         Node<T> visited = null;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;

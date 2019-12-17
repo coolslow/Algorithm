@@ -1,5 +1,10 @@
 package com.coolslow.sort.inplace;
 
+/**
+ * 堆排序
+ * <p>
+ * by MrThanksgiving
+ */
 public class HeapSort {
 
 
@@ -11,7 +16,6 @@ public class HeapSort {
      * 3 交换之后破坏了堆的特性，我们再把堆中剩余的元素再次构成一个大顶堆。
      * 4 然后再把堆顶元素与最后第二个元素交换….如此往复下去，等到剩余的元素只有一个的时候，此时的数组就是有序的了。
      */
-
     public static <T extends Comparable<T>> void sort(T[] data) {
         if (data == null) {
             return;

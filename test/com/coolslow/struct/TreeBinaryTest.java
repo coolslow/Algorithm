@@ -8,6 +8,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 二叉树 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class TreeBinaryTest {
 
     @Test
@@ -50,55 +55,6 @@ public class TreeBinaryTest {
     @Test
     public void test2() {
 
-//        BinaryTree<Integer> tree = new BinaryTree<>();
-//        iteratorIn(tree);
-//        BinaryTree<String> tree = new BinaryTree<>();
-//        tree.add("H");
-//        tree.add("D");
-//        tree.add("B");
-//        tree.add("A");
-//        tree.add("C");
-//        tree.add("F");
-//        tree.add("G");
-//        tree.add("L");
-//        tree.add("N");
-//        tree.add("J");
-//        tree.add("K");
-//        tree.add("M");
-//        tree.add("M");
-//        MySingleLinkedList<Integer> testData = MyData.generateBinaryTree(10,false,false);
-//        MyUtils.printMarkLine("array list order iterator");
-//        for(int i=0;i<testData.size();i++){
-//            MyUtils.print(testData.get(i) + ", ");
-//        }
-//        testData.iterator(data -> {
-//            tree.add(data);
-//        });
-//        MyUtils.printMarkLine("pre order iterator");
-//        iteratorPre(tree);
-//        MyUtils.printLine();
-//        recursivePre(tree);
-//
-//        MyUtils.printMarkLine("in order iterator");
-//        iteratorIn(tree);
-//        MyUtils.printLine();
-//        recursiveIn(tree);
-//
-//        MyUtils.printMarkLine("post order iterator");
-//        iteratorPost(tree);
-//        MyUtils.printLine();
-//        recursivePost(tree);
-//        MyUtils.printMarkLine("bfs order iterator");
-//        iteratorBfs(tree);
-//        MyUtils.printLine();
-
-//        Integer[] data = new Integer[]{//
-//                100, //
-//                50, 150, //
-//                25, 75, 125, 175, //
-//                12, 37, 62, 87, 112, 137, 162, 187, //
-//                6, 18, 31, 28, 43,45, 56, 68, 81, 93, 106, 118, 131, 143, 156, 168, 181, 193
-//        };
         Integer[] data = new Integer[]{//
                 100, //
                 50, //

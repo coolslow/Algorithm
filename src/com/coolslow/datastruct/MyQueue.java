@@ -2,6 +2,11 @@ package com.coolslow.datastruct;
 
 import com.coolslow.utils.MyIterator;
 
+/**
+ * 队列
+ * <p>
+ * by MrThanksgiving
+ */
 public class MyQueue<T> {
 
 
@@ -46,8 +51,8 @@ public class MyQueue<T> {
         return size;
     }
 
-    public boolean isEmpty() {
-        return size() == 0;
+    public boolean empty() {
+        return size() != 0;
     }
 
     public void iterator(MyIterator<T> iterator) {

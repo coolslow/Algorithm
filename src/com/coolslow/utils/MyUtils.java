@@ -1,10 +1,21 @@
 package com.coolslow.utils;
 
 /**
- * By MrZ
- * 2019-11-15
+ * 工具类
+ * <p>
+ * by MrThanksgiving
  */
 public class MyUtils {
+
+    public static final String ANSI_RESET = "\u001B[0m";
+
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void print(String log) {
         System.out.print(log);
@@ -36,16 +47,17 @@ public class MyUtils {
         performanceTime = System.currentTimeMillis();
     }
 
-    public static void endTime(String mark) {
+    public static long endTime(String mark) {
         long duration = System.currentTimeMillis() - performanceTime;
         printMarkLine(mark + duration + "毫秒");
         performanceTime = System.currentTimeMillis();
+        return duration;
     }
 
 
     public static void printProgressing(int curr, int total) {
         int per = total / 100;
-        if(per == 0){
+        if (per == 0) {
             return;
         }
         curr = (curr + 1);

@@ -4,6 +4,11 @@ import com.coolslow.datastruct.tree.AVLTree;
 import com.coolslow.utils.MyUtils;
 import org.junit.Test;
 
+/**
+ * AVL 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class TreeAVLTest {
 
 

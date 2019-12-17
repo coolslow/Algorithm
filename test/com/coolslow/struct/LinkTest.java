@@ -6,6 +6,11 @@ import com.coolslow.utils.MyUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * 链表 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class LinkTest {
 
     @Test

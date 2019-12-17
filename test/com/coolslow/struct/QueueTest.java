@@ -10,6 +10,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 队列 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class QueueTest {
 
     @Test

@@ -2,8 +2,9 @@ package com.coolslow.datastruct;
 
 
 /**
- * By MrZ
- * 2019-11-16
+ * 数组
+ * <p>
+ * by MrThanksgiving
  */
 public class MyArrayList<T> {
 
@@ -15,6 +16,7 @@ public class MyArrayList<T> {
     public MyArrayList() {
         this(DEFAULT_CAPACITY);
     }
+
     public MyArrayList(int capacity) {
         elementData = new Object[capacity];
     }
@@ -42,6 +44,7 @@ public class MyArrayList<T> {
         size++;
     }
 
+    @SuppressWarnings("unchecked")
     public T remove(int idx) {
         if (idx >= size()) {
             return null;
@@ -54,6 +57,7 @@ public class MyArrayList<T> {
         return t;
     }
 
+    @SuppressWarnings("unchecked")
     public T get(int idx) {
         if (idx >= size()) {
             return null;
@@ -61,6 +65,7 @@ public class MyArrayList<T> {
         return (T) elementData[idx];
     }
 
+    @SuppressWarnings({"unchecked", "unused"})
     public T set(int idx, T t) {
         if (idx >= size()) {
             return null;
@@ -79,7 +84,10 @@ public class MyArrayList<T> {
     }
 
     public boolean clear() {
-        elementData = new Object[0];
+        for (int i = 0; i < size; i++) {
+            elementData[i] = null;
+        }
+        size = 0;
         return true;
     }
 

@@ -1,11 +1,19 @@
 package com.coolslow.utils;
 
+import com.coolslow.datastruct.MyArrayList;
 import com.coolslow.datastruct.MySingleLinkedList;
 
+import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+
+/**
+ * 测试数据生产类
+ * <p>
+ * by MrThanksgiving
+ */
 public class MyData {
 
     /*
@@ -140,11 +148,11 @@ public class MyData {
      * @param powerBy2 2的n次幂
      * @return Integer[]
      */
-    public static Integer[] generateRandomData(int powerBy2) {
-        return generateRandomData(powerBy2, false, false);
+    public static Integer[] generateRandomDataNoRepeat(int powerBy2) {
+        return generateRandomDataNoRepeat(powerBy2, false, false);
     }
 
-    public static Integer[] generateRandomData(int powerBy2, boolean isOpenPrintLog, boolean isOpenCostTimeLog) {
+    public static Integer[] generateRandomDataNoRepeat(int powerBy2, boolean isOpenPrintLog, boolean isOpenCostTimeLog) {
 
         if (isOpenCostTimeLog) {
             MyUtils.startTime();
@@ -194,15 +202,142 @@ public class MyData {
         return list;
     }
 
-    public static void print(Integer[] data) {
+
+    /**
+     * 2的n次幂个节点的随机 可能会重复
+     *
+     * @param powerBy2 2的n次幂
+     * @return Integer[]
+     */
+    public static Double[] generateRandomDataCanRepeatDouble(int powerBy2) {
+        return generateRandomDataCanRepeatDouble(powerBy2, false, false);
+    }
+
+    public static Double[] generateRandomDataCanRepeatDouble(int powerBy2, boolean isOpenPrintLog, boolean isOpenCostTimeLog) {
+
+        if (isOpenCostTimeLog) {
+            MyUtils.startTime();
+        }
+        if (powerBy2 < 0) {
+            if (isOpenCostTimeLog) {
+                MyUtils.endTime(" " + 0 + "个节点构建耗时：");
+            }
+            return new Double[0];
+        }
+
+        if (powerBy2 >= 30) {
+            powerBy2 = 30;
+        }
+        Random random = new Random();
+        int capacity = (int) Math.pow(2, powerBy2);
+
+        NumberFormat format = NumberFormat.getNumberInstance();
+        format.setMinimumIntegerDigits(0);
+        format.setMaximumIntegerDigits(0);
+        format.setMinimumFractionDigits(2);
+        format.setMaximumFractionDigits(2);
+
+        Double[] list = new Double[capacity];
+        for (int i = 0; i < capacity; i++) {
+            double d = random.nextDouble();
+            int integer = random.nextInt(capacity) % 500;
+            double fraction = random.nextDouble();
+            list[i] = Double.parseDouble(integer + format.format(fraction));
+            if (isOpenPrintLog) {
+                if (i % 10000 == 0) {
+                    MyUtils.println("当前进度：" + (i / 10000) + " , 总进度：" + (capacity / 10000));
+                } else if (i == list.length - 1) {
+                    MyUtils.println("当前进度：" + (i / 10000) + " , 总进度：" + (capacity / 10000));
+                }
+            }
+        }
+        if (isOpenCostTimeLog) {
+            MyUtils.endTime(" " + capacity + "个节点构建耗时：");
+        }
+        return list;
+
+    }
+
+
+    /**
+     * 2的n次幂个节点的随机 可能会重复
+     *
+     * @param powerBy2 2的n次幂
+     * @return Integer[]
+     */
+    public static Integer[] generateRandomDataCanRepeatInteger(int powerBy2) {
+        return generateRandomDataCanRepeatInteger(powerBy2, false, false);
+    }
+
+    public static Integer[] generateRandomDataCanRepeatInteger(int powerBy2, boolean isOpenPrintLog, boolean isOpenCostTimeLog) {
+
+        if (isOpenCostTimeLog) {
+            MyUtils.startTime();
+        }
+        if (powerBy2 < 0) {
+            if (isOpenCostTimeLog) {
+                MyUtils.endTime(" " + 0 + "个节点构建耗时：");
+            }
+            return new Integer[0];
+        }
+
+        if (powerBy2 >= 30) {
+            powerBy2 = 30;
+        }
+        Random random = new Random();
+        int capacity = (int) Math.pow(2, powerBy2);
+
+        NumberFormat format = NumberFormat.getNumberInstance();
+        format.setMinimumIntegerDigits(0);
+        format.setMaximumIntegerDigits(0);
+        format.setMinimumFractionDigits(2);
+        format.setMaximumFractionDigits(2);
+
+        Integer[] list = new Integer[capacity];
+        for (int i = 0; i < capacity; i++) {
+            list[i] = random.nextInt(capacity);
+            if (isOpenPrintLog) {
+                if (i % 10000 == 0) {
+                    MyUtils.println("当前进度：" + (i / 10000) + " , 总进度：" + (capacity / 10000));
+                } else if (i == list.length - 1) {
+                    MyUtils.println("当前进度：" + (i / 10000) + " , 总进度：" + (capacity / 10000));
+                }
+            }
+        }
+        if (isOpenCostTimeLog) {
+            MyUtils.endTime(" " + capacity + "个节点构建耗时：");
+        }
+        return list;
+
+    }
+
+
+    public static <T> void print(T[] data) {
         if (data == null) {
             return;
         }
-        for (Integer i : data) {
+        for (T i : data) {
             MyUtils.print(i + ", ");
         }
         MyUtils.printLine();
     }
+
+
+    public static <T> void printMyArrayList(MyArrayList<T> data) {
+        if (data == null)
+            return;
+        printMyArrayList(data, 0, data.size() - 1);
+    }
+
+    public static <T> void printMyArrayList(MyArrayList<T> data, int s, int e) {
+        if (data == null)
+            return;
+        for (int i = s; i <= e; i++) {
+            MyUtils.print(data.get(i) + ", ");
+        }
+        MyUtils.println("");
+    }
+
 
     public static void verifyDataNoRepeat(Integer[] data) {
         if (data == null) {
@@ -227,14 +362,36 @@ public class MyData {
 
     }
 
-    public static void verifySortRight(Integer[] data) {
+    public static <T extends Comparable<T>> void verifySortRightAscendingByMyArrayList(MyArrayList<T> data) {
         if (data == null) {
             return;
         }
         boolean success = true;
-        int lastData = -1;
-        for (Integer i : data) {
-            if (i < lastData) {
+        T lastData = data.get(0);
+        for (int i = 0; i < data.size(); i++) {
+            T d = data.get(i);
+            if (d.compareTo(lastData) < 0) {
+                success = false;
+                break;
+            }
+            lastData = d;
+        }
+        if (success) {
+            MyUtils.println("排序正确");
+        } else {
+            MyUtils.println("排序错误" + lastData);
+        }
+
+    }
+
+    public static <T extends Comparable<T>> void verifySortRightDescending(T[] data) {
+        if (data == null) {
+            return;
+        }
+        boolean success = true;
+        T lastData = data[0];
+        for (T i : data) {
+            if (i.compareTo(lastData) > 0) {
                 success = false;
                 break;
             }
@@ -243,10 +400,38 @@ public class MyData {
         if (success) {
             MyUtils.println("排序正确");
         } else {
-            MyUtils.println("排序错误"+lastData);
+            MyUtils.println("排序错误" + lastData);
         }
 
     }
 
+    public static <T extends Comparable<T>> boolean verifySortRightAscending(T[] data) {
+        return verifySortRightAscending(data, true);
+    }
+
+    public static <T extends Comparable<T>> boolean verifySortRightAscending(T[] data, boolean isOpenLog) {
+        if (data == null) {
+            return true;
+        }
+        boolean success = true;
+        T lastData = data[0];
+        for (T i : data) {
+            if (i.compareTo(lastData) < 0) {
+                success = false;
+                break;
+            }
+            lastData = i;
+        }
+        if (success) {
+            if (isOpenLog) {
+                MyUtils.println("排序正确");
+            }
+        } else {
+            if (isOpenLog) {
+                MyUtils.println("排序错误" + lastData);
+            }
+        }
+        return success;
+    }
 
 }

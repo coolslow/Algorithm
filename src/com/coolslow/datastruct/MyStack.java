@@ -2,21 +2,25 @@ package com.coolslow.datastruct;
 
 import com.coolslow.utils.MyIterator;
 
+/**
+ * 栈
+ * <p>
+ * by MrThanksgiving
+ */
 public class MyStack<T> {
 
-    private Node head;
+    private Node<T> head;
     private int size;
 
     public MyStack() {
     }
 
     public void push(T data) {
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node curr = head;
-            newNode.next = curr;
+            newNode.next = head;
             head = newNode;
         }
         size++;
@@ -27,17 +31,17 @@ public class MyStack<T> {
     }
 
     public T pop() {
-        if(head == null){
+        if (head == null) {
             return null;
         }
-        Node result = head;
+        Node<T> result = head;
         head = result.next;
         size--;
         return result.data;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
+    public boolean empty() {
+        return size != 0;
     }
 
     public int size() {
@@ -45,7 +49,7 @@ public class MyStack<T> {
     }
 
     public void iterator(MyIterator<T> iterator) {
-        Node temp = head;
+        Node<T> temp = head;
         while (temp != null) {
             if (iterator != null) {
                 iterator.call(temp.data);
@@ -54,9 +58,9 @@ public class MyStack<T> {
         }
     }
 
-    private final class Node {
+    private static final class Node<T> {
         T data;
-        Node next;
+        Node<T> next;
 
         public Node(T d) {
             this.data = d;

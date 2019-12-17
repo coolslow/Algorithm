@@ -1,9 +1,16 @@
 package com.coolslow.sort.inplace;
 
+import com.coolslow.datastruct.MyArrayList;
 import com.coolslow.datastruct.MyQueue;
 
 import java.util.Random;
 
+
+/**
+ * 快速排序
+ * <p>
+ * by MrThanksgiving
+ */
 public class QuickSort {
 
     /**
@@ -19,14 +26,14 @@ public class QuickSort {
         Random random = new Random();
         MyQueue<KV> myQueue = new MyQueue<>();
         myQueue.add(new KV(0, data.length - 1));
-        while (!myQueue.isEmpty()) {
+        while (myQueue.empty()) {
             KV kv = myQueue.remove();
             int start = kv.start;
             int end = kv.end;
-            int index = random.nextInt(end) % (end - start + 1) + start;
+            int index = random.nextInt(end) % (end - start) + start;
             T base = data[index];
             while (start < end) {
-                while (start <= end && base.compareTo(data[start]) > 0) {
+                while (start < end && base.compareTo(data[start]) > 0) {
                     start++;
                 }
                 while (start < end && base.compareTo(data[end]) < 0) {
@@ -48,10 +55,57 @@ public class QuickSort {
             if (rightStart < rightEnd) {
                 myQueue.add(new KV(rightStart, rightEnd));
             }
-
-//            MyUtils.printProgressing(myQueue.size(),myQueue.size());
         }
 
+    }
+
+
+    public static <T extends Comparable<T>> void sort(MyArrayList<T> data) {
+        if (data == null) {
+            return;
+        }
+        Random random = new Random();
+        MyQueue<KV> myQueue = new MyQueue<>();
+        myQueue.add(new KV(0, data.size() - 1));
+        while (myQueue.empty()) {
+            KV kv = myQueue.remove();
+            int start = kv.start;
+            int end = kv.end;
+            int index = random.nextInt(end) % (end - start) + start;
+            swap(data, start, index);
+            T base = data.get(start);
+            while (start < end) {
+                while (start < end && base.compareTo(data.get(end)) <= 0) {
+                    end--;
+                }
+                if (start < end) {
+                    swap(data, end, start);
+                }
+                while (start < end && base.compareTo(data.get(start)) >= 0) {
+                    start++;
+                }
+                if (start < end) {
+                    swap(data, end, start);
+                }
+            }
+
+            int leftStart = kv.start;
+            int leftEnd = start;
+            if (leftStart < leftEnd) {
+                myQueue.add(new KV(leftStart, leftEnd));
+            }
+            int rightStart = end + 1;
+            int rightEnd = kv.end;
+            if (rightStart < rightEnd) {
+                myQueue.add(new KV(rightStart, rightEnd));
+            }
+        }
+    }
+
+    private static <T extends Comparable<T>> void swap(MyArrayList<T> data, int index1, int index2) {
+        T temp = data.get(index1);
+        data.set(index1, data.get(index2));
+        data.set(index2, temp);
     }
 
     static class KV {

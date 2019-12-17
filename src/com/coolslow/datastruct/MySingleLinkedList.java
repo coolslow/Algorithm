@@ -2,19 +2,26 @@ package com.coolslow.datastruct;
 
 import com.coolslow.utils.MyIterator;
 
+import java.lang.reflect.Array;
+
+/**
+ * 单链表
+ * <p>
+ * by MrThanksgiving
+ */
 public class MySingleLinkedList<T> {
 
-    private Node head;
-    private Node tail;
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     public MySingleLinkedList() {
     }
 
     public void addFirst(T data) {
-        Node temp = head;
+        Node<T> temp = head;
 
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<>(data);
         head = newNode;
 
         if (tail == null) {
@@ -28,7 +35,7 @@ public class MySingleLinkedList<T> {
     public void addLast(T data) {
         Node temp = tail;
 
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<>(data);
         tail = newNode;
         if (head == null) {
             head = newNode;
@@ -47,10 +54,10 @@ public class MySingleLinkedList<T> {
         } else if (idx == size()) {
             addLast(data);
         } else {
-            Node prev = findNode(idx - 1);
+            Node<T> prev = findNode(idx - 1);
             if (prev != null) {
-                Node temp = prev.next;
-                Node newNode = new Node(data);
+                Node<T> temp = prev.next;
+                Node<T> newNode = new Node<>(data);
                 newNode.next = temp;
                 prev.next = newNode;
                 size++;
@@ -62,7 +69,7 @@ public class MySingleLinkedList<T> {
         if (idx < 0) {
             return null;
         } else if (idx == 0) {
-            Node temp = head;
+            Node<T> temp = head;
             if (temp != null) {
                 head = temp.next;
                 size--;
@@ -72,10 +79,10 @@ public class MySingleLinkedList<T> {
                 return temp.data;
             }
             return null;
-        } else if (idx > 0 && idx < size()) {
-            Node prev = findNode(idx - 1);
+        } else if (idx < size()) {
+            Node<T> prev = findNode(idx - 1);
             if (prev != null) {
-                Node result = prev.next;
+                Node<T> result = prev.next;
                 if (result != null) {
                     prev.next = result.next;
                     size--;
@@ -103,13 +110,12 @@ public class MySingleLinkedList<T> {
         if (idx < 0 || idx >= size()) {
             return null;
         }
-        Node node = findNode(idx);
+        Node<T> node = findNode(idx);
         if (node != null) {
             return node.data;
         }
         return null;
     }
-
 
     public boolean isEmpty() {
         return size() == 0;
@@ -119,8 +125,8 @@ public class MySingleLinkedList<T> {
         return size;
     }
 
-    private Node findNode(int idx) {
-        Node temp = head;
+    private Node<T> findNode(int idx) {
+        Node<T> temp = head;
         int index = 0;
         while (index != idx && temp != null) {
             index++;
@@ -130,7 +136,7 @@ public class MySingleLinkedList<T> {
     }
 
     public void iterator(MyIterator<T> iterator) {
-        Node temp = head;
+        Node<T> temp = head;
         while (temp != null) {
             if (iterator != null) {
                 iterator.call(temp.data);
@@ -139,10 +145,21 @@ public class MySingleLinkedList<T> {
         }
     }
 
+    @SuppressWarnings("unchecked")
+    public <E> E[] toArray(E[] a) {
+        if (a.length != size)
+            a = (E[]) Array.newInstance(a.getClass().getComponentType(), size);
+        int i = 0;
+        Object[] result = a;
+        for (Node<T> x = head; x != null; x = x.next)
+            result[i++] = x.data;
+        return a;
+    }
 
-    private class Node {
+
+    private static class Node<T> {
         T data;
-        Node next;
+        Node<T> next;
 
         Node(T t) {
             data = t;

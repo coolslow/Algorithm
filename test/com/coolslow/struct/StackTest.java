@@ -7,6 +7,11 @@ import org.junit.Test;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * 栈 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class StackTest {
 
     @Test

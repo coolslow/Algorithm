@@ -7,34 +7,9 @@ import com.coolslow.utils.MyIterator;
 import java.util.Stack;
 
 /**
- * Tasks：
- *
- *
+ * 二叉树
  * <p>
- * 树的创建 done
- * 树的创建 数组方式 done
- * 树节点添加 done
- * 树节点删除 done
- * 树遍历（递归）done
- * 树遍历（循环）done
- * 层次遍历（循环）done
- * 树的高度 done
- * 树的节点 done
- * 树的叶子节点 done
- * <p>
- * 树集合生产器 done
- *
- * <p>
- * 搜索二插树 done
- * 哈夫曼树
- * 平衡树AVL done
- * 红黑树  done
- * b树
- * b+树
- * 堆树
- * <p>
- * 深度：对于任意节点n,n的深度为从根到n的唯一路径长，根的深度为0；
- * 高度：对于任意节点n,n的高度为从n到一片树叶的最长路径长，所有树叶的高度为0；
+ * by MrThanksgiving
  */
 public class BinaryTree<T extends Comparable<T>> {
 
@@ -219,7 +194,7 @@ public class BinaryTree<T extends Comparable<T>> {
         MyStack<Node> stack = new MyStack<>();
         Node temp = root;
         Node visited = null;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -273,7 +248,7 @@ public class BinaryTree<T extends Comparable<T>> {
     public void iteratorPre(MyIterator<T> iterator) {
         MyStack<Node<T>> stack = new MyStack<>();
         stack.push(root);
-        while (!stack.isEmpty()) {
+        while (stack.empty()) {
             Node<T> temp = stack.pop();
             if (temp != null) {
                 if (iterator != null) {
@@ -292,7 +267,7 @@ public class BinaryTree<T extends Comparable<T>> {
     public void iteratorIn(MyIterator<T> iterator) {
         MyStack<Node<T>> stack = new MyStack<>();
         Node<T> temp = root;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -309,7 +284,7 @@ public class BinaryTree<T extends Comparable<T>> {
         MyStack<Node<T>> stack = new MyStack<>();
         Node<T> visited = null;
         Node<T> temp = root;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -378,7 +353,7 @@ public class BinaryTree<T extends Comparable<T>> {
     public void iteratorBfs(MyIterator<T> iterator) {
         MyQueue<Node<T>> queue = new MyQueue<>();
         queue.add(root);
-        while (!queue.isEmpty()) {
+        while (queue.empty()) {
             Node<T> temp = queue.remove();
             if (iterator != null) {
                 iterator.call(temp.data);

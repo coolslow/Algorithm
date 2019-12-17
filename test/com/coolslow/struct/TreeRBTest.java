@@ -7,8 +7,12 @@ import org.junit.Test;
 
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-//https://blog.csdn.net/abcdef314159/article/details/77193888
 
+/**
+ * 红黑树 测试类
+ * <p>
+ * by MrThanksgiving
+ */
 public class TreeRBTest {
 
     @Test
@@ -89,7 +93,7 @@ public class TreeRBTest {
     public void test7() {
 
 //        Integer[] data = new Integer[]{100, 150, 50, 25, 75, 37, 40, 39};
-        Integer[] data = MyData.generateRandomData(20);
+        Integer[] data = MyData.generateRandomDataNoRepeat(20);
         MyData.verifyDataNoRepeat(data);
 
         MyUtils.startTime();
@@ -102,7 +106,7 @@ public class TreeRBTest {
 
         int remove = 524288;
         tree.remove(remove);
-        MyUtils.endTime("删除节点"+remove+"，耗时");
+        MyUtils.endTime("删除节点" + remove + "，耗时");
 
 
     }
