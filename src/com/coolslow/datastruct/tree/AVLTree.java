@@ -1,7 +1,7 @@
 package com.coolslow.datastruct.tree;
 
-import com.coolslow.datastruct.MyStack;
-import com.coolslow.utils.MyIterator;
+import com.coolslow.datastruct.stack.MyStack;
+import com.coolslow.datastruct.utils.MyIterator;
 
 /**
  * AVL树
