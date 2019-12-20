@@ -32,7 +32,7 @@ public class Code063UniquePathsII {
      *        [0,0,0]
      *      ]
      *      输出: 2
-     * 解释:
+     *      解释:
      *      3x3 网格的正中间有一个障碍物。
      *      从左上角到右下角一共有 2 条不同的路径：
      *      1. 向右 -> 向右 -> 向下 -> 向下
@@ -74,20 +74,7 @@ public class Code063UniquePathsII {
 //             [0,1,0],
 //             [0,0,0]
 //           ]
-        int[][] obstacleGrid = new int[3][3];
-//        第一行
-        obstacleGrid[0][0] = 0;
-        obstacleGrid[0][1] = 0;
-        obstacleGrid[0][2] = 0;
-//        第二行
-        obstacleGrid[1][0] = 0;
-        obstacleGrid[1][1] = 1;
-        obstacleGrid[1][2] = 0;
-//        第三行
-        obstacleGrid[2][0] = 0;
-        obstacleGrid[2][1] = 0;
-        obstacleGrid[2][2] = 0;
-
+        int[][] obstacleGrid = {{0,0,0},{0,1,0},{0,0,0}};
         int result = uniquePathsWithObstacles(obstacleGrid);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }

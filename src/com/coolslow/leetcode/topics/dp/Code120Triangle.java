@@ -5,6 +5,8 @@ import com.coolslow.datastruct.utils.MyUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -58,31 +60,11 @@ public class Code120Triangle {
 //             [4,1,8,3]
 //           ]
         List<List<Integer>> triangle = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            List<Integer> row = new ArrayList<>();
-            triangle.add(row);
-        }
-        for (int i = 0; i < 4; i++) {
-            List<Integer> row = triangle.get(i);
-            if (i == 0) {
-                row.add(2);
-            }
-            if (i == 1) {
-                row.add(3);
-                row.add(4);
-            }
-            if (i == 2) {
-                row.add(6);
-                row.add(5);
-                row.add(7);
-            }
-            if (i == 3) {
-                row.add(4);
-                row.add(1);
-                row.add(8);
-                row.add(3);
-            }
-        }
+        triangle.add(Collections.singletonList(2));
+        triangle.add(Arrays.asList(3, 4));
+        triangle.add(Arrays.asList(6, 5, 7));
+        triangle.add(Arrays.asList(4, 1, 8, 3));
+
         int result = minimumTotal(triangle);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
