@@ -4,6 +4,7 @@ import com.coolslow.datastruct.utils.MyUtils;
 import org.junit.Test;
 
 /**
+ * 最大子序和
  * by MrThanksgiving
  */
 public class Code053MaximumSubArray {
@@ -35,6 +36,7 @@ public class Code053MaximumSubArray {
         }
         return max;
     }
+
 
     @Test
     public void testMaxSubArray() {

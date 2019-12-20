@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 三角形最小路径和
  * by MrThanksgiving
  */
 public class Code120Triangle {
@@ -47,7 +48,6 @@ public class Code120Triangle {
         }
         return triangle.get(0).get(0);
     }
-
 
     @Test
     public void testMinimumTotal() {
