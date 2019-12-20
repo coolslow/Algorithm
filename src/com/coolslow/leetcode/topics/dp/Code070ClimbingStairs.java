@@ -1,7 +1,12 @@
 package com.coolslow.leetcode.topics.dp;
 
-public class Code070ClimbingStairs {
+import com.coolslow.datastruct.utils.MyUtils;
+import org.junit.Test;
 
+/**
+ * by MrThanksgiving
+ */
+public class Code070ClimbingStairs {
 
     /**
      * <pre>
@@ -43,5 +48,12 @@ public class Code070ClimbingStairs {
      * 执行用时 : 1 ms, 在所有 java 提交中击败了17.11%的用户
      * 内存消耗 :32.7 MB, 在所有 java 提交中击败了75.63%的用户
      */
+
+    @Test
+    public void testClimbStairs() {
+        int result = climbStairs(3);
+        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
+    }
+
 
 }

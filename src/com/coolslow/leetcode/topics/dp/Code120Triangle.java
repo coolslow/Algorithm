@@ -1,8 +1,15 @@
 package com.coolslow.leetcode.topics.dp;
 
 
+import com.coolslow.datastruct.utils.MyUtils;
+import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * by MrThanksgiving
+ */
 public class Code120Triangle {
 
     /**
@@ -39,6 +46,45 @@ public class Code120Triangle {
             }
         }
         return triangle.get(0).get(0);
+    }
+
+
+    @Test
+    public void testMinimumTotal() {
+//           [
+//                [2],
+//               [3,4],
+//              [6,5,7],
+//             [4,1,8,3]
+//           ]
+        List<List<Integer>> triangle = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            List<Integer> row = new ArrayList<>();
+            triangle.add(row);
+        }
+        for (int i = 0; i < 4; i++) {
+            List<Integer> row = triangle.get(i);
+            if (i == 0) {
+                row.add(2);
+            }
+            if (i == 1) {
+                row.add(3);
+                row.add(4);
+            }
+            if (i == 2) {
+                row.add(6);
+                row.add(5);
+                row.add(7);
+            }
+            if (i == 3) {
+                row.add(4);
+                row.add(1);
+                row.add(8);
+                row.add(3);
+            }
+        }
+        int result = minimumTotal(triangle);
+        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 }
