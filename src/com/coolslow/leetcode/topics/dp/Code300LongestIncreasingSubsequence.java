@@ -30,11 +30,7 @@ public class Code300LongestIncreasingSubsequence {
      */
     public int lengthOfLIS(int[] nums) {
 //         dp[i] =  以i点结尾的最长上升子序列的长度
-//         dp[i] =  for(x : i-1...0){
-//                      if(nums[x] < nums[i]){
-//                          dp[i] = Math.max(dp[x] + 1,dp[i]);
-//                      }
-//                  }
+//         dp[i] =  Math.max(dp[i-1] ... dp[0]) + 1;
         if (nums == null || nums.length == 0) {
             return 0;
         }
