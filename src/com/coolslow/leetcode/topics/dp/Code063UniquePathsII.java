@@ -74,7 +74,11 @@ public class Code063UniquePathsII {
 //             [0,1,0],
 //             [0,0,0]
 //           ]
-        int[][] obstacleGrid = {{0,0,0},{0,1,0},{0,0,0}};
+        int[][] obstacleGrid = {
+                {0, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}
+        };
         int result = uniquePathsWithObstacles(obstacleGrid);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }

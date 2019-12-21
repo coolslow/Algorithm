@@ -61,7 +61,11 @@ public class Code064MinimumPathSum {
 //            [4,2,1]
 //        ]
 
-        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        int[][] grid = {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}
+        };
         int result = minPathSum(grid);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
