@@ -32,7 +32,7 @@ public class Code198HouseRobber {
      */
     public int rob(int[] nums) {
         // dp[i] = 偷窃第i个房间，不触发警报的情况下得到的最大金额。
-        // dp[i] = Math.max(d[i-2]...dp[0]) + nums[i]
+        // dp[i] = Math.max(d[i-2],d[i-1]) + nums[i]
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -42,21 +42,19 @@ public class Code198HouseRobber {
         int count = nums.length;
         int[] dp = new int[count];
         dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
-        int max = nums[0];
-        for (int i = 1; i < count; i++) {
-            for (int j = i - 2; j >= 0; j--) {
-                dp[i] = Math.max(dp[j] + nums[i], dp[i]);
-            }
-            max = Math.max(max, dp[i]);
+        dp[1] = Math.max(dp[0], nums[1]);
+        for (int i = 2; i < count; i++) {
+            dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
         }
-        return max;
+        return dp[count - 1];
     }
 
     @Test
     public void testRob() {
+//        int[] nums = {1, 1};
+        int[] nums = {1, 2};
 //        int[] nums = {1, 2, 3, 1};
-        int[] nums = {2, 7, 9, 3, 1};
+//        int[] nums = {2, 7, 9, 3, 1};
         int result = rob(nums);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
