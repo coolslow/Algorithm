@@ -1,4 +1,4 @@
-package com.coolslow.leetcode.topics.dp;
+package com.coolslow.leetcode.topics;
 
 import com.coolslow.datastruct.utils.MyUtils;
 import org.junit.Test;

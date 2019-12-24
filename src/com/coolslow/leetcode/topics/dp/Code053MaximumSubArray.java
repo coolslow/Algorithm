@@ -21,7 +21,8 @@ public class Code053MaximumSubArray {
      *
      * </pre>
      */
-    public int maxSubArray(int[] nums) {//
+    public int maxSubArray(int[] nums) {
+        // dp[i] 以 i 结尾的所有子数组中，和最大的是多少？
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -36,12 +37,12 @@ public class Code053MaximumSubArray {
         return max;
     }
 
-
     @Test
     public void testMaxSubArray() {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int result = maxSubArray(nums);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
+
 
 }

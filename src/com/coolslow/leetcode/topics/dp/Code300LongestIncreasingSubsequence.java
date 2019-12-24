@@ -28,6 +28,7 @@ public class Code300LongestIncreasingSubsequence {
      * 进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?
      * </pre>
      */
+
     public int lengthOfLIS(int[] nums) {
 //         dp[i] =  以i点结尾的最长上升子序列的长度
 //         dp[i] =  Math.max(dp[i-1] ... dp[0]) + 1;
@@ -49,8 +50,8 @@ public class Code300LongestIncreasingSubsequence {
 
     @Test
     public void testLengthOfLIS() {
-//        int[] nums = {10, 9, 2, 5, 3, 7, 101，18};
-        int[] nums = {10, 9, 2, 5, 3, 7, 101};
+        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+//        int[] nums = {4, 10, 4, 3, 8, 9};
         int result = lengthOfLIS(nums);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
