@@ -4,7 +4,7 @@ import com.coolslow.datastruct.utils.MyUtils;
 import org.junit.Test;
 
 /**
- * 买卖股票的最佳时机
+ * 买卖股票的最佳时机II
  * by MrThanksgiving
  */
 public class Code122BestTimeToBuyAndSellStockII {
