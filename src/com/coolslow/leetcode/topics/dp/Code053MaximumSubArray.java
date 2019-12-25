@@ -38,7 +38,7 @@ public class Code053MaximumSubArray {
     }
 
     @Test
-    public void testMaxSubArray() {
+    public void testSolution() {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int result = maxSubArray(nums);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);

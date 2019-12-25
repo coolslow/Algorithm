@@ -61,7 +61,7 @@ public class Code005LongestPalindromicSubstring {
     }
 
     @Test
-    public void testLongestPalindrome() {
+    public void testSolution() {
         String result = longestPalindrome("babad");
 //        String result = longestPalindrome("cbbd");
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);

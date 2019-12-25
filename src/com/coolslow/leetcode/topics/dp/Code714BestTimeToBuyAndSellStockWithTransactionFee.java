@@ -51,7 +51,7 @@ public class Code714BestTimeToBuyAndSellStockWithTransactionFee {
 
 
     @Test
-    public void testMaxProfit() {
+    public void testSolution() {
         int[] prices = {1, 3, 2, 8, 4, 9};
         int result = maxProfit(prices, 2);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);

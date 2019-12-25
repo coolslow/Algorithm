@@ -47,7 +47,7 @@ public class Code309BestTimeToBuyAndSellStockWithCoolDown {
 
 
     @Test
-    public void testMaxProfit() {
+    public void testSolution() {
         int[] prices = {1, 2, 3, 0, 2};
 //        int[] prices = {1, 2, 4};
         int result = maxProfit(prices);

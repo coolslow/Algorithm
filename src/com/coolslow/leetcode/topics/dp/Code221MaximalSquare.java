@@ -50,7 +50,7 @@ public class Code221MaximalSquare {
     }
 
     @Test
-    public void testMaximalSquare() {
+    public void testSolution() {
 //        char[][] matrix = {
 //                {'0', '1'},
 //        };

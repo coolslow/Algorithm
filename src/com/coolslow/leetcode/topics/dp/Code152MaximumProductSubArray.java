@@ -7,7 +7,7 @@ import org.junit.Test;
  * 乘积最大子序列
  * by MrThanksgiving
  */
-public class Code152MaximumProductSubarray {
+public class Code152MaximumProductSubArray {
 
     /**
      * <pre>
@@ -56,7 +56,7 @@ public class Code152MaximumProductSubarray {
     }
 
     @Test
-    public void testMaxProduct() {
+    public void testSolution() {
 //        int[] prices = {2, 3, -2, 4};
         int[] prices = {-2, 0, -1};
         int result = maxProduct(prices);

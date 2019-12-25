@@ -69,4 +69,21 @@ public class MyUtils {
 
     }
 
+
+    public static <T> void printArray(int[] data) {
+        if (data == null || data.length == 0) {
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (int i : data) {
+            stringBuilder.append(i + ", ");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append(" ]");
+        MyUtils.println(stringBuilder.toString());
+//        MyUtils.printLine();
+    }
+
 }

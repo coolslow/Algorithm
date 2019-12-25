@@ -109,7 +109,7 @@ public class Code213HouseRobberII {
 //    }
 
     @Test
-    public void testRob() {
+    public void testSolution() {
 
         int[][] nums = {
                 {1, 2, 3, 1},

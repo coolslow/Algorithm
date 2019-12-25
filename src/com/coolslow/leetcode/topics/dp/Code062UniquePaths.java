@@ -58,7 +58,7 @@ public class Code062UniquePaths {
     }
 
     @Test
-    public void testUniquePaths() {
+    public void testSolution() {
         int result = uniquePaths(7, 3);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }

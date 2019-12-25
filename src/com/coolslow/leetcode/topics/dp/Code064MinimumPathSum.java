@@ -54,7 +54,7 @@ public class Code064MinimumPathSum {
     }
 
     @Test
-    public void testMinPathSum() {
+    public void testSolution() {
 //        [
 //            [1,3,1],
 //            [1,5,1],

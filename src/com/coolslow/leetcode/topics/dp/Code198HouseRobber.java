@@ -50,7 +50,7 @@ public class Code198HouseRobber {
     }
 
     @Test
-    public void testRob() {
+    public void testSolution() {
 //        int[] nums = {1, 1};
         int[] nums = {1, 2};
 //        int[] nums = {1, 2, 3, 1};

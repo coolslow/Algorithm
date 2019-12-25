@@ -52,7 +52,7 @@ public class Code120Triangle {
     }
 
     @Test
-    public void testMinimumTotal() {
+    public void testSolution() {
 //           [
 //                [2],
 //               [3,4],

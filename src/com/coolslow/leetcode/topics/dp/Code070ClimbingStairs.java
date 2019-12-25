@@ -51,7 +51,7 @@ public class Code070ClimbingStairs {
      */
 
     @Test
-    public void testClimbStairs() {
+    public void testSolution() {
         int result = climbStairs(3);
         MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }

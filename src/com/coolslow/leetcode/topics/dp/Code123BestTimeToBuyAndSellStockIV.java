@@ -70,7 +70,7 @@ public class Code123BestTimeToBuyAndSellStockIV {
     }
 
     @Test
-    public void testMaxProfit() {
+    public void testSolution() {
         int[] prices = {2, 4, 1};
         int k = 2;
 //        File file = new File("src/com/coolslow/leetcode/topics/dp/test.txt");
