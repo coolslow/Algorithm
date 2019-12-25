@@ -1,10 +1,6 @@
 package com.coolslow.datastruct.utils;
 
-import org.junit.Test;
-
 import java.io.*;
-import java.net.URL;
-import java.nio.file.Path;
 
 /**
  * IO工具类
