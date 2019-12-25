@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 买卖股票的最佳时机IV
  * by MrThanksgiving
@@ -69,14 +66,5 @@ public class Code123BestTimeToBuyAndSellStockIV {
         return dp[count - 1][0];
     }
 
-    @Test
-    public void testSolution() {
-        int[] prices = {2, 4, 1};
-        int k = 2;
-//        File file = new File("src/com/coolslow/leetcode/topics/dp/test.txt");
-//        int[] prices = MyIO.getIntArray(file.getAbsolutePath());
-        int result = maxProfit(k, prices);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

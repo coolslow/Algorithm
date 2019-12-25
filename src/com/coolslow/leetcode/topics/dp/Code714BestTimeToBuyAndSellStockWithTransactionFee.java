@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 买卖股票的最佳时机含手续费
  * by MrThanksgiving
@@ -49,12 +46,5 @@ public class Code714BestTimeToBuyAndSellStockWithTransactionFee {
         return dp[count - 1][0];
     }
 
-
-    @Test
-    public void testSolution() {
-        int[] prices = {1, 3, 2, 8, 4, 9};
-        int result = maxProfit(prices, 2);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

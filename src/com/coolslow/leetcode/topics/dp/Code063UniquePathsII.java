@@ -1,9 +1,6 @@
 package com.coolslow.leetcode.topics.dp;
 
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 不同路径问题
  * by MrThanksgiving
@@ -67,20 +64,5 @@ public class Code063UniquePathsII {
         return dp[m - 1][n - 1];
     }
 
-    @Test
-    public void testSolution() {
-//           [
-//             [0,0,0],
-//             [0,1,0],
-//             [0,0,0]
-//           ]
-        int[][] obstacleGrid = {
-                {0, 0, 0},
-                {0, 1, 0},
-                {0, 0, 0}
-        };
-        int result = uniquePathsWithObstacles(obstacleGrid);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

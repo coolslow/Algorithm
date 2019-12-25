@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 打家劫舍
  * by MrThanksgiving
@@ -47,16 +44,6 @@ public class Code198HouseRobber {
             dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
         }
         return dp[count - 1];
-    }
-
-    @Test
-    public void testSolution() {
-//        int[] nums = {1, 1};
-        int[] nums = {1, 2};
-//        int[] nums = {1, 2, 3, 1};
-//        int[] nums = {2, 7, 9, 3, 1};
-        int result = rob(nums);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 

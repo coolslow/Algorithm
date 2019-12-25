@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 最大子序和
  * by MrThanksgiving
@@ -35,13 +32,6 @@ public class Code053MaximumSubArray {
             max = Math.max(dp[i], max);
         }
         return max;
-    }
-
-    @Test
-    public void testSolution() {
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int result = maxSubArray(nums);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 

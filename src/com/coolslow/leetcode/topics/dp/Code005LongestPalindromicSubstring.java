@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 最长回文子串
  * by MrThanksgiving
@@ -58,13 +55,6 @@ public class Code005LongestPalindromicSubstring {
             }
         }
         return s.substring(startIndex, endIndex + 1);
-    }
-
-    @Test
-    public void testSolution() {
-        String result = longestPalindrome("babad");
-//        String result = longestPalindrome("cbbd");
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 

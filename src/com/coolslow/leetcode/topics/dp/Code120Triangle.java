@@ -1,12 +1,6 @@
 package com.coolslow.leetcode.topics.dp;
 
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -51,22 +45,5 @@ public class Code120Triangle {
         return triangle.get(0).get(0);
     }
 
-    @Test
-    public void testSolution() {
-//           [
-//                [2],
-//               [3,4],
-//              [6,5,7],
-//             [4,1,8,3]
-//           ]
-        List<List<Integer>> triangle = new ArrayList<>();
-        triangle.add(Collections.singletonList(2));
-        triangle.add(Arrays.asList(3, 4));
-        triangle.add(Arrays.asList(6, 5, 7));
-        triangle.add(Arrays.asList(4, 1, 8, 3));
-
-        int result = minimumTotal(triangle);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

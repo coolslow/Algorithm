@@ -78,12 +78,28 @@ public class MyUtils {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
         for (int i : data) {
-            stringBuilder.append(i + ", ");
+            stringBuilder.append(i + " , ");
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        stringBuilder.append(" ]");
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append("]");
         MyUtils.println(stringBuilder.toString());
-//        MyUtils.printLine();
+    }
+
+    public static <T> void printArray(float[] data) {
+        if (data == null || data.length == 0) {
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (float i : data) {
+            stringBuilder.append(i + " , ");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append("]");
+        MyUtils.println(stringBuilder.toString());
     }
 
 }

@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 最大正方形
  * by MrThanksgiving
@@ -49,19 +46,5 @@ public class Code221MaximalSquare {
         return max * max;
     }
 
-    @Test
-    public void testSolution() {
-//        char[][] matrix = {
-//                {'0', '1'},
-//        };
-        char[][] matrix = {
-                {'1', '0', '1', '0', '0'},
-                {'1', '1', '1', '1', '1'},
-                {'1', '1', '1', '1', '1'},
-                {'1', '1', '1', '1', '0'}
-        };
-        int result = maximalSquare(matrix);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

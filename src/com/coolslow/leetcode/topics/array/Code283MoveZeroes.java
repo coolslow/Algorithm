@@ -1,9 +1,5 @@
 package com.coolslow.leetcode.topics.array;
 
-import com.coolslow.datastruct.utils.MyData;
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 移动零
  * by MrThanksgiving
@@ -25,15 +21,6 @@ public class Code283MoveZeroes {
      * </pre>
      */
     public void moveZeroes(int[] nums) {
-    }
-
-    @Test
-    public void testSolution() {
-        int[] nums = {1,2,};
-        moveZeroes(nums);
-        MyUtils.printArray(nums);
-
-//        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 }

@@ -1,9 +1,6 @@
 package com.coolslow.leetcode.topics.dp;
 
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 最小路径和
  * by MrThanksgiving
@@ -51,23 +48,6 @@ public class Code064MinimumPathSum {
             }
         }
         return dp[rs - 1][cs - 1];
-    }
-
-    @Test
-    public void testSolution() {
-//        [
-//            [1,3,1],
-//            [1,5,1],
-//            [4,2,1]
-//        ]
-
-        int[][] grid = {
-                {1, 3, 1},
-                {1, 5, 1},
-                {4, 2, 1}
-        };
-        int result = minPathSum(grid);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 }

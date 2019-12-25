@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 import java.util.Arrays;
 
 /**
@@ -46,14 +43,6 @@ public class Code300LongestIncreasingSubsequence {
             max = Math.max(dp[i], max);
         }
         return max;
-    }
-
-    @Test
-    public void testSolution() {
-        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
-//        int[] nums = {4, 10, 4, 3, 8, 9};
-        int result = lengthOfLIS(nums);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 

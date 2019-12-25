@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 /**
  * 乘积最大子序列
  * by MrThanksgiving
@@ -55,12 +52,5 @@ public class Code152MaximumProductSubArray {
         return max;
     }
 
-    @Test
-    public void testSolution() {
-//        int[] prices = {2, 3, -2, 4};
-        int[] prices = {-2, 0, -1};
-        int result = maxProduct(prices);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }

@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.topics.dp;
 
-import com.coolslow.datastruct.utils.MyUtils;
-import org.junit.Test;
-
 import java.util.Arrays;
 
 /**
@@ -55,13 +52,5 @@ public class Code322CoinChange {
         return dp[amount] > amount ? -1 : dp[amount];
     }
 
-    @Test
-    public void testSolution() {
-        int[] coins = {1, 2, 5};//11
-//        int[] coins = {2};//3
-//        int[] coins = {2, 5, 10, 1}; //27
-        int result = coinChange(coins, 11);
-        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
-    }
 
 }
