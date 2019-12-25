@@ -21,6 +21,25 @@ public class Code283MoveZeroes {
      * </pre>
      */
     public void moveZeroes(int[] nums) {
+        if (nums == null || nums.length == 0 || nums.length == 1) {
+            return;
+        }
+        int noZeroIndex = 0;
+        int count = nums.length;
+        for (int i = 0; i < count; i++) {
+            if (nums[i] != 0) {
+                nums[noZeroIndex++] = nums[i];
+            }
+        }
+        for (int i = noZeroIndex; i < count; i++) {
+            nums[i] = 0;
+        }
     }
+
+    /*
+     * 思路：
+     *      慢指针之前的所有元素都是非零的。
+     *      当前指针和慢速指针之间的所有元素都是零。
+     */
 
 }

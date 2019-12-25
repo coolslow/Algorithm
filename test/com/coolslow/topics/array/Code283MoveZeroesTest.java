@@ -16,8 +16,6 @@ public class Code283MoveZeroesTest {
         int[] nums = {1, 2,};
         solution.moveZeroes(nums);
         MyUtils.printArray(nums);
-
-//        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
 
 }

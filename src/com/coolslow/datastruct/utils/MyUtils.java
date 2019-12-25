@@ -78,7 +78,7 @@ public class MyUtils {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
         for (int i : data) {
-            stringBuilder.append(i + " , ");
+            stringBuilder.append(i).append(" , ");
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
@@ -90,11 +90,10 @@ public class MyUtils {
         if (data == null || data.length == 0) {
             return;
         }
-
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
         for (float i : data) {
-            stringBuilder.append(i + " , ");
+            stringBuilder.append(i).append(" , ");
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);

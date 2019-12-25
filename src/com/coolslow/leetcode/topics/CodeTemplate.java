@@ -14,5 +14,9 @@ public class CodeTemplate {
         return 0;
     }
 
-
+    public void testSolution() {
+//        int[] prices = {};
+//        int result = solution(prices);
+//        MyUtils.print(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
+    }
 }
