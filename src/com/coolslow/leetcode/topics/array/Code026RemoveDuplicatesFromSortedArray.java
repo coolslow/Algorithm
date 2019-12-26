@@ -31,7 +31,7 @@ public class Code026RemoveDuplicatesFromSortedArray {
             return 1;
         }
         int l = 0;
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             if (nums[l] != nums[i]) {
                 nums[++l] = nums[i];
             }
