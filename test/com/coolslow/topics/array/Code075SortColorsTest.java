@@ -19,7 +19,7 @@ public class Code075SortColorsTest {
 //                {2, 0},
 //                {2, 1, 0},
 //                {1, 2, 0},
-                {0,1,0}
+                {0, 1, 0}
         };
         for (int[] num : nums) {
             solution.sortColors(num);
@@ -27,4 +27,5 @@ public class Code075SortColorsTest {
         }
 
     }
+
 }

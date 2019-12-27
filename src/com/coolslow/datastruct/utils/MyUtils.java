@@ -70,7 +70,7 @@ public class MyUtils {
     }
 
 
-    public static <T> void printArray(int[] data) {
+    public static void printArray(int[] data) {
         if (data == null || data.length == 0) {
             return;
         }
@@ -86,13 +86,29 @@ public class MyUtils {
         MyUtils.println(stringBuilder.toString());
     }
 
-    public static <T> void printArray(float[] data) {
+    public static void printArray(float[] data) {
         if (data == null || data.length == 0) {
             return;
         }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
         for (float i : data) {
+            stringBuilder.append(i).append(" , ");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append("]");
+        MyUtils.println(stringBuilder.toString());
+    }
+
+    public static <T> void printArray(T[] data) {
+        if (data == null || data.length == 0) {
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (T i : data) {
             stringBuilder.append(i).append(" , ");
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
