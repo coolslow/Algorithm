@@ -22,7 +22,48 @@ public class Code88MergeSortedArray {
      *      输出: [1,2,2,3,5,6]
      * </pre>
      */
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge1(int[] nums1, int m, int[] nums2, int n) {// O(N^2) O(1)
+        if (nums1 == null || nums2 == null) return;
+        int l = m - 1, r = n - 1, k = nums1.length - 1;
+        while (l >= 0 && r >= 0)
+            nums1[k--] = nums1[l] > nums2[r] ? nums1[l--] : nums2[r--];
+        while (l >= 0)
+            nums1[k--] = nums1[l--];
+        while (r >= 0)
+            nums1[k--] = nums2[r--];
+    }
+
+
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {// O(N^2) O(1)
+        if (nums1 == null || nums2 == null) return;
+        int[] contain = new int[m];
+        System.arraycopy(nums1, 0, contain, 0, m);
+        int l = 0, r = 0, k = 0;
+        while (l < m && r < n)
+            nums1[k++] = contain[l] < nums2[r] ? contain[l++] : nums2[r++];
+        while (l < m)
+            nums1[k++] = contain[l++];
+        while (r < n)
+            nums1[k++] = nums2[r++];
+    }
+
+    public void merge3(int[] nums1, int m, int[] nums2, int n) {// O(N^2) O(1)
+        if (nums1 == null || nums2 == null) return;
+        int k = m;
+        int l = 0;
+        int r = 0;
+        while (l < k && r < n) {
+            if (nums1[l] >= nums2[r]) {
+                for (int i = k - 1; i >= l; i--) {
+                    nums1[i + 1] = nums1[i];
+                }
+                nums1[l] = nums2[r++];
+                k++;
+            }
+            l++;
+        }
+        while (r < n)
+            nums1[l++] = nums2[r++];
     }
 
 }
