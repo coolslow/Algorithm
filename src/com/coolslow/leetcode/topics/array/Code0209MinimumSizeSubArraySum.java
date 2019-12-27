@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 长度最小的子数组
  * by MrThanksgiving
  */
-public class Code209MinimumSizeSubArraySum {
+public class Code0209MinimumSizeSubArraySum {
 
     /**
      * <pre>

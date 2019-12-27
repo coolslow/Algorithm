@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 最大正方形
  * by MrThanksgiving
  */
-public class Code221MaximalSquare {
+public class Code0221MaximalSquare {
 
     /**
      * <pre>

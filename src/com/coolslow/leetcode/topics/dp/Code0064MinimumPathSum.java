@@ -5,7 +5,7 @@ package com.coolslow.leetcode.topics.dp;
  * 最小路径和
  * by MrThanksgiving
  */
-public class Code064MinimumPathSum {
+public class Code0064MinimumPathSum {
 
 
     /**

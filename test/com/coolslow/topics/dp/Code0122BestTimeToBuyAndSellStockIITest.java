@@ -1,19 +1,19 @@
 package com.coolslow.topics.dp;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code122BestTimeToBuyAndSellStockII;
+import com.coolslow.leetcode.topics.dp.Code0122BestTimeToBuyAndSellStockII;
 import org.junit.Test;
 
 /**
  * 买卖股票的最佳时机II
  * by MrThanksgiving
  */
-public class Code122BestTimeToBuyAndSellStockIITest {
+public class Code0122BestTimeToBuyAndSellStockIITest {
 
 
     @Test
     public void testSolution() {
-        Code122BestTimeToBuyAndSellStockII solution = new Code122BestTimeToBuyAndSellStockII();
+        Code0122BestTimeToBuyAndSellStockII solution = new Code0122BestTimeToBuyAndSellStockII();
         int[] prices = {7, 1, 5, 3, 6, 4};
 //        int[] prices = {7, 6, 4, 3, 1};
 //        int[] prices = {1, 2, 3, 4, 5};

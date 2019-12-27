@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 打家劫舍
  * by MrThanksgiving
  */
-public class Code198HouseRobber {
+public class Code0198HouseRobber {
 
     /**
      * <pre>

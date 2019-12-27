@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 爬楼梯
  * by MrThanksgiving
  */
-public class Code070ClimbingStairs {
+public class Code0070ClimbingStairs {
 
     /**
      * <pre>

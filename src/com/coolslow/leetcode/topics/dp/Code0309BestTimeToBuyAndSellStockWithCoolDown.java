@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 最佳买卖股票时机含冷冻期
  * by MrThanksgiving
  */
-public class Code309BestTimeToBuyAndSellStockWithCoolDown {
+public class Code0309BestTimeToBuyAndSellStockWithCoolDown {
 
     /**
      * <pre>

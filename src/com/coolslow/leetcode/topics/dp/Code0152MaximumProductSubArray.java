@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 乘积最大子序列
  * by MrThanksgiving
  */
-public class Code152MaximumProductSubArray {
+public class Code0152MaximumProductSubArray {
 
     /**
      * <pre>

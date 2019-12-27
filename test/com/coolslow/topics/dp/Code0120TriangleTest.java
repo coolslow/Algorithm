@@ -2,7 +2,7 @@ package com.coolslow.topics.dp;
 
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code120Triangle;
+import com.coolslow.leetcode.topics.dp.Code0120Triangle;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,13 +14,13 @@ import java.util.List;
  * 三角形最小路径和
  * by MrThanksgiving
  */
-public class Code120TriangleTest {
+public class Code0120TriangleTest {
 
 
     @Test
     public void testSolution() {
 
-        Code120Triangle solution = new Code120Triangle();
+        Code0120Triangle solution = new Code0120Triangle();
 
 //           [
 //                [2],

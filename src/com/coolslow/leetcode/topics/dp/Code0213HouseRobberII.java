@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 打家劫舍II
  * by MrThanksgiving
  */
-public class Code213HouseRobberII {
+public class Code0213HouseRobberII {
 
     /**
      * <pre>

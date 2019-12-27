@@ -1,20 +1,19 @@
 package com.coolslow.topics.dp;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code198HouseRobber;
+import com.coolslow.leetcode.topics.dp.Code0198HouseRobber;
 import org.junit.Test;
 
 /**
  * 打家劫舍
  * by MrThanksgiving
  */
-public class Code198HouseRobberTest {
-
+public class Code0198HouseRobberTest {
 
 
     @Test
     public void testSolution() {
-        Code198HouseRobber solution = new Code198HouseRobber();
+        Code0198HouseRobber solution = new Code0198HouseRobber();
 //        int[] nums = {1, 1};
         int[] nums = {1, 2};
 //        int[] nums = {1, 2, 3, 1};

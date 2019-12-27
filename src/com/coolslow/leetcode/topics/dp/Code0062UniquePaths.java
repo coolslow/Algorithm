@@ -5,7 +5,7 @@ package com.coolslow.leetcode.topics.dp;
  * 不同路径问题
  * by MrThanksgiving
  */
-public class Code062UniquePaths {
+public class Code0062UniquePaths {
 
     /**
      * <pre>

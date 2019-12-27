@@ -1,21 +1,19 @@
 package com.coolslow.topics.dp;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code322CoinChange;
+import com.coolslow.leetcode.topics.dp.Code0322CoinChange;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 /**
  * 零钱兑换
  * by MrThanksgiving
  */
-public class Code322CoinChangeTest {
+public class Code0322CoinChangeTest {
 
 
     @Test
     public void testSolution() {
-        Code322CoinChange solution = new Code322CoinChange();
+        Code0322CoinChange solution = new Code0322CoinChange();
         int[] coins = {1, 2, 5};//11
 //        int[] coins = {2};//3
 //        int[] coins = {2, 5, 10, 1}; //27

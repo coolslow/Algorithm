@@ -1,17 +1,17 @@
 package com.coolslow.topics.array;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.array.Code075SortColors;
+import com.coolslow.leetcode.topics.array.Code0075SortColors;
 import org.junit.Test;
 
 /**
  * by MrThanksgiving
  */
-public class Code075SortColorsTest {
+public class Code0075SortColorsTest {
 
     @Test
     public void testSolution() {
-        Code075SortColors solution = new Code075SortColors();
+        Code0075SortColors solution = new Code0075SortColors();
         int[][] nums = {
 //                {2, 0, 2, 1, 1, 0},
 //                {2},

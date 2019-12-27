@@ -7,7 +7,7 @@ import java.util.List;
  * 三角形最小路径和
  * by MrThanksgiving
  */
-public class Code120Triangle {
+public class Code0120Triangle {
 
     /**
      * <pre>

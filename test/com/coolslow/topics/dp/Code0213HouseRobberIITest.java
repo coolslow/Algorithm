@@ -1,7 +1,7 @@
 package com.coolslow.topics.dp;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code213HouseRobberII;
+import com.coolslow.leetcode.topics.dp.Code0213HouseRobberII;
 import org.junit.Test;
 
 
@@ -9,11 +9,11 @@ import org.junit.Test;
  * 打家劫舍II
  * by MrThanksgiving
  */
-public class Code213HouseRobberIITest {
+public class Code0213HouseRobberIITest {
 
     @Test
     public void testSolution() {
-        Code213HouseRobberII solution = new Code213HouseRobberII();
+        Code0213HouseRobberII solution = new Code0213HouseRobberII();
         int[][] nums = {
                 {1, 2, 3, 1},
                 {2, 3, 2},

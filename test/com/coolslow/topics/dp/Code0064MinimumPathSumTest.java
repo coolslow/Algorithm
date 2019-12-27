@@ -2,19 +2,19 @@ package com.coolslow.topics.dp;
 
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code064MinimumPathSum;
+import com.coolslow.leetcode.topics.dp.Code0064MinimumPathSum;
 import org.junit.Test;
 
 /**
  * 最小路径和
  * by MrThanksgiving
  */
-public class Code064MinimumPathSumTest {
+public class Code0064MinimumPathSumTest {
 
 
     @Test
     public void testSolution() {
-        Code064MinimumPathSum solution = new Code064MinimumPathSum();
+        Code0064MinimumPathSum solution = new Code0064MinimumPathSum();
 
 //        [
 //            [1,3,1],

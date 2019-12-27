@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 删除排序数组中的重复项 II
  * by MrThanksgiving
  */
-public class Code080RemoveDuplicatesFromSortedArrayII {
+public class Code0080RemoveDuplicatesFromSortedArrayII {
 
     /**
      * <pre>

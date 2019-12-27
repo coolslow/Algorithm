@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 零钱兑换
  * by MrThanksgiving
  */
-public class Code322CoinChange {
+public class Code0322CoinChange {
 
     /**
      * <pre>

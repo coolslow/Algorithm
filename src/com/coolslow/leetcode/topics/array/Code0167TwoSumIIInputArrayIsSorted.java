@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 两数之和 II - 输入有序数组
  * by MrThanksgiving
  */
-public class Code167TwoSumIIInputArrayIsSorted {
+public class Code0167TwoSumIIInputArrayIsSorted {
 
     /**
      * <pre>

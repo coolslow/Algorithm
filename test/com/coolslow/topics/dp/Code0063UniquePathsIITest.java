@@ -2,18 +2,18 @@ package com.coolslow.topics.dp;
 
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code063UniquePathsII;
+import com.coolslow.leetcode.topics.dp.Code0063UniquePathsII;
 import org.junit.Test;
 
 /**
  * 不同路径问题
  * by MrThanksgiving
  */
-public class Code063UniquePathsIITest {
+public class Code0063UniquePathsIITest {
 
     @Test
     public void testSolution() {
-        Code063UniquePathsII solution = new Code063UniquePathsII();
+        Code0063UniquePathsII solution = new Code0063UniquePathsII();
 //           [
 //             [0,0,0],
 //             [0,1,0],

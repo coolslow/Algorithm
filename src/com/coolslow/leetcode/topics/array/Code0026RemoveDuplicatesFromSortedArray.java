@@ -3,7 +3,7 @@ package com.coolslow.leetcode.topics.array;
 /**
  * by MrThanksgiving
  */
-public class Code026RemoveDuplicatesFromSortedArray {
+public class Code0026RemoveDuplicatesFromSortedArray {
 
     /**
      * <pre>

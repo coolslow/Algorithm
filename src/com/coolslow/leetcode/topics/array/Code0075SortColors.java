@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 颜色分类
  * by MrThanksgiving
  */
-public class Code075SortColors {
+public class Code0075SortColors {
 
     /**
      * <pre>

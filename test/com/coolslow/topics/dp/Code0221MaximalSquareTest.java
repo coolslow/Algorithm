@@ -1,19 +1,19 @@
 package com.coolslow.topics.dp;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.dp.Code221MaximalSquare;
+import com.coolslow.leetcode.topics.dp.Code0221MaximalSquare;
 import org.junit.Test;
 
 /**
  * 最大正方形
  * by MrThanksgiving
  */
-public class Code221MaximalSquareTest {
+public class Code0221MaximalSquareTest {
 
 
     @Test
     public void testSolution() {
-        Code221MaximalSquare solution = new Code221MaximalSquare();
+        Code0221MaximalSquare solution = new Code0221MaximalSquare();
 
 //        char[][] matrix = {
 //                {'0', '1'},

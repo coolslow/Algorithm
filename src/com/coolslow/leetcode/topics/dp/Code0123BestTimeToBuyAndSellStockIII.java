@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 买卖股票的最佳时机III
  * by MrThanksgiving
  */
-public class Code123BestTimeToBuyAndSellStockIII {
+public class Code0123BestTimeToBuyAndSellStockIII {
 
     /**
      * <pre>

@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 移动零
  * by MrThanksgiving
  */
-public class Code283MoveZeroes {
+public class Code0283MoveZeroes {
 
     /**
      * <pre>

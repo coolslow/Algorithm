@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 最长上升子序列
  * by MrThanksgiving
  */
-public class Code300LongestIncreasingSubsequence {
+public class Code0300LongestIncreasingSubsequence {
 
     /**
      * <pre>

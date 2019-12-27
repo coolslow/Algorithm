@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 买卖股票的最佳时机含手续费
  * by MrThanksgiving
  */
-public class Code714BestTimeToBuyAndSellStockWithTransactionFee {
+public class Code0714BestTimeToBuyAndSellStockWithTransactionFee {
 
     /**
      * <pre>

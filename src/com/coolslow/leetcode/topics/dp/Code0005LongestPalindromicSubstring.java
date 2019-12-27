@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.dp;
  * 最长回文子串
  * by MrThanksgiving
  */
-public class Code005LongestPalindromicSubstring {
+public class Code0005LongestPalindromicSubstring {
 
     /**
      * <pre>

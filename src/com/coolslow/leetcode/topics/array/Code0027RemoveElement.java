@@ -4,7 +4,7 @@ package com.coolslow.leetcode.topics.array;
  * 移除元素
  * by MrThanksgiving
  */
-public class Code027RemoveElement {
+public class Code0027RemoveElement {
 
     /**
      * <pre>

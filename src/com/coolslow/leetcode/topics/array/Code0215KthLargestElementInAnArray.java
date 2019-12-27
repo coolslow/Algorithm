@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
  * 数组中的第K个最大元素
  * by MrThanksgiving
  */
-public class Code215KthLargestElementInAnArray {
+public class Code0215KthLargestElementInAnArray {
 
     /**
      * <pre>
