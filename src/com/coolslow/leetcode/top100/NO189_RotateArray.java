@@ -31,7 +31,7 @@ package com.coolslow.leetcode.top100;
  *
  *
  */
-public class RotateArray {
+public class NO189_RotateArray {
 
     /**
      * 暴力解法，时间复杂度O(n^2)

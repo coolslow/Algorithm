@@ -26,7 +26,7 @@ import com.coolslow.common.Solution;
  *      2. 你是否注意到并且使用了"允许更改数组元素顺序"的提示？
  *      3. 当要删除的元素很少时会发生什么？
  */
-public class RemoveElementFromArray {
+public class NO27_RemoveElementFromArray {
 
     public static int removeElement(int[] nums, int val) {
 

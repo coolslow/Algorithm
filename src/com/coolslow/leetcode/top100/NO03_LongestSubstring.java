@@ -26,7 +26,7 @@ import java.util.Set;
  *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
  */
 
-public class LongestSubstring {
+public class NO03_LongestSubstring {
 
     /**
      * 暴力解法，时间复杂度为O(n^3)

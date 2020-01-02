@@ -36,7 +36,7 @@ import com.coolslow.common.Solution;
  * temp = rev * 10 + pop;
  * rev = temp;
  */
-public class ReverseInteger {
+public class NO07_ReverseInteger {
 
     public static int reverse(int x) {
         int rev = 0;

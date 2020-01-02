@@ -3,6 +3,8 @@ package com.coolslow.leetcode.top100;
 import com.coolslow.leetcode.top100.datastructure.ListNode;
 
 /**
+ * @author ming
+ *
  * 2. 两数相加
  * 给定两个 [非空] 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 [逆序] 的方式存储的，
  * 并且它们的每个节点只能存储 一位 数字。
@@ -16,12 +18,15 @@ import com.coolslow.leetcode.top100.datastructure.ListNode;
  *      原因：342 + 456 = 807
  *
  * 相关标签：链表、数字
+ *
  */
-public final class AddTwoNumbers {
+public final class NO02_AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
-        ListNode p = l1, q = l2, curr = head; // 将当前指针指向head，即新创建的链表的头部
-        int carry = 0; // 进位
+        // 将当前指针指向head，即新创建的链表的头部
+        ListNode p = l1, q = l2, curr = head;
+        // 进位
+        int carry = 0;
 
         while(p!= null || q != null) {
             int x = (p != null) ? p.val : 0;

@@ -4,7 +4,7 @@ import com.coolslow.leetcode.top100.playground.RemoveElementFromArrayPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RemoveElementFromArrayTest {
+public class NO27RemoveElementFromArrayTest {
     @Test
     public void shouldRemoveCorrectElementFromArray() {
         int[] testArray1 = new int[] {1, 1, 2, 3, 4, 6};

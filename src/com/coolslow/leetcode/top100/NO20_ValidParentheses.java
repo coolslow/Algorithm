@@ -38,7 +38,7 @@ import java.util.Stack;
  *
  *
  */
-public class ValidParentheses {
+public class NO20_ValidParentheses {
 
     public static boolean isValidParentheses(String s) {
         HashMap<Character, Character> map = new HashMap<>();
@@ -66,14 +66,15 @@ public class ValidParentheses {
     public static boolean isValidParenthesesShort(String s) {
         Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
-            if (c == '(')
+            if (c == '(') {
                 stack.push(')');
-            else if (c == '{')
+            } else if (c == '{') {
                 stack.push('}');
-            else if (c == '[')
+            } else if (c == '[') {
                 stack.push(']');
-            else if (stack.isEmpty() || stack.pop() != c)
+            } else if (stack.isEmpty() || stack.pop() != c) {
                 return false;
+            }
         }
         return stack.isEmpty();
     }
