@@ -33,6 +33,26 @@ public class Code189RotateArray {
      * </pre>
      */
     public void rotate(int[] nums, int k) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
     }
+
+    public void reverse(int[] nums, int l, int r) {
+        while (l < r) {
+            nums[l] ^= nums[r];
+            nums[r] ^= nums[l];
+            nums[l++] ^= nums[r--];
+        }
+    }
+
+    // 反转3次。
+    // 第一次全部反转
+    // 第二次反转前k个
+    // 第三次反转后k个
 
 }
