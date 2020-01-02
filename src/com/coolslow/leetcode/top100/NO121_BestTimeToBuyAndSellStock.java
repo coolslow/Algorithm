@@ -24,9 +24,9 @@ package com.coolslow.leetcode.top100;
  *      需要在给定的数组中找出两个数的最大差值（即：最大收益），并且，第二个数（卖出价格）必须比第一个数（买入价格）大。
  *      即，为每一个满足条件的i, j（j > i）找到：Max(prices[j] - prices[i])
  */
-public class BestTimeToBuyAndSellStock {
+public class NO121_BestTimeToBuyAndSellStock {
 
-    // 暴力解法，时间复杂度为O(n^2)
+    /** 暴力解法，时间复杂度为O(n^2) */
     public static int maxProfit(int[] prices) {
         int maxProfit = 0;
         for(int i = 0; i < prices.length; i++) {

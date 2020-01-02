@@ -43,13 +43,19 @@ package com.coolslow.leetcode.top100;
  *
  *
  */
-public class StringToInteger {
+public class NO08_StringToInteger {
     public static int myAtoi(String str) {
-        if(str == null || str.length() ==0) return 0;
+        if(str == null || str.length() ==0) {
+            return 0;
+        }
         int i = 0;
-        while(i < str.length() && str.charAt(i) == ' ') i++;
+        while(i < str.length() && str.charAt(i) == ' ') {
+            i++;
+        }
 
-        if(i == str.length()) return 0;
+        if(i == str.length()) {
+            return 0;
+        }
         int sign = 1;
         if(str.charAt(i) == '+' || str.charAt(i) == '-') {
             if(str.charAt(i) == '-') {
@@ -64,8 +70,12 @@ public class StringToInteger {
         while(i < str.length() && isDigit(str.charAt(i))) {
             val = val * 10 + str.charAt(i) - '0';
             long temp = sign * val;
-            if(temp < Integer.MIN_VALUE) return Integer.MIN_VALUE;
-            if(temp > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+            if(temp < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+            if(temp > Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
             i++;
         }
         return (int)(val * sign);

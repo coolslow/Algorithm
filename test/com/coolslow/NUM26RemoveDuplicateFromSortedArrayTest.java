@@ -1,10 +1,10 @@
 package com.coolslow;
 
-import com.coolslow.leetcode.top100.RemoveDuplicateFromSortedArray;
+import com.coolslow.leetcode.top100.NO26_RemoveDuplicateFromSortedArray;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RemoveDuplicateFromSortedArrayTest {
+public class NUM26RemoveDuplicateFromSortedArrayTest {
     @Test
     public void shouldRemoveDuplicateFromSortedArray() {
         // 验证空数组的返回结果
@@ -14,9 +14,9 @@ public class RemoveDuplicateFromSortedArrayTest {
         // 验证无重复数组的返回结果
         int[] noDuplicates = new int[] { 1, 2, 3, 5 };
 
-        int result = RemoveDuplicateFromSortedArray.removeDuplicates(nums);
-        int result1 = RemoveDuplicateFromSortedArray.removeDuplicates(emptyArr);
-        int result2 = RemoveDuplicateFromSortedArray.removeDuplicates(noDuplicates);
+        int result = NO26_RemoveDuplicateFromSortedArray.removeDuplicates(nums);
+        int result1 = NO26_RemoveDuplicateFromSortedArray.removeDuplicates(emptyArr);
+        int result2 = NO26_RemoveDuplicateFromSortedArray.removeDuplicates(noDuplicates);
         Assert.assertEquals(6, result);
         Assert.assertEquals(0, result1);
         Assert.assertEquals(4, result2);

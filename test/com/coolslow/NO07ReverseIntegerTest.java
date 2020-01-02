@@ -4,7 +4,7 @@ import com.coolslow.leetcode.top100.playground.ReverseIntegerPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ReverseIntegerTest {
+public class NO07ReverseIntegerTest {
     @Test
     public void shouldCorrectReverseInteger() {
         int x1 = 120;

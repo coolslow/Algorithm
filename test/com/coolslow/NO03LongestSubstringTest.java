@@ -4,7 +4,7 @@ import com.coolslow.leetcode.top100.playground.LongestSubstringPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LongestSubstringTest {
+public class NO03LongestSubstringTest {
 
     @Test
     public void shouldReturnCorrectLongestSubstringNum() {
