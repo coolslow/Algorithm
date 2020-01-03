@@ -16,6 +16,7 @@ public class CodeTemplate {
 
 //    @Test
     public void testSolution() {
+//         solution = new ();
 //        int[] nums = {};
 //        int result = solution(nums);
 //        MyUtils.println(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
