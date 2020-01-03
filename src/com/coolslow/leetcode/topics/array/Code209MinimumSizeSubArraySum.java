@@ -23,14 +23,10 @@ public class Code209MinimumSizeSubArraySum {
      * </pre>
      */
     public int minSubArrayLen(int s, int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0)
             return 0;
-        }
-        int count = nums.length;
-        int l = 0;
-        int sum = 0;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < count; i++) {
+        int l = 0, sum = 0, min = Integer.MAX_VALUE;
+        for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
             while (sum >= s) {
                 min = Math.min(min, i - l + 1);

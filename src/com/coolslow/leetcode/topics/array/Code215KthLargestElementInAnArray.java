@@ -29,11 +29,9 @@ public class Code215KthLargestElementInAnArray {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int count = nums.length;
         PriorityQueue<Integer> queue = new PriorityQueue<>(k);
-        queue.offer(nums[0]);
-        for (int i = 1; i < count; i++) {
-            queue.offer(nums[i]);
+        for (int num : nums) {
+            queue.offer(num);
             if (queue.size() > k) {
                 queue.poll();
             }

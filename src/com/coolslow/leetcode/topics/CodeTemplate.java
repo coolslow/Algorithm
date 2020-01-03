@@ -14,6 +14,7 @@ public class CodeTemplate {
         return 0;
     }
 
+//    @Test
     public void testSolution() {
 //        int[] nums = {};
 //        int result = solution(nums);

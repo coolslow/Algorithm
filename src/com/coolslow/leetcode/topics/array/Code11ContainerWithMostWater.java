@@ -25,14 +25,11 @@ public class Code11ContainerWithMostWater {
         if (height == null || height.length < 2) {
             return 0;
         }
-        int count = height.length;
-        int l = 0, r = count - 1, max = 0;
+        int l = 0, r = height.length - 1, max = 0;
         while (l < r) {
             max = Math.max(max, Math.min(height[l], height[r]) * (r - l));
-            if (height[l] < height[r])
-                l++;
-            else
-                r--;
+            if (height[l] < height[r]) l++;
+            else r--;
         }
         return max;
     }

@@ -52,7 +52,7 @@ public class Code189RotateArray {
 
     // 反转3次。
     // 第一次全部反转
-    // 第二次反转前k个
-    // 第三次反转后k个
+    // 第二次反转0到k-1个
+    // 第三次反转k到count-1个
 
 }
