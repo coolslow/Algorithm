@@ -1,4 +1,4 @@
-package com.coolslow;
+package com.coolslow.top100;
 
 import com.coolslow.leetcode.top100.NO121_BestTimeToBuyAndSellStock;
 import org.junit.Assert;

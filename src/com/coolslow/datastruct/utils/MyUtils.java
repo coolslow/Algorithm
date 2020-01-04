@@ -106,6 +106,42 @@ public class MyUtils {
         MyUtils.println(stringBuilder.toString());
     }
 
+    public static void printArray(char[] data) {
+        if (data == null || data.length == 0) {
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (char i : data) {
+            stringBuilder.append(i).append(" , ");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append("]");
+        MyUtils.println(stringBuilder.toString());
+    }
+
+    public static void printArray(char[][] data) {
+        if (data == null || data.length == 0 || data[0].length == 0) {
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ \n");
+        for (char[] i : data) {
+            stringBuilder.append("  [ ");
+            for (char j : i) {
+                stringBuilder.append(j).append(" , ");
+            }
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            stringBuilder.append("] \n");
+        }
+        stringBuilder.append("]");
+        MyUtils.println(stringBuilder.toString());
+    }
+
     public static void printArray(float[] data) {
         if (data == null || data.length == 0) {
             return;

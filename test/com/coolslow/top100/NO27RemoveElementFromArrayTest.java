@@ -1,4 +1,4 @@
-package com.coolslow;
+package com.coolslow.top100;
 
 import com.coolslow.leetcode.top100.playground.RemoveElementFromArrayPlayground;
 import org.junit.Assert;
