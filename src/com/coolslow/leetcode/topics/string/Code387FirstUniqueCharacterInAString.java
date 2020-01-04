@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 字符串中的第一个唯一字符
  * by MrThanksgiving
  */
 public class Code387FirstUniqueCharacterInAString {

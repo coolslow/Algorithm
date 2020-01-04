@@ -1,6 +1,7 @@
 package com.coolslow.leetcode.topics.array;
 
 /**
+ * 删除排序数组中的重复项
  * by MrThanksgiving
  */
 public class Code26RemoveDuplicatesFromSortedArray {
