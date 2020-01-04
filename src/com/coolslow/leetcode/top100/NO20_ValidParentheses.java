@@ -64,7 +64,7 @@ public class NO20_ValidParentheses {
     }
 
     public static boolean isValidParenthesesShort(String s) {
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '(') {
                 stack.push(')');
