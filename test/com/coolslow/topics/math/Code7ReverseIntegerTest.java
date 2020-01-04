@@ -12,7 +12,8 @@ public class Code7ReverseIntegerTest {
     @Test
     public void testSolution() {
         Code7ReverseInteger solution = new Code7ReverseInteger();
-        int nums = 123;
+        int nums = 1534236469;
+//        int nums = 123;
         int result = solution.reverse(nums);
         MyUtils.println(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }

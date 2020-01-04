@@ -1,6 +1,7 @@
 package com.coolslow.leetcode.topics.math;
 
 /**
+ * 整数反转
  * by MrThanksgiving
  */
 public class Code7ReverseInteger {
@@ -28,7 +29,15 @@ public class Code7ReverseInteger {
      * </pre>
      */
     public int reverse(int x) {
-        return 0;
+        long y = 0;
+        while (x != 0) {
+            y = y * 10 + (x % 10);
+            x /= 10;
+        }
+        if ((int) y != y)
+            return 0;
+        else
+            return (int) y;
     }
 
 }
