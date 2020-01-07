@@ -43,7 +43,7 @@ public class Code19RemoveNthNodeFromEndOfList {
         lt.next = lt.next.next;
         return dummy.next;
     }
-
+    // 双指针。主要是快慢指针之间保持n的距离。当快指针为null时，慢指针正好在要删除的节点前面。
 
     public ListNode removeNthFromEnd2(ListNode head, int n) {
         if (head == null) return null;

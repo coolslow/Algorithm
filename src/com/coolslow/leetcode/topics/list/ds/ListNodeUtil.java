@@ -19,6 +19,15 @@ public class ListNodeUtil {
         return list.get(0);
     }
 
+    public static ListNode getLastList(ListNode node) {
+        if (node == null) return null;
+        ListNode curr = node;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
     public static void print(ListNode node) {
         while (node != null) {
             MyUtils.println(MyUtils.ANSI_RED + node.val + MyUtils.ANSI_RESET);
