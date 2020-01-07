@@ -1,7 +1,8 @@
 package com.coolslow.topics.list;
 
-import com.coolslow.datastruct.utils.MyUtils;
 import com.coolslow.leetcode.topics.list.Code237DeleteNodeInALinkedList;
+import com.coolslow.leetcode.topics.list.ds.ListNode;
+import com.coolslow.leetcode.topics.list.ds.ListNodeUtil;
 import org.junit.Test;
 
 /**
@@ -13,26 +14,11 @@ public class Code237DeleteNodeInALinkedListTest {
     @Test
     public void testSolution() {
         Code237DeleteNodeInALinkedList solution = new Code237DeleteNodeInALinkedList();
-
-        Code237DeleteNodeInALinkedList.ListNode n1 = new Code237DeleteNodeInALinkedList.ListNode(1);
-        Code237DeleteNodeInALinkedList.ListNode n2 = new Code237DeleteNodeInALinkedList.ListNode(2);
-        Code237DeleteNodeInALinkedList.ListNode n3 = new Code237DeleteNodeInALinkedList.ListNode(3);
-        Code237DeleteNodeInALinkedList.ListNode n4 = new Code237DeleteNodeInALinkedList.ListNode(4);
-        Code237DeleteNodeInALinkedList.ListNode n5 = new Code237DeleteNodeInALinkedList.ListNode(5);
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
-        Code237DeleteNodeInALinkedList.ListNode n = new Code237DeleteNodeInALinkedList.ListNode(5);
+        ListNode node = ListNodeUtil.getList(new int[]{1, 2, 3, 4, 5});
+        ListNode n = new ListNode(3);
         solution.deleteNode(n);
-        print(n1);
+        ListNodeUtil.print(node);
     }
 
-    public void print(Code237DeleteNodeInALinkedList.ListNode node) {
-        while (node != null) {
-            MyUtils.println(MyUtils.ANSI_RED + node.val + MyUtils.ANSI_RESET);
-            node = node.next;
-        }
-    }
 
 }

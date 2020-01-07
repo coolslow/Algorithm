@@ -1,5 +1,8 @@
 package com.coolslow.leetcode.topics.list;
 
+
+import com.coolslow.leetcode.topics.list.ds.ListNode;
+
 /**
  * 删除链表中的节点
  * by MrThanksgiving
@@ -40,12 +43,4 @@ public class Code237DeleteNodeInALinkedList {
         }
     }
 
-    public static class ListNode {
-        public int val;
-        public ListNode next;
-
-        public ListNode(int x) {
-            val = x;
-        }
-    }
 }
