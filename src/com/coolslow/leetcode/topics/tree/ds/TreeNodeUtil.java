@@ -1,9 +1,7 @@
 package com.coolslow.leetcode.topics.tree.ds;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.sun.javafx.binding.StringFormatter;
 
-import java.text.Format;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -15,12 +13,15 @@ public class TreeNodeUtil {
         int count = data.length;
         TreeNode[] array = new TreeNode[count];
         for (int i = 0; i < count; i++) {
-            array[i] = new TreeNode(data[i]);
+            if (data[i] != null)
+                array[i] = new TreeNode(data[i]);
+            else
+                array[i] = null;
         }
         TreeNode root = array[0], temp;
         for (int i = 0; i < count; i++) {
             temp = array[i];
-            if (temp.val == null) {
+            if (temp == null) {
                 continue;
             }
             if (2 * i + 1 < count) {

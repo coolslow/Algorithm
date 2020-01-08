@@ -1,11 +1,11 @@
 package com.coolslow.leetcode.topics.tree.ds;
 
 public class TreeNode {
-    public Integer val;
+    public int val;
     public TreeNode left;
     public TreeNode right;
 
-    public TreeNode(Integer x) {
+    public TreeNode(int x) {
         val = x;
     }
 }

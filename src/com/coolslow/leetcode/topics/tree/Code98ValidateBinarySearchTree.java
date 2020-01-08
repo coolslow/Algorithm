@@ -72,8 +72,7 @@ public class Code98ValidateBinarySearchTree {
         if (min != null && min >= val) return false;
         if (max != null && max <= val) return false;
         if (!isValidBST(root.left, min, val)) return false;
-        if (!isValidBST(root.right, val, max)) return false;
-        return true;
+        return isValidBST(root.right, val, max);
     }
 
 }
