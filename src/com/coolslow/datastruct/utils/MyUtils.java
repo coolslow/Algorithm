@@ -21,6 +21,10 @@ public class MyUtils {
         System.out.print(log);
     }
 
+    public static void println() {
+        println("");
+    }
+
     public static void println(String log) {
         System.out.println(log);
     }
