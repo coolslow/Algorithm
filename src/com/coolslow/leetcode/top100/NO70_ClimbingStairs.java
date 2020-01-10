@@ -78,7 +78,9 @@ public class NO70_ClimbingStairs {
         return cur;
     }
 
-    /** 解题思路：
+    /**
+     * NOTE: 脑洞解法
+     * 解题思路：
      * Java的话因为返回值为int，n = 46时，结果会溢出，因此n < 46，有如下show翻天，脑洞大开的解法
      */
     public static int climbStairsShowOff(int n) {

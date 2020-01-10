@@ -1,8 +1,6 @@
 package com.coolslow.leetcode.top100;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Stack;
 
 /**
