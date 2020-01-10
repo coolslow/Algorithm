@@ -1,24 +1,26 @@
 package com.coolslow.datastruct.tree;
 
 
-import com.coolslow.datastruct.MyStack;
-import com.coolslow.utils.MyIterator;
+import com.coolslow.datastruct.stack.MyStack;
+import com.coolslow.datastruct.utils.MyIterator;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 1.每个结点要么是红的要么是黑的。  
- * 2.根结点是黑的。  
- * 3.每个叶结点（叶结点即指树尾端NIL指针或NULL结点）都是黑的。  
- * 4.如果一个结点是红的，那么它的两个儿子都是黑的。  
- * 5.对于任意结点而言，其到叶结点树尾端NIL指针的每条路径都包含相同数目的黑结点。 
- *
- * @param <T>
+ * 红黑树
+ * <p>
+ * by MrThanksgiving
  */
-// https://blog.csdn.net/abcdef314159/article/details/77193888
-
 public class RBTree<T extends Comparable<T>> {
+
+    /*
+     * 1.每个结点要么是红的要么是黑的。  
+     * 2.根结点是黑的。  
+     * 3.每个叶结点（叶结点即指树尾端NIL指针或NULL结点）都是黑的。  
+     * 4.如果一个结点是红的，那么它的两个儿子都是黑的。  
+     * 5.对于任意结点而言，其到叶结点树尾端NIL指针的每条路径都包含相同数目的黑结点。 
+     */
 
     private static final boolean RED = false;
     private static final boolean BLACK = true;
@@ -381,7 +383,7 @@ public class RBTree<T extends Comparable<T>> {
         MyStack<Node<T>> stack = new MyStack<>();
         Node<T> temp = node;
         Node<T> visited = null;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -405,7 +407,7 @@ public class RBTree<T extends Comparable<T>> {
         Node<T> temp = node;
         Node<T> visited = null;
         int height = 0;
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
@@ -431,7 +433,7 @@ public class RBTree<T extends Comparable<T>> {
         Node<T> temp = node;
         Node<T> visited = null;
         Map<String, Integer> recorder = new LinkedHashMap<>();
-        while (temp != null || !stack.isEmpty()) {
+        while (temp != null || stack.empty()) {
             while (temp != null) {
                 stack.push(temp);
                 temp = temp.left;
