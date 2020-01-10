@@ -1,5 +1,7 @@
 package com.coolslow.datastruct.utils;
 
+import java.util.List;
+
 /**
  * 工具类
  * <p>
@@ -166,6 +168,21 @@ public class MyUtils {
             return;
         }
 
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (T i : data) {
+            stringBuilder.append(i).append(" , ");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.append("]");
+        MyUtils.println(stringBuilder.toString());
+    }
+
+    public static <T> void printArray(List<T> data) {
+        if (data == null || data.size() == 0) {
+            return;
+        }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ ");
         for (T i : data) {
