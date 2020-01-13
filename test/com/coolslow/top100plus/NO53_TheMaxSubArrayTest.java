@@ -12,13 +12,13 @@ public class NO53_TheMaxSubArrayTest {
         int[] arr2 = new int[] { 1, 2, 3, 4, 5, -4, -3, -2, -1};
 
         int result = NO53_TheMaxSubArray.maxSubArray(arr);
-        int result1 = NO53_TheMaxSubArray.maxSubArraryShorter(arr);
+        int result1 = NO53_TheMaxSubArray.maxSubArrayShorter(arr);
 
         int result2 = NO53_TheMaxSubArray.maxSubArray(arr1);
-        int result3 = NO53_TheMaxSubArray.maxSubArraryShorter(arr1);
+        int result3 = NO53_TheMaxSubArray.maxSubArrayShorter(arr1);
 
         int result4 = NO53_TheMaxSubArray.maxSubArray(arr2);
-        int result5 = NO53_TheMaxSubArray.maxSubArraryShorter(arr2);
+        int result5 = NO53_TheMaxSubArray.maxSubArrayShorter(arr2);
 
         Assert.assertEquals(6, result);
         Assert.assertEquals(6, result1);

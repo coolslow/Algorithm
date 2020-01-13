@@ -31,12 +31,15 @@ public class NO14_LongestCommonPrefix {
      * @param strs 给出的字符串
      * @return 返回公共子串
      */
-    public String getTheLongestCommonPrefix(String[] strs) {
+    public static String getTheLongestCommonPrefix(String[] strs) {
+        // 数组为空或strs为null时返回""
         if(strs == null || strs.length == 0) {
             return "";
         }
+        // 将数组中的第一个字符串设置为公共子串
         String prefix = strs[0];
         for (String str : strs) {
+            // indexOf的结果为0表示相同子串的下标从0开始
             while (str.indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
                 if (prefix.isEmpty()) {
