@@ -32,6 +32,7 @@ public class NO14_LongestCommonPrefix {
      * @return 返回公共子串
      */
     public String getTheLongestCommonPrefix(String[] strs) {
+        // 数组为空或strs为null时返回""
         if(strs == null || strs.length == 0) {
             return "";
         }
