@@ -84,7 +84,7 @@ public class NO53_TheMaxSubArray {
      * @param nums 输入的数组
      * @return 返回连续子数组的最大和
      */
-    public static int maxSubArraryShorter(int[] nums) {
+    public static int maxSubArrayShorter(int[] nums) {
         // 先假设最大的子数组为数组的第一个数
         // 这样就可以忽略数组只有一个元素的极端情况
         int prev = nums[0];
