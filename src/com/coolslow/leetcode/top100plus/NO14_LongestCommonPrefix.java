@@ -38,6 +38,7 @@ public class NO14_LongestCommonPrefix {
         }
         String prefix = strs[0];
         for (String str : strs) {
+            // indexOf的结果为0表示相同子串的下标从0开始
             while (str.indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
                 if (prefix.isEmpty()) {

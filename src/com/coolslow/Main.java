@@ -3,7 +3,8 @@ package com.coolslow;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World Algorithm");
+        String greeting = "Hello World Algorithm";
+        System.out.println(greeting);
     }
 }
 
