@@ -22,7 +22,35 @@ public class Code5LongestPalindromicSubstring {
      *      输出: "bb"
      * </pre>
      */
+
     public String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) return "";
+        int max = 1, count = s.length(), startIndex = 0, endIndex = 0;
+        boolean[][] dp = new boolean[count][count];
+        for (int end = 0; end < count; end++) {
+            for (int start = 0; start <= end; start++) {
+                if (start == end) {
+                    dp[start][end] = true;
+                } else {
+                    boolean isEqual = s.charAt(start) == s.charAt(end);
+                    if (start + 1 == end && isEqual)
+                        dp[start][end] = true;
+                    else if (start + 1 < end && isEqual && dp[start + 1][end - 1]) {
+                        dp[start][end] = true;
+                    }
+                }
+                if (dp[start][end] && end - start + 1 > max) {
+                    max = end - start + 1;
+                    startIndex = start;
+                    endIndex = end;
+                }
+            }
+        }
+        return s.substring(startIndex, endIndex + 1);
+    }
+
+
+    public String longestPalindrome2(String s) {
 //        dp[i][j] 为以i开始，j结尾的子串是回文子串
 //        dp[i][j] = (s[i] == s[j] && dp[i+1][j-1])
 

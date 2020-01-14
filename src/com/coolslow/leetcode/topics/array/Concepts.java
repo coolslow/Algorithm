@@ -13,4 +13,9 @@ public class Concepts {
      * 双指针算法
      *
      */
+
+
+    /*
+     * Manacher
+     */
 }
