@@ -1,6 +1,5 @@
 package com.coolslow.topics.list;
 
-import com.coolslow.datastruct.utils.MyUtils;
 import com.coolslow.leetcode.topics.list.Code2AddTwoNumbers;
 import com.coolslow.leetcode.topics.list.ds.ListNode;
 import com.coolslow.leetcode.topics.list.ds.ListNodeUtil;
