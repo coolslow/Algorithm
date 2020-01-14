@@ -21,20 +21,55 @@ import com.coolslow.leetcode.top100plus.datastructure.ListNode;
  *
  */
 public final class NO02_AddTwoNumbers {
+
+    /**
+     * 方法：初等数学
+     *
+     * 思路：
+     * 使用变量跟踪进位，并从包含最低有效位的表头开始模拟逐位相加的过程。
+     *
+     * 伪代码如下：
+     *   - 将当前节点初始化为返回列表的哑节点
+     *   - 将进位 carry 初始化为0
+     *   - 将 p 和 q 分别初始化为列表 l1 he l2 的头部
+     *   - 编列列表 l1 和 l2 直至到达他们各自的尾端
+     *     a. 将x设置为节点p的值。如果p已经到达l1的末尾，则将其值设置为0
+     *     b. 将y设置为节点q的值。如果q已经到达l2的末尾，则将其值设置为0
+     *     c. 设定 sum = x + y + carry
+     *     d. 更新进位的值，carry = sum / 10
+     *     e. 创建一个数值为(sum mod 10)的新节点，并将其设置为当前节点的下一个节点，然后将当前节点前进到下一个节点
+     *     f. 同时，将p和q前进到下一个节点。
+     *   - 检查 carry = 1 是否成立，如果成立，则向返回列表追加一个含有数字1的新节点。
+     *   - 返回哑节点的下一个节点。
+     *
+     *
+     * 复杂度分析：
+     *   - 时间复杂度：O(max(m, n))，假设 m 和 n 分别表示 l1 和 l2 的长度，上面的算法最多重复 max(m, n) 次。
+     *   - 空间复杂度：O(max(m, n))，新列表的长度最多为 max(m,n) + 1。
+     *
+     * @param l1 第一个链表
+     * @param l2 第二个链表
+     * @return 新的包含 l1 和 l2 的排序链表
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // 设置一个哑节点
         ListNode head = new ListNode(0);
         // 将当前指针指向head，即新创建的链表的头部
-        ListNode p = l1, q = l2, curr = head;
+        ListNode curr = head, p = l1, q = l2;
         // 进位
         int carry = 0;
 
         while(p!= null || q != null) {
+            // 将 x 设为结点 p 的值。如果 p 已经到达 l1 的末尾，则将其值设置为 0
             int x = (p != null) ? p.val : 0;
+            // 将 y 设为结点 q 的值。如果 q 已经到达 l2 的末尾，则将其值设置为 0。
             int y = (q != null) ? q.val : 0;
 
             int sum = carry + x + y;
             carry = sum / 10;
+
             curr.next = new ListNode(sum % 10);
+            // 指针向后移动
             curr = curr.next;
 
             if(p != null) {
