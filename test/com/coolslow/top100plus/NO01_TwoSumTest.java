@@ -5,7 +5,7 @@ import com.coolslow.leetcode.top100plus.playground.TwoSumPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NO01TwoSumTest {
+public class NO01_TwoSumTest {
     @Test
     public void shouldGetCorrectArrayForTwoSum() {
         int[] nums = new int[] {2, 7, 11, 15};

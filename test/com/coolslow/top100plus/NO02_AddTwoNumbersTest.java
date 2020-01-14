@@ -4,7 +4,7 @@ import com.coolslow.leetcode.top100plus.datastructure.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NO02AddTwoNumbersTest {
+public class NO02_AddTwoNumbersTest {
     @Test
     public void shouldAddTwoNumbersCorrectly() {
 

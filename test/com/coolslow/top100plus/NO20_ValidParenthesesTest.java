@@ -4,7 +4,7 @@ import com.coolslow.leetcode.top100plus.NO20_ValidParentheses;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NO20ValidParenthesesTest {
+public class NO20_ValidParenthesesTest {
 
     @Test
     public void shouldCheckParenthesesCorrectly() {

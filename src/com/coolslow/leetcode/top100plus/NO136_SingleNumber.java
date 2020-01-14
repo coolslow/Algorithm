@@ -1,8 +1,5 @@
 package com.coolslow.leetcode.top100plus;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 136. 只出现一次的数字
  *
@@ -22,6 +19,12 @@ import java.util.Map;
  */
 public class NO136_SingleNumber {
 
+    /**
+     * 解法一：异或的方式找到唯一一个只出现一次的数字
+     *
+     * @param nums 输入的数字数组
+     * @return 返回唯一出现一次的数字
+     */
     public static int singleNumber(int[] nums) {
 
         int target = 0;
