@@ -34,4 +34,13 @@ public class ListNodeUtil {
             node = node.next;
         }
     }
+
+    public static ListNode join(ListNode a, ListNode b) {
+        if (a == null) return b;
+        ListNode curr = a;
+        while (curr.next != null)
+            curr = curr.next;
+        curr.next = b;
+        return a;
+    }
 }

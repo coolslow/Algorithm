@@ -3,6 +3,7 @@ package com.coolslow.leetcode.topics.list;
 import com.coolslow.leetcode.topics.list.ds.ListNode;
 
 /**
+ * 是否有环
  * by MrThanksgiving
  */
 public class Code141LinkedListCycle {
