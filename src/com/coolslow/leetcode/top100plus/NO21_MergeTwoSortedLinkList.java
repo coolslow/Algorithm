@@ -43,7 +43,7 @@ public class NO21_MergeTwoSortedLinkList {
 
     /**
      * 方法二：迭代
-     *
+     *;
      * 设置一个哨兵节点"prehead"，这可以在最后比较容易的返回合并后的链表。
      *
      *
