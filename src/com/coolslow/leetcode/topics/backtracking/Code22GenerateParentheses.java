@@ -1,4 +1,4 @@
-package com.coolslow.leetcode.topics.string;
+package com.coolslow.leetcode.topics.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;

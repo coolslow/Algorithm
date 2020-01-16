@@ -1,7 +1,7 @@
-package com.coolslow.topics.string;
+package com.coolslow.topics.backtracking;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.string.Code22GenerateParentheses;
+import com.coolslow.leetcode.topics.backtracking.Code22GenerateParentheses;
 import org.junit.Test;
 
 import java.util.List;

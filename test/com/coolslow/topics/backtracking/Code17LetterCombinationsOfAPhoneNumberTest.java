@@ -1,7 +1,7 @@
-package com.coolslow.topics.string;
+package com.coolslow.topics.backtracking;
 
 import com.coolslow.datastruct.utils.MyUtils;
-import com.coolslow.leetcode.topics.string.Code17LetterCombinationsOfAPhoneNumber;
+import com.coolslow.leetcode.topics.backtracking.Code17LetterCombinationsOfAPhoneNumber;
 import org.junit.Test;
 
 import java.util.List;
