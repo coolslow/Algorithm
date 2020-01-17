@@ -44,14 +44,20 @@ public class TreeNodeUtil {
         queue.add(data);
         TreeNode temp;
         while (!queue.isEmpty()) {
-            temp = queue.poll();
-            MyUtils.print(temp.val + " , ");
-            if (temp.left != null) {
-                queue.add(temp.left);
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                temp = queue.poll();
+                if (temp != null) {
+                    MyUtils.print(temp.val + " , ");
+                    if (temp.left != null) {
+                        queue.add(temp.left);
+                    }
+                    if (temp.right != null) {
+                        queue.add(temp.right);
+                    }
+                }
             }
-            if (temp.right != null) {
-                queue.add(temp.right);
-            }
+            MyUtils.println();
         }
 
     }

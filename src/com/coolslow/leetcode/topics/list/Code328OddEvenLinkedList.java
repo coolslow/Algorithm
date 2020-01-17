@@ -3,6 +3,7 @@ package com.coolslow.leetcode.topics.list;
 import com.coolslow.leetcode.topics.list.ds.ListNode;
 
 /**
+ * 奇偶链表
  * by MrThanksgiving
  */
 public class Code328OddEvenLinkedList {

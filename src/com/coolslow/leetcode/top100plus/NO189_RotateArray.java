@@ -41,7 +41,7 @@ public class NO189_RotateArray {
      */
     public static int[] rotateArrayWithBruteForce(int[] nums, int k) {
         int temp, previous;
-        for(int i = 0; i < k; i ++) {
+        for(int i = 0; i < k; i++) {
             previous = nums[nums.length - 1];
             for(int j = 0; j < nums.length; j++) {
                 temp = nums[j];
