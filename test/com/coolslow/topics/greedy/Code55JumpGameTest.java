@@ -17,4 +17,21 @@ public class Code55JumpGameTest {
         boolean result = solution.canJump(input);
         MyUtils.println(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
     }
+
+
+    @Test
+    public void testSolution2() {
+        int[] coins = {1, 2};
+        int amount = 3;
+        int result = coinChange(coins, amount);
+        MyUtils.println(MyUtils.ANSI_RED + result + MyUtils.ANSI_RESET);
+
+    }
+
+    public int coinChange(int[] coins, int amount) {
+        if (coins == null || coins.length == 0) return -1;
+        int[] dp = new int[coins.length];
+        return 0;
+    }
+
 }
