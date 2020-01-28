@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/out" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11.0.5" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="junit:junit:4.12" level="project" />
     <orderEntry type="module-library" scope="TEST">

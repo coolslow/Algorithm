@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/com/coolslow/leetcode/top100/NO07_ReverseInteger.java
-package com.coolslow.leetcode.top100;
-=======
 package com.coolslow.leetcode.top100plus;
->>>>>>> develop:src/com/coolslow/leetcode/top100plus/NO07_ReverseInteger.java
 
 /**
  * 7. 整数反转
