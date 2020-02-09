@@ -34,7 +34,7 @@ package com.coolslow.leetcode.top100plus;
 public class NO05_LongestPalindromicSubstring {
 
     /**
-     * 暴力破解法
+     * 暴力解法
      * @return 返回回文子串
      */
     public static String longestPalindromicSubString(String s) {
@@ -67,5 +67,56 @@ public class NO05_LongestPalindromicSubstring {
             }
         }
         return true;
+    }
+
+    ///////////////////////////////////////////////////
+
+    /**
+     * 根据回文串的定义，正着和反着读一样，那么把原来的字符串倒置，然后找最长的公共子串就可以了。（思路有漏洞，可纠正）
+     *
+     * 这里采用动态规划的办法，申请一个二维的数组初始化为 0，然后判断对应的字符是否相等
+     * arr [ i ][ j ] = arr [ i - 1 ][ j - 1] + 1
+     * 当 i = 0 或者 j = 0 的时候单独分析，字符相等的话 arr [ i ][ j ] 就赋为 1 。
+     * arr [ i ][ j ] 保存的就是公共子串的长度
+     *
+     * @return
+     */
+    public static String longestPalindromeWithCommonMethod(String s) {
+        if(s.equals("")) {
+            return s;
+        }
+        String origin = s;
+        //字符串倒置
+        String reverse = new StringBuffer(s).reverse().toString();
+        int length = s.length();
+        int[] arr = new int[length];
+
+        int maxLen = 0;
+        int maxEnd = 0;
+        for(int i = 0; i < length; i++) {
+            for(int j = length - 1; j >= 0; j--) {
+                // 判断下标是否对应
+                if (origin.charAt(i) == reverse.charAt(j)) {
+                    // 对于 i = 0, j = 0 的情况单独处理
+                    if (i == 0 || j == 0) {
+                        arr[j] = 1;
+                    } else {
+                        arr[j] = arr[j - 1] + 1;
+                    }
+                } else {
+                    arr[j] = 0;
+                }
+
+                if (arr[j] > maxLen) {
+                    int beforeRev = length - 1 - j;
+                    if(beforeRev + arr[j] - 1 == i) {
+                        maxLen = arr[j];
+                        // 以 i 位置结尾的字符
+                        maxEnd = i;
+                    }
+                }
+            }
+        }
+        return s.substring(maxEnd - maxLen + 1, maxEnd + 1);
     }
 }
