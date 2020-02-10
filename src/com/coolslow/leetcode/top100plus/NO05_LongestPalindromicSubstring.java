@@ -69,7 +69,7 @@ public class NO05_LongestPalindromicSubstring {
         return true;
     }
 
-    ///////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
 
     /**
      * 根据回文串的定义，正着和反着读一样，那么把原来的字符串倒置，然后找最长的公共子串就可以了。（思路有漏洞，可纠正）
@@ -79,7 +79,7 @@ public class NO05_LongestPalindromicSubstring {
      * 当 i = 0 或者 j = 0 的时候单独分析，字符相等的话 arr [ i ][ j ] 就赋为 1 。
      * arr [ i ][ j ] 保存的就是公共子串的长度
      *
-     * @return
+     * @return 返回最长回文子串
      */
     public static String longestPalindromeWithCommonMethod(String s) {
         if(s.equals("")) {
@@ -118,5 +118,56 @@ public class NO05_LongestPalindromicSubstring {
             }
         }
         return s.substring(maxEnd - maxLen + 1, maxEnd + 1);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * 效率最高的查找最长回文子串算法
+     *
+     *
+     * @param s 制定的字符串
+     * @return 返回最长回文子串
+     */
+    public static String longestPalindromeBestMethod(String s) {
+        if(s == null || s.length() == 0) {
+            return s;
+        }
+
+        int sLength = s.length();
+        if(sLength == 1){
+            return s;
+        }
+
+        char[] chars = s.toCharArray();
+
+        int[] result = new int[2];
+        for(int i = 0; i < sLength ;i++){
+            i = explore(chars,i,result);
+        }
+
+        return s.substring(result[0] + 1, result[1]);
+    }
+
+    private static int explore(char[] chars, int i ,int [] result) {
+        int l =i;
+        int r = i;
+        int length = chars.length;
+
+        while ((r + 1) < length && chars[r + 1] == chars[r]){
+            r++;
+        }
+
+        int re = r;
+        while(l >= 0 && r < length && chars[l] == chars[r]){
+            l--;
+            r++;
+        }
+        if((r - l) > (result[1]- result[0])){
+            result[0] = l;
+            result[1] = r;
+        }
+
+        return re;
     }
 }
