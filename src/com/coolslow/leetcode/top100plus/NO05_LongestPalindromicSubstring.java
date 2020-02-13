@@ -143,14 +143,14 @@ public class NO05_LongestPalindromicSubstring {
 
         int[] result = new int[2];
         for(int i = 0; i < sLength ;i++){
-            i = explore(chars,i,result);
+            i = explore(chars, i, result);
         }
 
         return s.substring(result[0] + 1, result[1]);
     }
 
     private static int explore(char[] chars, int i ,int [] result) {
-        int l =i;
+        int l = i;
         int r = i;
         int length = chars.length;
 
