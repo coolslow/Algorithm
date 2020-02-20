@@ -35,7 +35,7 @@ public class NO198_HouseRobber {
      * @param nums 给定的代表每家存放金额的数组
      * @return 返回最优的抢劫方案的结果
      */
-    public int rob(int[] nums) {
+    public static int rob(int[] nums) {
         int prevMax = 0;
         int currMax = 0;
 
