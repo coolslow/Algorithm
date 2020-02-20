@@ -1,6 +1,7 @@
 package com.coolslow.top100plus;
 
 import com.coolslow.leetcode.top100plus.NO01_TwoSum;
+import com.coolslow.leetcode.top100plus.NO198_HouseRobber;
 import com.coolslow.leetcode.top100plus.playground.TwoSumPlayground;
 import org.junit.Assert;
 import org.junit.Test;
