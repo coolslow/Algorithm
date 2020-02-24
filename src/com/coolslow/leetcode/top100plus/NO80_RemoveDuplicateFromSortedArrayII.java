@@ -45,7 +45,9 @@ public class NO80_RemoveDuplicateFromSortedArrayII {
         // Initialize the counter and the second pointer.
         int j = 1, count = 1;
 
+        // 从第二个元素开始遍历
         for (int i = 1; i < nums.length; i++) {
+            // 如果第一个元素和第二个元素相等，则计数器 +1
             if (nums[i] == nums[i - 1]) {
                 count++;
             } else {
