@@ -27,7 +27,7 @@ package com.coolslow.leetcode.top100plus;
 public class NO198_HouseRobber {
 
     /**
-     * 方法一：动态规划
+     * 方法一：动态规划（第一种方法）
      *
      * 时间复杂度：O(n)。其中 n 为房子的数量。
      * 空间复杂度：O(1)。
@@ -45,14 +45,43 @@ public class NO198_HouseRobber {
      *      显然想选出数额最大的选项的通用公式如下：
      *      f(k) = Max(f(k - 2) + Ak, f(k - 1))
      *
+     * -------------------------------------------------------------------------
+     * > 递推公式：dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])
+     * > 关键是dp[0]和dp[1]的初始化, dp[0]=nums[0], dp[1]要初始化成nums[0]和nums[1]中较大的那个
+     * > 因为dp[i]的意义为打劫前i个所获取的最大值。
+     *
      *
      * @param nums 给定的代表每家存放金额的数组
      * @return 返回最优的抢劫方案的结果
      */
     public static int rob(int[] nums) {
+
+        int len = nums.length;
+        if(len == 0) {
+            return 0;
+        }
+        // 申请了一个长度为 len + 1 的数组
+        int[] dp = new int[len + 1];
+        dp[0] = 0;
+        dp[1] = nums[0];
+        for(int i = 2; i <= len; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
+        }
+        return dp[len];
+    }
+
+    /**
+     * 时间复杂度：O(n)。其中 n 为房子的数量。
+     * 空间复杂度：O(1)。
+     *
+     * @param nums 给定的代表每家存放金额的数组
+     * @return 返回最优的抢劫方案的结果
+     */
+    public static int houseRobber(int[] nums) {
         int prevMax = 0;
         int currMax = 0;
 
+        // 通过临时变量申请避免了空间复杂度为 O(n)，使空间复杂度为 O(1)
         for(int x: nums) {
             int temp = currMax;
             currMax = Math.max(prevMax + x, currMax);
