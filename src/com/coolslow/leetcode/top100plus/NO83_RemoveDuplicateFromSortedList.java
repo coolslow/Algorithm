@@ -16,7 +16,7 @@ import com.coolslow.leetcode.top100plus.datastructure.ListNode;
  *  输出: 1->2->3
  *
  */
-public class NO83_RemoveDuplicatesFromSortedList {
+public class NO83_RemoveDuplicateFromSortedList {
 
     /** 普通的解决办法 */
     public ListNode deleteDuplicates(ListNode head) {
