@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Playground(name = "两数之和", rank = Playground.Difficulty.Easy)
-public class TwoSumPlayground {
+public class NO01_TwoSumPlayground {
 
     /**
      * 暴力解法，时间复杂度为O(n^2)
-     * @param nums
-     * @param target
-     * @return
+     * @param nums 给定的数组
+     * @param target 目标值
+     * @return 返回满足目标值的数组中元素的下标
      */
     @Solution(desc = "解法1：两数之和 - 暴力解法")
     @Topics(tags = Topics.Tags.Array)
@@ -32,9 +32,9 @@ public class TwoSumPlayground {
     
     /**
      * 使用HashMap遍历存储数组中的数据，再逐个比较 O(n)
-     * @param nums
-     * @param target
-     * @return
+     * @param nums 给定的数组
+     * @param target 目标值
+     * @return 返回满足目标值的数组中元素的下标
      */
     @Solution(desc = "解法2：两数之和 - HasMap两次for循环")
     @Topics(tags = Topics.Tags.Array)
@@ -56,9 +56,9 @@ public class TwoSumPlayground {
 
     /**
      * 使用HashMap一次遍历存储数组中的数据并返回对应的数组下标 O(n)
-     * @param nums
-     * @param target
-     * @return
+     * @param nums 给定的数组
+     * @param target 目标值
+     * @return 返回满足目标值的数组中元素的下标
      */
     @Solution(desc = "解法3：两数之和 - HasMap一次for循环")
     @Topics(tags = Topics.Tags.Array)

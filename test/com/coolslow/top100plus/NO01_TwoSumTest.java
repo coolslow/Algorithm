@@ -1,8 +1,7 @@
 package com.coolslow.top100plus;
 
 import com.coolslow.leetcode.top100plus.NO01_TwoSum;
-import com.coolslow.leetcode.top100plus.NO198_HouseRobber;
-import com.coolslow.leetcode.top100plus.playground.TwoSumPlayground;
+import com.coolslow.leetcode.top100plus.playground.NO01_TwoSumPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,10 +30,10 @@ public class NO01_TwoSumTest {
         int[] nums1 = new int[] {0, 1, 3, 8, 7, 11, 12, 13};
         int target1 = 4;
 
-        int[] result = TwoSumPlayground.twoSum(nums, target);
+        int[] result = NO01_TwoSumPlayground.twoSum(nums, target);
         Assert.assertArrayEquals(new int[] {}, result);
 
-        int[] result1 = TwoSumPlayground.twoSumWithHashMap(nums1, target1);
+        int[] result1 = NO01_TwoSumPlayground.twoSumWithHashMap(nums1, target1);
         Assert.assertArrayEquals(new int[] {1, 2}, result1);
     }
 }
