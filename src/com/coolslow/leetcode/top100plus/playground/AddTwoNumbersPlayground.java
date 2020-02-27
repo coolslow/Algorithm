@@ -10,9 +10,9 @@ public class AddTwoNumbersPlayground {
 
     /**
      * 暴力解法
-     * @param nums
-     * @param target
-     * @return
+     * @param nums 给定的数组
+     * @param target 给定的目标值
+     * @return 返回满足条件的数组下标
      */
     public static int[] twoSum(int[] nums, int target) {
         int n = nums.length;

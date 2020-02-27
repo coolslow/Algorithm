@@ -27,7 +27,7 @@ public class NO22_GenerateParentheses {
      * @return 返回一个包含所有正确格式的括号数组
      */
     public List<String> generateParenthesis(int n) {
-        List<String> ans = new ArrayList();
+        List<String> ans = new ArrayList<>();
 
         if (n == 0) {
             ans.add("");
