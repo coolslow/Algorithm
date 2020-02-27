@@ -43,31 +43,31 @@ public class NO15_ThreeSum {
                 break;
             }
             // 去重
-            if(i > 0 && nums[i] == nums[i-1]) {
+            if(i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
 
-            int L = i+1;
-            int R = len-1;
+            int left = i + 1;
+            int right = len - 1;
 
-            while(L < R) {
-                int sum = nums[i] + nums[L] + nums[R];
+            while(left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
                 if(sum == 0){
-                    ans.add(Arrays.asList(nums[i],nums[L],nums[R]));
+                    ans.add(Arrays.asList(nums[i],nums[left],nums[right]));
                     // 去重
-                    while (L<R && nums[L] == nums[L+1]) {
-                        L++;
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
                     }
                     // 去重
-                    while (L<R && nums[R] == nums[R-1]) {
-                        R--;
+                    while (left < right && nums[right] == nums[right-1]) {
+                        right--;
                     }
-                    L++;
-                    R--;
+                    left++;
+                    right--;
                 } else if (sum < 0) {
-                    L++;
+                    left++;
                 } else {
-                    R--;
+                    right--;
                 }
             }
         }
