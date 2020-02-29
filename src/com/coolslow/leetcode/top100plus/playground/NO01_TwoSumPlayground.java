@@ -46,6 +46,7 @@ public class NO01_TwoSumPlayground {
 
         for(int j = 0; j < nums.length; j++) {
             int temp = target - nums[j];
+            // 在HashMap中包含 temp 满足target - nums[j]的数且这个数下标不是j
             if(map.containsKey(temp) && map.get(temp) != j) {
                 return new int[] {j, map.get(temp)};
             }

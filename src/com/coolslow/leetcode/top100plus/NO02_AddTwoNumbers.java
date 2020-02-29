@@ -51,7 +51,7 @@ public final class NO02_AddTwoNumbers {
      * @param l2 第二个链表
      * @return 新的包含 l1 和 l2 的排序链表
      */
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 设置一个哑节点
         ListNode head = new ListNode(0);
         // 将当前指针指向head，即新创建的链表的头部
@@ -68,6 +68,7 @@ public final class NO02_AddTwoNumbers {
             int sum = carry + x + y;
             carry = sum / 10;
 
+            // 为当前节点增加下一个节点
             curr.next = new ListNode(sum % 10);
             // 指针向后移动
             curr = curr.next;
