@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Playground(name = "最长子串", rank = Playground.Difficulty.Medium)
-public class LongestSubstringPlayground {
+public class NO03_LongestSubstringPlayground {
 
     /**
      * 暴力解法

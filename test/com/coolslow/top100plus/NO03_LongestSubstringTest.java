@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.playground.LongestSubstringPlayground;
+import com.coolslow.leetcode.top100plus.playground.NO03_LongestSubstringPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,10 +12,10 @@ public class NO03_LongestSubstringTest {
         String s1 = "abcdeefghi"; // 最长子串 efghijklmn
         String s3 = "wcnmbb";
 
-        int result = LongestSubstringPlayground.lengthOfLongestSubString(s);
-        int result1 = LongestSubstringPlayground.lengthOfLongestSubstringWithSlidingWindow(s);
-        int result2 = LongestSubstringPlayground.lengthOfLongestSubstringWithSlidingWindow(s1);
-        int result3 = LongestSubstringPlayground.lengthOfLongestSubstringWithOptimizedSlidingWindow(s3);
+        int result = NO03_LongestSubstringPlayground.lengthOfLongestSubString(s);
+        int result1 = NO03_LongestSubstringPlayground.lengthOfLongestSubstringWithSlidingWindow(s);
+        int result2 = NO03_LongestSubstringPlayground.lengthOfLongestSubstringWithSlidingWindow(s1);
+        int result3 = NO03_LongestSubstringPlayground.lengthOfLongestSubstringWithOptimizedSlidingWindow(s3);
         Assert.assertEquals(3, result);
         Assert.assertEquals(3, result1);
         Assert.assertEquals(5, result2);
