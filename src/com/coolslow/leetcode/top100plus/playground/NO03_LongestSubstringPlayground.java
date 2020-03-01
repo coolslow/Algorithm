@@ -13,7 +13,7 @@ import java.util.Set;
 public class NO03_LongestSubstringPlayground {
 
     /**
-     * 暴力解法
+     * 解法一：暴力解法
      * @param s 输入的字符串
      * @return 返回最长子串的长度值
      */
@@ -52,13 +52,15 @@ public class NO03_LongestSubstringPlayground {
     }
 
     /**
+     * 解法二：滑动窗口
+     *
      * 用HashSet来作为滑动窗口，检查一个字符串是否在HashSet中的时间复杂度为O(1)
      * 这个问题中，我们用HashSet来存储滑动窗口中的字符串。这个滑动窗口的初始大小为 window[i, j)（左闭右开，初始状态 j = i）
      * 接着将右侧区间 j 向右滑动。当将 j 作为下标的元素如果不在HashSet中，就将右侧区间继续向右滑动更远的距离。持续滑动直到 j 为下标的元素存在于HashSet中。
      * 至此，我们找到了以i开头的最长子串。如果对于所有的i执行上述操作，我们就能获得最终的答案。
      *
-     * @param s
-     * @return
+     * @param s 输入的字符串
+     * @return 返回最长子串的长度值
      */
     @Solution(desc = "解法2：查找最长子串 - 滑动窗口")
     @Topics(tags = Topics.Tags.String)
@@ -84,8 +86,8 @@ public class NO03_LongestSubstringPlayground {
      * 通过采用mapping字符串的下标的方式，可以取代用HashSet来判断字符串是否存在。这样，我们就可以在发现重复的字符是立刻跳过该字符。
      * 原因是：如果 s[j] 在[i, j)范围里与下标j'是重复的，就没有必要一点点的增加i。可以直接忽略所有在[i, j)范围里的所有元素，让j直接变为 j'+1。
      *
-     * @param s
-     * @return
+     * @param s 输入的字符串
+     * @return 返回最长子串的长度值
      */
     @Solution(desc = "解法3：查找最长子串 - 滑动窗口优化解决办法")
     @Topics(tags = Topics.Tags.String)

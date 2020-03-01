@@ -29,9 +29,9 @@ import java.util.Set;
 public class NO03_LongestSubstring {
 
     /**
-     * 暴力解法，时间复杂度为O(n^3)
-     * @param s
-     * @return
+     * 方法一：暴力解法，时间复杂度为O(n^3)
+     * @param s 给定的字符串
+     * @return 返回无重复最长子串的长度
      */
     public static int lengthOfLongestSubString(String s) {
         int n = s.length();
