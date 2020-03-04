@@ -59,7 +59,13 @@ public class NO03_LongestSubstring {
     }
 
     /**
-     * 滑动窗口
+     * 方法二：滑动窗口
+     *
+     * 暴力法非常简单，但因为它总是重复的检查字串是否重复，导致它太慢了。
+     * 我们都知道，如果从索引i到j - 1之间的子串S(i,j-1)确定没有重复，那么只需检查S(j)对应的字符串是否已尽存在于S(i, j-1)之间即可。
+     * 通过使用HashSet作为滑动窗口，可以用O(1)的时间来完成对字符串是否在当前子字符串中的检查。
+     *
+     *
      */
     public static int lengthOfLongestSubStringWithSlidingWindow(String s) {
         int n = s.length(), ans = 0, i = 0, j = 0;
@@ -88,9 +94,10 @@ public class NO03_LongestSubstring {
     public int lengthOfLongestSubStringWithOptimizedSlidingWindow(String s) {
         int n = s.length(), ans = 0;
         Map<Character, Integer> map = new HashMap<>();
-
+        // 扩展 [i, j] 的滑动窗口
         for(int j = 0, i = 0; j < n; j++) {
             if(map.containsKey(s.charAt(j))) {
+                // 设置i的下标
                 i = Math.max(map.get(s.charAt(j)), i);
             }
             ans = Math.max(ans, j -i + 1);

@@ -9,13 +9,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@Playground(name = "最长子串", rank = Playground.Difficulty.Medium)
+@Playground(name = "无重复的最长子串", rank = Playground.Difficulty.Medium)
 public class NO03_LongestSubstringPlayground {
 
     /**
      * 解法一：暴力解法
      * @param s 输入的字符串
-     * @return 返回最长子串的长度值
+     * @return 返回无重复的最长子串的长度值
      */
     @Solution(desc = "解法1：查找最长子串 - 暴力解法")
     @Topics(tags = Topics.Tags.String)
