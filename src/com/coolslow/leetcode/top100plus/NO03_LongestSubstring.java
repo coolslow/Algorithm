@@ -65,7 +65,6 @@ public class NO03_LongestSubstring {
      * 我们都知道，如果从索引i到j - 1之间的子串S(i,j-1)确定没有重复，那么只需检查S(j)对应的字符串是否已尽存在于S(i, j-1)之间即可。
      * 通过使用HashSet作为滑动窗口，可以用O(1)的时间来完成对字符串是否在当前子字符串中的检查。
      *
-     *
      */
     public static int lengthOfLongestSubStringWithSlidingWindow(String s) {
         int n = s.length(), ans = 0, i = 0, j = 0;
@@ -104,5 +103,31 @@ public class NO03_LongestSubstring {
             map.put(s.charAt(j), j + 1);
         }
         return ans;
+    }
+
+    /**
+     * LeetCode 用时两毫秒的最佳解决办法
+     * @param s 给定的字符串
+     * @return 返回无重复最长子串的长度
+     */
+    public int lengthOfLongestSubStringWithBestMethod(String s) {
+        int max = 0, a = 0;
+        if (s.length() == 1) {
+            max = 1;
+        } else if(!"".equals(s) && s.length() > 0) {
+            char[] str = s.toCharArray();
+            for(int b = 1; b < s.length(); b++) {
+                for(int i = a; i < b; i++) {
+                    if(str[i] == str[b]) {
+                        max = Math.max(b - a, max);
+                        a = i + 1;
+                        break;
+                    }
+                }
+
+                max = Math.max(b - a + 1, max);
+            }
+        }
+        return max;
     }
 }
