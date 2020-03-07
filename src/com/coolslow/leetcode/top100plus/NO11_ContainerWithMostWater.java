@@ -71,4 +71,29 @@ public class NO11_ContainerWithMostWater {
 
         return maxArea;
     }
+
+    /**
+     * 解法二的优化方法：
+     * @param height 输入的数组
+     * @return 最大面积
+     */
+    public static int maxAreaTheBestSolutionInLeetCode(int[] height) {
+        int maxArea = 0;
+        int left = 0, right = height.length - 1;
+
+        while(left < right) {
+            int h = Math.min(height[left], height[right]);
+            maxArea = Math.max(maxArea, h * (right - left));
+
+            // 提速关键，找到下一个更长的
+            while(height[left] <= h && left < right) {
+                left++;
+            }
+            while(height[right] <= h && left < right) {
+                right--;
+            }
+        }
+
+        return maxArea;
+    }
 }
