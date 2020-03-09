@@ -80,7 +80,7 @@ public class NO53_TheMaxSubArray {
     }
 
     /**
-     * 方法二：更好的动态规划解法
+     * 方法二：更简洁的动态规划解法
      * @param nums 输入的数组
      * @return 返回连续子数组的最大和
      */
