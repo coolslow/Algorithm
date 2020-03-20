@@ -55,4 +55,29 @@ package com.coolslow.leetcode.interview.topics.sort;
  *
  */
 public class QuickSort {
+
+    public static void quickSort(int[] nums, int leftIndex, int rightIndex) {
+        int left = leftIndex;
+        int right = rightIndex;
+        int temp = 0;
+
+        if(left <= right) {
+            temp = nums[left];
+            //从左右两边交替扫描，直到left = right
+            while(left != right) {
+                while(right > left && nums[right] >= temp) {
+                    right--;
+                }
+                nums[left] = nums[right];
+
+                while(left < right && nums[left] <= temp) {
+                    left++;
+                }
+                nums[right] = nums[left];
+            }
+            nums[right] = temp;
+            quickSort(nums, leftIndex, left - 1);
+            quickSort(nums, right + 1, rightIndex);
+        }
+    }
 }
