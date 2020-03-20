@@ -2,6 +2,7 @@ package com.coolslow.leetcode.interview.topics.sort;
 
 /**
  * 快速排序
+ * 参考：https://www.cnblogs.com/MOBIN/p/4681369.html
  *
  * 核心思想：
  *    1. 在待排序的元素任取一个元素作为基准（通常选第一个元素，称为基准元素）
