@@ -1,6 +1,6 @@
 package com.coolslow.sort;
 
-import com.coolslow.leetcode.sort.BubbleSort;
+import com.coolslow.leetcode.interview.topics.sort.BubbleSort;
 import org.junit.Assert;
 import org.junit.Test;
 

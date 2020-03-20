@@ -1,4 +1,4 @@
-package com.coolslow.leetcode.sort;
+package com.coolslow.leetcode.interview.topics.sort;
 
 public class BubbleSort {
 
