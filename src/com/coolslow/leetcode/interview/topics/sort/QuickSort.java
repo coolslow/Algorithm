@@ -65,7 +65,7 @@ public class QuickSort {
             temp = nums[left];
             //从左右两边交替扫描，直到left = right
             while(left != right) {
-                while(right > left && nums[right] >= temp) {
+                while(left < right && nums[right] >= temp) {
                     right--;
                 }
                 nums[left] = nums[right];
