@@ -63,8 +63,9 @@ public class QuickSort {
         int temp = 0;
 
         if(left <= right) {
+            // 将最左边的元素作为基准
             temp = nums[left];
-            //从左右两边交替扫描，直到left = right
+            // 从左右两边交替扫描，直到left = right
             while(left != right) {
                 while(left < right && nums[right] >= temp) {
                     right--;
