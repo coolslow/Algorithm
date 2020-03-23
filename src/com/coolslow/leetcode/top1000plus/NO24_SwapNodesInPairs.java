@@ -45,4 +45,37 @@ public class NO24_SwapNodesInPairs {
 
         return secondNode;
     }
+
+    /**
+     * 方法二：迭代
+     *
+     * 将链表分成两部分：奇数节点为一部分；偶数节点为另一部分。
+     *
+     * 复杂度分析：
+     *  - 时间复杂度：O(N)
+     *  - 空间复杂度：O(1)
+     *
+     */
+    public static ListNode swapPairsWithIteration(ListNode head) {
+        // 将dummy node 看作输入链表的前一个节点
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+
+        ListNode prevNode = dummy;
+
+        while(head != null && head.next != null) {
+            ListNode firstNode = head;
+            ListNode secondNode = head.next;
+
+            // 交换节点
+            prevNode.next = secondNode;
+            firstNode.next = secondNode.next;
+            secondNode.next = firstNode;
+
+            prevNode = firstNode;
+            head = firstNode.next;
+        }
+
+        return dummy.next;
+    }
 }
