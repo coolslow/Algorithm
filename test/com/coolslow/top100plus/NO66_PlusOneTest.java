@@ -1,10 +1,8 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO66_PlusOne;
+import com.coolslow.leetcode.top1000plus.NO66_PlusOne;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class NO66_PlusOneTest {
 

@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO137_SingleNumberII;
+import com.coolslow.leetcode.top1000plus.NO137_SingleNumberII;
 import org.junit.Assert;
 import org.junit.Test;
 

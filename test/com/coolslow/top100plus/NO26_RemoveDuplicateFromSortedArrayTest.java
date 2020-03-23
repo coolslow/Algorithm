@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO26_RemoveDuplicateFromSortedArray;
+import com.coolslow.leetcode.top1000plus.NO26_RemoveDuplicateFromSortedArray;
 import org.junit.Assert;
 import org.junit.Test;
 

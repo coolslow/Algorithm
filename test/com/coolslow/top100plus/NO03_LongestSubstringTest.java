@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.playground.NO03_LongestSubstringPlayground;
+import com.coolslow.leetcode.top1000plus.playground.NO03_LongestSubstringPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 

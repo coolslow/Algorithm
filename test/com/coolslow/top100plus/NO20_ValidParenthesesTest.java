@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO20_ValidParentheses;
+import com.coolslow.leetcode.top1000plus.NO20_ValidParentheses;
 import org.junit.Assert;
 import org.junit.Test;
 

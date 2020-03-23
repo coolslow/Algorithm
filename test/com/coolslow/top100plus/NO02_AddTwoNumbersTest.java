@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.datastructure.ListNode;
+import com.coolslow.leetcode.top1000plus.datastructure.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO48_RotateImage;
-import org.junit.Assert;
+import com.coolslow.leetcode.top1000plus.NO48_RotateImage;
 import org.junit.Test;
 
 import java.util.Arrays;

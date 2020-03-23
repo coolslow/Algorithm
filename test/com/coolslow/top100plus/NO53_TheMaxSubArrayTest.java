@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO53_TheMaxSubArray;
+import com.coolslow.leetcode.top1000plus.NO53_TheMaxSubArray;
 import org.junit.Assert;
 import org.junit.Test;
 

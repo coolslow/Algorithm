@@ -1,6 +1,6 @@
 package com.coolslow.top100plus;
 
-import com.coolslow.leetcode.top100plus.NO11_ContainerWithMostWater;
+import com.coolslow.leetcode.top1000plus.NO11_ContainerWithMostWater;
 import org.junit.Assert;
 import org.junit.Test;
 
