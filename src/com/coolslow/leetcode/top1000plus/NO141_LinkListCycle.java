@@ -48,9 +48,12 @@ public class NO141_LinkListCycle {
         ListNode slow = head;
         ListNode fast = head.next;
         while (slow != fast) {
+            // 快指针到达链表尾端的情况
             if (fast == null || fast.next == null) {
                 return false;
             }
+
+            // 否则，继续按快指针一次走两步，慢指针一次走一步的方式循环
             slow = slow.next;
             fast = fast.next.next;
         }
