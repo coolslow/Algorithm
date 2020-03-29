@@ -37,7 +37,8 @@ public class NO141_LinkListCycle {
 
     /**
      * 解法二：双指针
-     *
+     * 思路：通过使用具有不同速度的 快、慢两个指针遍历链表，空间复杂度可以被降低至O(1)。慢指针每次移动一步，而快指针每次移动两步。
+     *      如果列表中不存在环，最终快指针将会最先到达尾部，此时，可以返回 false。
      *
      */
     public boolean hasCycleWithTwoPointers(ListNode head) {
