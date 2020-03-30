@@ -36,7 +36,7 @@ public class NO707_DesignLinkedList {
     /**
      * 单链表结构定义
      */
-    public class SingleListNode {
+    class SingleListNode {
         int val;
         SingleListNode next;
         public SingleListNode(int x) {
@@ -48,9 +48,71 @@ public class NO707_DesignLinkedList {
         int size;
         SingleListNode head; // 将哨兵节点作为伪头节点
 
+        // 构造函数
         public MyLinkedList() {
+            // 初始化链表长度为0
             size = 0;
+            // 初始化链表头（哑节点）
             head = new SingleListNode(0);
+        }
+
+        // 获取下标为index的链表对应的节点的值
+        public int get(int index) {
+            if(index < 0 || index >= size) {
+                return -1;
+            }
+
+            SingleListNode curr = head;
+
+            for(int i = 0; i < index + 1; i++) {
+                curr = curr.next;
+            }
+
+            return curr.val;
+        }
+
+        public void addAtHead(int val) {
+            addAtIndex(0, val);
+        }
+
+        public void addAtTail(int val) {
+            addAtIndex(size, val);
+        }
+
+        // 添加指定下标的链表元素
+        public void addAtIndex(int index, int val) {
+            if (index > size) {
+                return;
+            }
+
+            if (index < 0) {
+                index = 0;
+            }
+
+            size++;
+            SingleListNode pred = head;
+            for(int i = 0; i < index; i++) {
+                pred = pred.next;
+            }
+
+            SingleListNode toAdd = new SingleListNode(val);
+            toAdd.next = pred.next;
+            pred.next = toAdd;
+        }
+
+        // 删除指定下标的链表元素
+        public void deleteAtIndex(int index) {
+            if(index < 0 || index >= size) {
+                return;
+            }
+
+            size--;
+            SingleListNode pred = head;
+            for(int i = 0; i < index; i++) {
+                pred = pred.next;
+            }
+
+            pred.next = pred.next.next;
         }
     }
 }
