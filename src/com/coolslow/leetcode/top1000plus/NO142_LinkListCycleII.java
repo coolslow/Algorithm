@@ -43,14 +43,14 @@ public class NO142_LinkListCycleII {
      * @return 返回链表入环的节点
      */
     public static ListNode detectCycle(ListNode head) {
-        Set<ListNode> visted = new HashSet<>();
+        Set<ListNode> visited = new HashSet<>();
 
         ListNode node = head;
         while(node != null) {
-            if(visted.contains(node)) {
+            if(visited.contains(node)) {
                 return node;
             }
-            visted.add(node);
+            visited.add(node);
             node = node.next;
         }
 
