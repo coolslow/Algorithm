@@ -22,7 +22,7 @@ public class NO141_LinkListCycle {
      * - 时间复杂度O(n)，对于含有n个元素的链表，访问每个元素最多一次，添加一个节点到哈希表只需花费O(1)的时间。
      * - 空间复杂度O(n)，空间取决于添加到哈希表中的元素数目，最多可添加n个元素。
      */
-    public boolean hasCycleWithHashSet(ListNode head) {
+    public static boolean hasCycleWithHashSet(ListNode head) {
         Set<ListNode> nodesSeen = new HashSet<>();
         while (head != null) {
             if (nodesSeen.contains(head)) {
