@@ -21,13 +21,19 @@ public class NO206_ReverseLinkList {
      * 空间复杂度：O(1)
      */
     public static ListNode reverseLinkedList(ListNode head) {
+        // 声明一个null节点
         ListNode prev = null;
+        // 声明一个curr节点，将curr节点指向传入的head链表的表头
         ListNode curr = head;
 
         while(curr != null) {
+            // 存储头节点的下一个节点的信息
             ListNode nextTemp = curr.next;
+            // 当前节点的下一个节点（这里当curr.next指第一个节点的下一个节点，从头节点开始那么它必然指向null）
             curr.next = prev;
+            // 用prev来存储之前的头节点
             prev = curr;
+            // 将当前节点设置为之前存储的第二个节点，实现链表指向的反转
             curr = nextTemp;
         }
 
@@ -36,7 +42,6 @@ public class NO206_ReverseLinkList {
 
     /**
      * 解法二：递归
-     *
      *
      */
     public static ListNode reverseLinkedListWithRecursive(ListNode head) {
