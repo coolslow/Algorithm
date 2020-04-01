@@ -1,4 +1,4 @@
-package com.coolslow.top100plus;
+package com.coolslow.top1000plus;
 
 import com.coolslow.leetcode.top1000plus.NO01_TwoSum;
 import com.coolslow.leetcode.top1000plus.playground.NO01_TwoSumPlayground;

@@ -1,4 +1,4 @@
-package com.coolslow.top100plus;
+package com.coolslow.top1000plus;
 
 import com.coolslow.leetcode.top1000plus.NO292_ValidAnagram;
 import org.junit.Assert;
