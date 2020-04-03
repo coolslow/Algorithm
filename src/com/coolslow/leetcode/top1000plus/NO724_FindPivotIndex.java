@@ -28,7 +28,11 @@ public class NO724_FindPivotIndex {
     /**
      * 方法：前缀和
      * 算法：S 是数组的和，当索引 i 是中心索引时，位于 i 左边数组元素的和 leftsum 满足 S - nums[i] - leftsum。
-     *      只需要判断当前索引 i 是否满足 leftsum==S-nums[i]-leftsum 并动态计算 leftsum 的值。
+     *      只需要判断当前索引 i 是否满足 leftsum == S - nums[i] - leftsum 并动态计算 leftsum 的值。
+     *
+     *
+     * 时间复杂度：O(N)，其中 N 是 nums 的长度。
+     * 空间复杂度：O(1)，使用了 S 和 leftsum 两个变量。
      *
      * @param nums 给定的数组
      * @return 返回满足条件的索引，不满足则返回 -1
