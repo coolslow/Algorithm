@@ -52,9 +52,11 @@ public class NO21_MergeTwoSortedLinkList {
      * @return 合并后的链表
      */
     public ListNode mergeTwoListIteration(ListNode l1, ListNode l2) {
+        // 设置一个哨兵节点
         ListNode prehead = new ListNode(-1);
-
+        // 维护一个prev指针，将prev指针指向prehead节点
         ListNode prev = prehead;
+
         while (l1 != null && l2 != null) {
             if(l1.val <= l2.val) {
                 prev.next = l1;
