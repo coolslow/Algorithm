@@ -14,10 +14,10 @@ import java.util.List;
  * 输出:
  * [
  *      [1],
- *     [1,1],
- *    [1,2,1],
- *   [1,3,3,1],
- *  [1,4,6,4,1]
+ *     [1, 1],
+ *    [1, 2, 1],
+ *   [1, 3, 3, 1],
+ *  [1, 4, 6, 4, 1]
  * ]
  *
  */
@@ -28,9 +28,11 @@ public class NO118_PascalsTriangle {
         if(numRows == 0){
             return triangle;
         }
+        // 先添加第一行
         triangle.add(new ArrayList<>());
         triangle.get(0).add(1);
 
+        // 添加第一行以外的其他行
         for(int rowNum = 1; rowNum < numRows; rowNum++) {
             List<Integer> row = new ArrayList<>();
             List<Integer> prevRow = triangle.get(rowNum - 1);
