@@ -44,13 +44,14 @@ public class NO61_RotateLinkList {
             return head;
         }
 
-        // 将链表合为一个闭环
         ListNode oldTail = head;
+        // 获取链表的长度
         int n;
         for(n = 1; oldTail.next != null; n++) {
             oldTail = oldTail.next;
         }
 
+        // 将链表合为一个闭环
         oldTail.next = head;
 
         // 找到新的链表表尾 : (n - k % n - 1)th node
