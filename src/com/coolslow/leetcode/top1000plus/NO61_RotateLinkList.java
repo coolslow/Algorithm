@@ -37,6 +37,10 @@ public class NO61_RotateLinkList {
      * 新链表的表头在：n - k 的位置。其中 n 表示链表中节点的个数。新的链表表为就在头的前面，位于位置：n - k - 1。
      *
      * [Q]：但是，如果 k >= n 该如何处理呢？[A]：可以采用 k % n的方式
+     *
+     * 时间复杂度：O(N)，其中 N 是链表中的元素个数
+     * 空间复杂度：O(1)，因为只需要常数的空间
+     *
      */
     public static ListNode rotateLinkList(ListNode head, int k) {
         // 考虑基本情况
