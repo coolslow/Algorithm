@@ -21,19 +21,22 @@ import java.util.Arrays;
 public class NO16_ClosestThreeSum {
 
     public static int threeClosestNumSum(int[] nums, int target) {
+        // 先对数组进行排序
         Arrays.sort(nums);
-
+        // 假设前三个数（数组下标为0，1，2）的和与目标target值最接近
         int ans = nums[0] + nums[1] + nums[2];
 
         for(int i = 0; i < nums.length; i++) {
+            // 下标从1开始
             int start = i + 1, end = nums.length - 1;
 
             while(start < end) {
                 int sum = nums[start] + nums[end] + nums[i];
+                // 表示sum的和比ans更加接近，则把sum的值赋给ans
                 if(Math.abs(target - sum) < Math.abs(target - ans)) {
                     ans = sum;
                 }
-
+                // 这里需要基于已经排好序的数组考虑，如果sum > target，那么需要end指针向前，以缩小三数之和与target的差距
                 if(sum > target) {
                     end--;
                 } else if(sum < target) {
