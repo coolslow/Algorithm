@@ -39,7 +39,9 @@ public class NO16_ClosestThreeSum {
                 // 这里需要基于已经排好序的数组考虑，如果sum > target，那么需要end指针向前，以缩小三数之和与target的差距
                 if(sum > target) {
                     end--;
-                } else if(sum < target) {
+                }
+                // sum < target的情况
+                else if(sum < target) {
                     start++;
                 } else {
                     return ans;
