@@ -19,11 +19,27 @@ package com.coolslow.leetcode.top1000plus;
  * a) I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
  * b) X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。
  * c) C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+ *
+ * 注意：给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。
+ *
  */
 public class NO12_IntegerToRoman {
 
     public static String intToRoman(int num) {
 
-        return "";
+        int nums[] = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+        StringBuilder stringBuilder = new StringBuilder();
+        int index = 0;
+        while(index < 13) {
+            while (num >= nums[index]) {
+                stringBuilder.append(romans[index]);
+                num -= nums[index];
+            }
+            index++;
+        }
+
+        return stringBuilder.toString();
     }
 }
