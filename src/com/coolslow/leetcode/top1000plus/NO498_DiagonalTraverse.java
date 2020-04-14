@@ -20,9 +20,9 @@ public class NO498_DiagonalTraverse {
             return new int[0];
         }
 
-        // 获取matrix的长度（矩阵高度）
+        // 获取matrix的长度（矩阵高度 - 列）
         int n = matrix.length;
-        // 获取matrix每个数组的长度（矩阵宽度）
+        // 获取matrix每个数组的长度（矩阵宽度 - 行）
         int m = matrix[0].length;
 
         int row = 0, column = 0;
