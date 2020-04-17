@@ -111,5 +111,31 @@ public class NO50_Powx_N {
         }
     }
 
+    /**
+     * 解法三：快速幂算法（循环）
+     *
+     * 思路：使用公式：X^(a + b) = X^a * X^b。因此，我们可以将 n 看作一系列正整数之和。
+     *
+     * 时间复杂度O(logn)，对每一个 n 的二进制位表示，我们都至多需要累乘 1 次，所以总的时间复杂度为 O(logn)
+     * 空间复杂度O(1)。我们只需要用到2个变量量保存当前的乘积和最终结果。
+     */
+    public static double myFastPow(double x, int n) {
+        long num = n;
+        if(num < 0) {
+            x = 1/x;
+            num = -num;
+        }
 
+        double ans = 1;
+        double currentProduct = x;
+
+        for(long i = num; i > 0;i /= 2) {
+            if((i%2) == 1) {
+                ans = ans * currentProduct;
+            }
+            currentProduct = currentProduct * currentProduct;
+        }
+
+        return ans;
+    }
 }

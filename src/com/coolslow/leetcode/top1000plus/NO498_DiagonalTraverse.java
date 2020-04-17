@@ -24,7 +24,7 @@ public class NO498_DiagonalTraverse {
         int[] r = new int[m*n];
         int row = 0, clo = 0;
         // 总数量确定，根据总数量循环获取
-        for(int i = 0;i < r.length; i++){
+        for(int i = 0; i < r.length; i++){
             r[i] = matrix[row][clo];
             // 根据下标索引之和来确认下一个元素
             if((row + clo) % 2 == 0 ){
