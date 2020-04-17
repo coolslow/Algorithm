@@ -16,38 +16,38 @@ package com.coolslow.leetcode.top1000plus;
 public class NO498_DiagonalTraverse {
 
     public static int[] findDiagonalOrder(int[][] matrix) {
-        if(matrix == null || matrix.length==0){
+        if (matrix == null || matrix.length == 0) {
             return new int[0];
         }
+
         int m = matrix.length;
         int n = matrix[0].length;
-        int[] r = new int[m*n];
-        int row = 0, clo = 0;
-        // 总数量确定，根据总数量循环获取
-        for(int i = 0; i < r.length; i++){
-            r[i] = matrix[row][clo];
-            // 根据下标索引之和来确认下一个元素
-            if((row + clo) % 2 == 0 ){
-                if(clo == n-1){
+        int[] result = new int[m * n];
+        int row = 0, column = 0;
+
+        for(int i = 0; i < result.length; i++) {
+            result[i] = matrix[row][column];
+            if ((row + column) %2 == 0) {
+                if (column == n -1) {
                     row++;
-                }else if(row == 0){
-                    clo++;
-                }else{
+                } else if(row == 0) {
+                    column++;
+                } else {
                     row--;
-                    clo++;
+                    column++;
                 }
-            }else{
-                if(row == m - 1){
-                    clo++;
-                }else if(clo == 0){
+            } else {
+                if (row == m - 1) {
+                    column++;
+                } else if (column ==0) {
                     row++;
-                }else{
+                } else {
                     row++;
-                    clo--;
+                    column--;
                 }
             }
         }
-        return r;
+        return result;
 
 
 //        if (matrix == null || matrix.length == 0) {
