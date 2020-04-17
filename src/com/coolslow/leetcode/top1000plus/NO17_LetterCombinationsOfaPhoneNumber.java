@@ -22,6 +22,9 @@ import static javax.swing.UIManager.put;
  *
  * 说明:
  * 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
+ *
+ * 时间复杂度：O(3^N * 4^M)，其中 N 是输入数字中对应 3 个字母的数目（比方说 2，3，4，5，6，8）， M 是输入数字中对应 4 个字母的数目（比方说 7，9），N+M 是输入数字的总数
+ * 空间复杂度：O(3^N * 4^M)，这是因为需要保存 (3^N + 4^M) 个结果
  */
 public class NO17_LetterCombinationsOfaPhoneNumber {
 
