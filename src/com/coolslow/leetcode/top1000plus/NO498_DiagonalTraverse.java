@@ -22,12 +22,12 @@ public class NO498_DiagonalTraverse {
         int m = matrix.length;
         int n = matrix[0].length;
         int[] r = new int[m*n];
-        int row = 0,clo = 0;
+        int row = 0, clo = 0;
         // 总数量确定，根据总数量循环获取
-        for(int i=0;i< r.length;i++){
+        for(int i = 0;i < r.length; i++){
             r[i] = matrix[row][clo];
             // 根据下标索引之和来确认下一个元素
-            if((row+clo) % 2 == 0 ){
+            if((row + clo) % 2 == 0 ){
                 if(clo == n-1){
                     row++;
                 }else if(row == 0){
@@ -37,7 +37,7 @@ public class NO498_DiagonalTraverse {
                     clo++;
                 }
             }else{
-                if(row == m-1){
+                if(row == m - 1){
                     clo++;
                 }else if(clo == 0){
                     row++;
