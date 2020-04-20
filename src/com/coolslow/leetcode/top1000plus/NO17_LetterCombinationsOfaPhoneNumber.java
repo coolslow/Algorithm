@@ -29,13 +29,16 @@ import static javax.swing.UIManager.put;
 public class NO17_LetterCombinationsOfaPhoneNumber {
 
     public List<String> letterCombinations(String digits) {
-        if (digits.length() != 0)
+        if (digits.length() != 0) {
             backTrack("", digits);
+        }
         return output;
     }
 
-    // 创建数字与字母间的Mapping关系
-    Map<String, String> phone = new HashMap<String, String>() {{
+    /**
+     * 创建数字与字母间的Mapping关系
+     */
+    Map<String, String> phone = new HashMap<>() {{
         put("2", "abc");
         put("3", "def");
         put("4", "ghi");
@@ -46,7 +49,9 @@ public class NO17_LetterCombinationsOfaPhoneNumber {
         put("9", "wxyz");
     }};
 
-    // 声明一个待输出的List<String>
+    /**
+     * 声明一个待输出的List<String>
+     */
     List<String> output = new ArrayList<>();
 
     private void backTrack(String combination, String nextDigits) {
