@@ -1,4 +1,4 @@
-package com.coolslow.top1000plus;
+package com.coolslow.leetcode.top1000plus;
 
 /**
  * 344. 反转字符串
@@ -8,18 +8,17 @@ package com.coolslow.top1000plus;
  * 你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。
  *
  * 示例 1：
- *
  *  输入：["h","e","l","l","o"]
  *  输出：["o","l","l","e","h"]
  *
  * 示例 2：
- *
  *  输入：["H","a","n","n","a","h"]
  *  输出：["h","a","n","n","a","H"]
  *
  */
 public class NO344_ReverseString {
 
+    /** 方法一：双指针 */
     public static void reverseString(char[] s) {
         int start = 0, end = s.length - 1;
 
