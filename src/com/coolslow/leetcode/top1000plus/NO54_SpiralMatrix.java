@@ -54,9 +54,9 @@ public class NO54_SpiralMatrix {
             return ans;
         }
 
-        // 设置行的起始和结束的初始下标
+        // 设置行的起始和结束的初始下标(从上到下)
         int r1 = 0, r2 = matrix.length - 1;
-        // 设置列的起始和结束的初始下标
+        // 设置列的起始和结束的初始下标(从左到右)rccr
         int c1 = 0, c2 = matrix[0].length - 1;
 
         while(r1 <= r2 && c1 <= c2) {
