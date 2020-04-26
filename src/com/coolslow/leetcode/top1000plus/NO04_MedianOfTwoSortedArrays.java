@@ -94,4 +94,18 @@ public class NO04_MedianOfTwoSortedArrays {
             return nums[count / 2];
         }
     }
+
+    /**
+     * 解法三：
+     * 上边的思路，时间复杂度都达不到题目的要求 O(log(m+n))，看到log,很明显，需要用到二分法解决该类问题。
+     * 题目是求中位数，实际上是求第k小或第k大数的一种特殊情况
+     *
+     *
+     * @param nums1 给定的第一个数组
+     * @param nums2 给定的第二个数组
+     * @return 返回两个有序数组的中位数
+     */
+//    public static double findMedianSortedArraysTheBestMethod(int[] nums1, int[] nums2) {
+//
+//    }
 }
