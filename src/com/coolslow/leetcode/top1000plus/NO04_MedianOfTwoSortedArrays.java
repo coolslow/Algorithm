@@ -28,27 +28,14 @@ public class NO04_MedianOfTwoSortedArrays {
      * 解法一：暴力解法
      * 先将两个数组合并，两个有序数组的合并也是归并排序中的一部分。然后根据数组长度是奇数还是偶数，返回中位数。
      *
+     * 时间复杂度：O(m + n) 因为遍历的全部数组
+     * 空间复杂度：O(m + n) 用于爆粗合并后的两个数组
+     *
      * @param nums1 给定的第一个数组
      * @param nums2 给定的第二个数组
      * @return 返回两个有序数组的中位数
      */
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-
-//        int len1 = nums1.length;
-//        int len2 = nums2.length;
-//
-//        // 确保len1的长度小于len2的长度
-//        if(len1 > len2) {
-//            int[] temp = nums1;
-//            nums1 = nums2;
-//            nums2 = temp;
-//        }
-//
-//        int iMin = 0, iMax = len1, halfLen = (len1 + len2 + 1) / 2;
-//        while(iMin <= iMax) {
-//            int i = (iMin + iMax) / 2;
-//            int j = halfLen - i;
-//        }
 
         int m = nums1.length, n = nums2.length;
 
@@ -78,6 +65,33 @@ public class NO04_MedianOfTwoSortedArrays {
             }
         }
 
-        return 0.0;
+        // 开始处理两个数组长度均不为0的情况
+        int count = 0, i = 0, j = 0;
+        while( count != (m + n)) {
+            if(i == m) {
+                while(j != n) {
+                    nums[count++] = nums2[j++];
+                }
+                break;
+            }
+            if(j == n) {
+                while(i != m) {
+                    nums[count++] = nums1[i++];
+                }
+                break;
+            }
+
+            if(nums1[i] < nums2[j]) {
+                nums[count++] = nums1[i++];
+            } else {
+                nums[count++] = nums2[j++];
+            }
+        }
+
+        if(count % 2 == 0) {
+            return (nums[count/2 - 1] + nums[count/2]) / 2.0;
+        } else {
+            return nums[count / 2];
+        }
     }
 }
