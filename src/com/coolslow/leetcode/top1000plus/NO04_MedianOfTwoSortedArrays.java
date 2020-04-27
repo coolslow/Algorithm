@@ -67,7 +67,7 @@ public class NO04_MedianOfTwoSortedArrays {
 
         // 开始处理两个数组长度均不为0的情况
         int count = 0, i = 0, j = 0;
-        while( count != (m + n)) {
+        while(count != (m + n)) {
             if(i == m) {
                 while(j != n) {
                     nums[count++] = nums2[j++];
@@ -94,4 +94,9 @@ public class NO04_MedianOfTwoSortedArrays {
             return nums[count / 2];
         }
     }
+
+    /**
+     * 解法四：
+     */
+
 }
