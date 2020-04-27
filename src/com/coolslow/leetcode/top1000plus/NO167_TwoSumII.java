@@ -18,8 +18,8 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO167_TwoSumII {
     
-    public int[] twoSum(int[] numbers, int target) {
-        if(numbers.length == 0 || numbers == null) {
+    public static int[] twoSum(int[] numbers, int target) {
+        if(numbers == null || numbers.length == 0) {
             return new int[] {};
         }
 
