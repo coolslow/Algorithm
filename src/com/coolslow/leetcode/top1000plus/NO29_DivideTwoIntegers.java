@@ -18,8 +18,11 @@ package com.coolslow.leetcode.top1000plus;
  *  输出: -2
  *  解释: 7/-3 = truncate(-2.33333..) = -2
  *
+ *
+ * 提示：
+ *   - 被除数和除数均为 32 位有符号整数。
+ *   - 除数不为 0。
+ *   - 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−2^31,  2^31 − 1]。本题中，如果除法结果溢出，则返回 2^31 − 1。
  */
-
-@Deprecated
 public class NO29_DivideTwoIntegers {
 }
