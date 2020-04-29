@@ -26,18 +26,28 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO29_DivideTwoIntegers {
 
+    /**
+     * 算法思路：泰勒展开式
+     * 这个相当于是2的幂次的展开，任何一个数K可以被表示为：K = b0 * 2^0 + b1 * 2^1 + b2 * 2^2 + ... + bn * 2^n + ...
+     *
+     * @param dividend 被除数
+     * @param divisor 除数
+     * @return 返回被除数 dividend 除以 divisor 得到的商
+     */
     public static int divide(int dividend, int divisor) {
         boolean sign = (dividend > 0) ^ (divisor > 0);
         int result = 0;
 
+        // 将被除数转为负数
         if(dividend > 0) {
             dividend = -dividend;
         }
-
+        // 将除数转为负数
         if(divisor > 0) {
             divisor = -divisor;
         }
 
+        // 在被除数小于除数的情况下（一个负数小于另外一个负数，则 dividend 的绝对值比 divisor 的绝对值大
         while(dividend <= divisor) {
             int temp_result = -1;
             int temp_divisor = divisor;
