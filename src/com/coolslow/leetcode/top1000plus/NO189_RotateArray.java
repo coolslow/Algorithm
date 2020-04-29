@@ -34,7 +34,10 @@ package com.coolslow.leetcode.top1000plus;
 public class NO189_RotateArray {
 
     /**
-     * 暴力解法，时间复杂度O(n^2)
+     * 暴力解法
+     * 时间复杂度O(n*k)。每个元素都被移动1步O(n), k次O(k)。
+     * 空间复杂度O(1)，没有额外空间被使用
+     *
      * @param nums 输入的数组
      * @param k 指定的下标k
      * @return 返回一个旋转后的数组
@@ -53,7 +56,9 @@ public class NO189_RotateArray {
     }
 
     /**
-     * 利用额外的数组，时间复杂度O(n)，空间复杂度O(n)
+     * 方法二：利用额外的数组
+     * 时间复杂度O(n)，空间复杂度O(n)
+     *
      * @param nums 输入的数组
      * @param k 指定的下标k
      * @return 返回一个旋转后的数组
@@ -65,9 +70,10 @@ public class NO189_RotateArray {
         }
 
         // TODO 数组赋值可优化
-        for(int i = 0; i < nums.length; i++) {
-            nums[i] = a[i];
-        }
+//        for(int i = 0; i < nums.length; i++) {
+//            nums[i] = a[i];
+//        }
+        System.arraycopy(a, 0, nums, 0, nums.length);
 
         return nums;
     }
@@ -75,7 +81,7 @@ public class NO189_RotateArray {
     /**
      * 循环替换：
      * 我们可以将数组中的每一个数值直接放置所需的正确位置上。但这样做会破坏原来的数组。
-     * 因此，需要将替换的数字存储在temp变量中。然后，我们可以将替换的数字（temp）放置在正确的位置上，一次类推。
+     * 因此，需要将替换的数字存储在temp变量中。然后，我们可以将替换的数字（temp）放置在正确的位置上，以此类推。
      * 执行n次，n的大小为数组的长度。
      * @param nums 输入的数组
      * @param k 输入的数组
