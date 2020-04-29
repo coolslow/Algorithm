@@ -37,4 +37,32 @@ public class NO27_RemoveElementFromArray {
         }
         return count;
     }
+
+    /**
+     * 双指针法 - 当要删除的元素很少时
+     * 思路：
+     * 现在要考虑的是数组有很少要删除的元素个数情况。例如，num = [1，2，3，5，4]，val = 4
+     * 之前的算法会对前四个元素做不必要的复制操作。另一个例子是 num = [4，1，2，3，5]，val = 4。
+     * 似乎没有必要将 [1，2，3，5]这几个元素左移一步，因为问题描述中提到元素的顺序可以更改。
+     *
+     * 算法：当我们遇到 nums[i] = val 时，我们可以将当前元素与最后一个元素进行交换，并释放最后一个元素。这实际上使数组的大小减少了 1。
+     *
+     * @param nums 给定的数组
+     * @param val 给定的目标值
+     * @return 返回移除后新数组的长度
+     */
+    public static int removeElementWithTwoPointers(int[] nums, int val) {
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[n - 1];
+                // reduce array size by one
+                n--;
+            } else {
+                i++;
+            }
+        }
+        return n;
+    }
 }
