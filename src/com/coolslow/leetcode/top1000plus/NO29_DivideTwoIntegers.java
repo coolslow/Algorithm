@@ -29,6 +29,7 @@ public class NO29_DivideTwoIntegers {
     /**
      * 算法思路：泰勒展开式
      * 这个相当于是2的幂次的展开，任何一个数K可以被表示为：K = b0 * 2^0 + b1 * 2^1 + b2 * 2^2 + ... + bn * 2^n + ...
+     * https://leetcode-cn.com/problems/divide-two-integers/solution/zhi-xing-shi-jian-1msji-bai-100-by-luca-zhao/
      *
      * @param dividend 被除数
      * @param divisor 除数
