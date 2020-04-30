@@ -35,7 +35,9 @@ public class NO29_DivideTwoIntegers {
      * @return 返回被除数 dividend 除以 divisor 得到的商
      */
     public static int divide(int dividend, int divisor) {
+        // 根据除数和被除数是否大于0来设置返回结果的标记
         boolean sign = (dividend > 0) ^ (divisor > 0);
+        // 设置返回的商的默认值为0
         int result = 0;
 
         // 将被除数转为负数
@@ -49,18 +51,18 @@ public class NO29_DivideTwoIntegers {
 
         // 在被除数小于除数的情况下（一个负数小于另外一个负数，则 dividend 的绝对值比 divisor 的绝对值大
         while(dividend <= divisor) {
-            int temp_result = -1;
-            int temp_divisor = divisor;
+            int tempResult = -1;
+            int tempDivisor = divisor;
 
-            while(dividend <= (temp_divisor << 1)) {
-                if(temp_divisor <= (Integer.MIN_VALUE >> 1)){
+            while(dividend <= (tempDivisor << 1)) {
+                if(tempDivisor <= (Integer.MIN_VALUE >> 1)){
                     break;
                 }
-                temp_result = temp_result << 1;
-                temp_divisor = temp_divisor << 1;
+                tempResult = tempResult << 1;
+                tempDivisor = tempDivisor << 1;
             }
-            dividend = dividend - temp_divisor;
-            result += temp_result;
+            dividend = dividend - tempDivisor;
+            result += tempResult;
         }
         if(!sign) {
             if(result <= Integer.MIN_VALUE) {
