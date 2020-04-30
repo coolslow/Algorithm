@@ -55,6 +55,8 @@ public class NO29_DivideTwoIntegers {
             int tempDivisor = divisor;
 
             while(dividend <= (tempDivisor << 1)) {
+                // tempDivisor 不能比 Integer.MIN_VALUE >> 1 即：-1073741824 小
+                // 因为，如果比它还小，那么<< 1就会越界
                 if(tempDivisor <= (Integer.MIN_VALUE >> 1)){
                     break;
                 }
