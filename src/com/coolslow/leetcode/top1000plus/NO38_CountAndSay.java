@@ -29,4 +29,38 @@ package com.coolslow.leetcode.top1000plus;
  *
  */
 public class NO38_CountAndSay {
+
+    /**
+     * 递归解法
+     * @param n 给定的整数 n，(1 <= n <= 30)
+     * @return 返回String类型的对给定n的上一个数字的描述
+     */
+    public static String countAndSay(int n) {
+        // 声明一个StringBuilder来保存输出的字符串
+        StringBuilder sb = new StringBuilder();
+
+        int p1 = 0, cur = 1;
+        if(n == 1) {
+            return "1";
+        }
+
+        String str = countAndSay(n - 1);
+        for(cur = 1; cur < str.length(); cur++) {
+            if(str.charAt(p1) != str.charAt(cur)) {
+                int count = cur - p1;
+                sb.append(count).append(str.charAt(p1));
+                p1 = cur;
+            }
+        }
+
+//        if(p1 != cur) {
+//            int count = cur - p1;
+//            sb.append(count).append(str.charAt(p1));
+//        }
+
+        int count = cur - p1;
+        sb.append(count).append(str.charAt(p1));
+
+        return sb.toString();
+    }
 }
