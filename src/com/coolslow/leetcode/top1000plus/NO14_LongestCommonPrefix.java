@@ -19,7 +19,7 @@ package com.coolslow.leetcode.top1000plus;
  * 说明：
  *      所有输入只包含小写字母 a-z
  */
-class NO14_LongestCommonPrefix {
+public class NO14_LongestCommonPrefix {
 
     /**
      * 方法一：水平扫描法
