@@ -103,6 +103,8 @@ public class NO119_PascalsTriangleII {
     private static int combination(int n, int k) {
         long res = 1;
         for (int i = 1; i <= k; i++) {
+            // 这里就是记住公式的推导
+            // n!/(k! * (n - k)!) = (n - k + 1)!/k!
             res = res * (n - k + i) / i;
         }
 
