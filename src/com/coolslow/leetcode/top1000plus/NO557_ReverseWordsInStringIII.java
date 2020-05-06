@@ -67,7 +67,8 @@ public class NO557_ReverseWordsInStringIII {
             }
         }
         words.add(sb.toString());
-        return words.toArray(new String[words.size()]);
+        int size = words.size();
+        return words.toArray(new String[size]);
     }
 
     private static String reverse(String s) {
