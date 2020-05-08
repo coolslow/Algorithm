@@ -11,7 +11,7 @@ import com.coolslow.leetcode.top1000plus.datastructure.ListNode;
  * 示例：
  *      给定 1->2->3->4, 应该返回 2->1->4->3.
  */
-public class NO24_SwapNodesInPairs {
+public class  NO24_SwapNodesInPairs {
     /**
      * 方法一：递归方法
      *
@@ -41,6 +41,7 @@ public class NO24_SwapNodesInPairs {
 
         // 递归执行节点的两两交换
         firstNode.next = swapPairsNodes(secondNode.next);
+        // 第二个节点的下一个节点指向第一个节点（进行了交换）
         secondNode.next = firstNode;
 
         return secondNode;

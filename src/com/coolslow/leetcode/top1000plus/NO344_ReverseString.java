@@ -53,10 +53,11 @@ public class NO344_ReverseString {
     }
 
     private static void helper(char[] s, int left, int right) {
+        // 初始条件
         if(left >= right) {
             return;
         }
-
+        // 交换头尾
         char tmp = s[left];
         s[left] = s[right];
         s[right] = tmp;
