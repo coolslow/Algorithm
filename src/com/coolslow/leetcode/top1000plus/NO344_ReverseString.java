@@ -18,7 +18,10 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO344_ReverseString {
 
-    /** 方法一：双指针 */
+    /**
+     * 方法一：双指针
+     * @param s 给定的字符串数组
+     */
     public static void reverseString(char[] s) {
         int start = 0, end = s.length - 1;
 
@@ -30,5 +33,37 @@ public class NO344_ReverseString {
             start++;
             end--;
         }
+    }
+
+    /**
+     * 方法二：递归
+     *
+     * 使用递归的办法反转字符串，它是原地反转，但空间复杂度却不是常数级空间，因为递归过程中使用了堆栈空间
+     * 算法：实现一个递归函数helper，它接受两个参数 left 左指针，right 右指针。
+     * - 如果 left >= right，不做任何操作
+     * - 否则交换 s[left] 和 s[right] 和调用 helper(left + 1, right - 1)。
+     *   首次调用函数我们传递首尾指针反转整个字符串 return helper(0, len(s) - 1)。
+     *
+     * 复杂度分析：
+     * 时间复杂度：O(N)。
+     * 空间复杂度：O(N)，递归过程中使用的堆栈空间。
+     */
+    public static void reverseStringWithRecursion(char[] s) {
+        helper(s, 0, s.length - 1);
+    }
+
+    private static void helper(char[] s, int left, int right) {
+        if(left >= right) {
+            return;
+        }
+
+        char tmp = s[left];
+        s[left] = s[right];
+        s[right] = tmp;
+
+        left++;
+        right--;
+
+        helper(s, left, right);
     }
 }
