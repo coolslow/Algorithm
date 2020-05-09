@@ -19,7 +19,7 @@ import java.util.Stack;
 public class NO32_LongestValidParentheses {
 
     /**
-     * 暴力法
+     * 解法一：暴力法
      *
      * 算法：考虑给定字符串中每种可能的非空偶数长度字符串，检查它是否是一个有效括号字符串序列。
      * 为检查有效性，可以使用栈方法。
@@ -59,6 +59,46 @@ public class NO32_LongestValidParentheses {
                 return false;
             }
         }
+        // 检查栈是否为空，为空表示括号是有效的，否则括号无效
         return stack.empty();
+    }
+
+    /**
+     * 解法二：动态规划法
+     *
+     * 也可以通过动态规划解决此类问题。
+     * 定义一个dp数组，其中第i个元素表示以下标为i的自负结尾的最长有效子字符串的长度。
+     * 先将dp数组全部初始化为0。
+     * 可以知道，明显的，有效的子字符串一定以')'结尾。可以进一步得出结论：以'('结尾的子字符串对应的dp数组位置上的值必定为0。
+     * 所以说我们只需要更新')'在 dp 数组中对应位置的值。
+     * 为了求出dp数组，我们每两个字符检查一次，如果满足如下条件：
+     *  1. s[i] = ')' 且 s[i - 1] = '('，也就是字符串形如："......()"，我们可以推出：
+     *          dp[i] = dp[i - 2] + 2
+     *     可以理解为：因为结束部分的"()"是一个有效的子字符串，并且将之前有效子字符串的长度增加了2
+     *  2. s[i] = ')' 且 s[i - 1] = ')'，也就是字符串形如："......))"，我们可以推出：
+     *          dp[i] = dp[i - 1] + dp[i - dp[i - 1] - 2] + 2
+     *
+     * @param s 给定的字符串
+     * @return 返回有效括号的最大长度
+     *
+     * 时间复杂度：O(n)。遍历整个字符串一次，就可以将 dp 数组求出来。
+     * 空间复杂度：O(n)。需要一个大小为 n 的 dp 数组。
+     *
+     */
+    public static int longestValidParenthesesWithDp(String s) {
+        int maxAns = 0;
+        int[] dp = new int[s.length()];
+        for(int i = 1; i < s.length(); i++) {
+            if(s.charAt(i) == ')') {
+                if(s.charAt(i - 1) == '(') {
+                    dp[i] = (i > 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
+                }
+                maxAns = Math.max(maxAns, dp[i]);
+            }
+        }
+
+        return maxAns;
     }
 }
