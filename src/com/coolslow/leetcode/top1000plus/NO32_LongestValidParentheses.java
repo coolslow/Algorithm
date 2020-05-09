@@ -152,6 +152,10 @@ public class NO32_LongestValidParentheses {
      *
      * @param s 给定的字符串
      * @return 返回有效括号的最大长度
+     *
+     * 时间复杂度：O(n)。n是给定字符串的长度。
+     * 空间复杂度：O(1)。
+     *
      */
     public static int longestValidParenthesesWithoutExtraSpace(String s) {
         int left = 0, right = 0, maxLength = 0;
