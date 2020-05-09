@@ -15,8 +15,12 @@ public class NO32_LongestValidParenthesesTest {
         int result3 = NO32_LongestValidParentheses.longestValidParentheses(s3);
         System.out.println(result3);
 
+        int result4 = NO32_LongestValidParentheses.longestValidParenthesesWithDp(s1);
+        int result5 = NO32_LongestValidParentheses.longestValidParenthesesWithDp(s2);
+
         Assert.assertEquals(4, result1);
         Assert.assertEquals(10, result2);
-
+        Assert.assertEquals(4, result4);
+        Assert.assertEquals(10, result5);
     }
 }
