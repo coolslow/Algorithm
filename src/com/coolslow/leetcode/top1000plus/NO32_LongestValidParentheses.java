@@ -155,6 +155,8 @@ public class NO32_LongestValidParentheses {
      */
     public static int longestValidParenthesesWithoutExtraSpace(String s) {
         int left = 0, right = 0, maxLength = 0;
+
+        // 从左到右遍历String
         for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '(') {
                 left++;
@@ -169,6 +171,8 @@ public class NO32_LongestValidParentheses {
         }
 
         left = right = 0;
+
+        // 从右到左再遍历一遍String
         for(int i = s.length() - 1; i >= 0; i--) {
             if(s.charAt(i) == '(') {
                 left++;
