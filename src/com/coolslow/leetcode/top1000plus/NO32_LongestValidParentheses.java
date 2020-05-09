@@ -165,7 +165,7 @@ public class NO32_LongestValidParentheses {
             }
             if(left == right) {
                 maxLength = Math.max(maxLength, 2 * right);
-            } else if (right >= left) {
+            } else if (right > left) {
                 left = right = 0;
             }
         }
@@ -181,7 +181,7 @@ public class NO32_LongestValidParentheses {
             }
             if(left == right) {
                 maxLength = Math.max(maxLength, 2 * left);
-            } else if ( left >= right) {
+            } else if ( left > right) {
                 left = right = 0;
             }
         }
