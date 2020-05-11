@@ -101,11 +101,8 @@ public class NO42_TrappingRainWater {
         return sum;
     }
 
-
-
-
     /**
-     * 解法一：动态规划法
+     * 解法三：动态规划法
      *
      * 时间复杂度：O(n)
      * 空间负载度：O(n)
@@ -128,6 +125,49 @@ public class NO42_TrappingRainWater {
             int min = Math.min(max_left[i], max_right[i]);
             if (min > height[i]) {
                 sum = sum + (min - height[i]);
+            }
+        }
+        return sum;
+    }
+
+    /**
+     * 解法四：双指针
+     *
+     * 时间复杂度：O(n)
+     * 空间负载度：O(1)
+     *
+     * @param height 给出的表征柱子的非负数数组
+     * @return 返回能接到的雨水量
+     */
+    public static int trapWithTwoPointers(int[] height) {
+
+        int sum = 0;
+
+        int max_left = 0;
+        int max_right = 0;
+
+        int left = 1;
+        // 加右指针进去
+        int right = height.length - 2;
+        for (int i = 1; i < height.length - 1; i++) {
+            // 从左到右更
+            if (height[left - 1] < height[right + 1]) {
+                max_left = Math.max(max_left, height[left - 1]);
+                int min = max_left;
+                if (min > height[left]) {
+                    sum += (min - height[left]);
+                }
+                left++;
+
+            }
+            // 从右到左更
+            else {
+                max_right = Math.max(max_right, height[right + 1]);
+                int min = max_right;
+                if (min > height[right]) {
+                    sum += (min - height[right]);
+                }
+                right--;
             }
         }
         return sum;
