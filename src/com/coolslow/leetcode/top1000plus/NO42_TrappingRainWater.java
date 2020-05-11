@@ -12,7 +12,7 @@ package com.coolslow.leetcode.top1000plus;
 public class NO42_TrappingRainWater {
 
     /**
-     * 解法：按行求解雨水积水
+     * 解法一：按行求解雨水积水
      *
      * 方法：
      * - 先找到高度最高的柱子，然后一层一层累加到最高的高度按行求解能够积攒的雨水。
@@ -61,38 +61,75 @@ public class NO42_TrappingRainWater {
     }
 
     /**
+     * 解法二：按列求解
+     *
+     * 求每一列的水，只需要关注当前列，以及左边最高的柱子，右边最高的柱子就可以。
+     * 装水的多少实际上根据木桶效应决定，只需要看左边最高的墙和右边最高的墙中较矮的一个就够了。
+     * 所以，根据较矮的哪个墙和当前列的墙的高度可以分为三种情况考虑：
+     * 1. 较矮的墙的高度大于当前列的墙的高度
+     * 2. 较矮的墙的高度小于当前列的墙的高度
+     * 3. 较矮的墙的高度等于当前列的墙的高度
+     *
+     * @param height 给出的表征柱子的非负数数组
+     * @return 返回能接到的雨水量
+     */
+    public static int trapRainWaterByColumn(int[] height) {
+        int sum = 0, len = height.length;
+        // 最两端的列不用考虑，因为一定不会有谁，所以下标从 1 到 length - 2
+        for(int i = 0; i < len - 1; i++) {
+            int maxLeft = 0;
+            for(int j = i - 1; j >= 0; j--) {
+                if(height[j] > maxLeft) {
+                    maxLeft = height[j];
+                }
+            }
+
+            int maxRight = 0;
+            for(int j = i + 1; j < len; i++) {
+                if(height[j] > maxRight) {
+                    maxRight = height[j];
+                }
+            }
+            //找出两端较小的
+            int min = Math.min(maxLeft, maxRight);
+            //只有较小的一段大于当前列的高度才会有水，其他情况不会有水
+            if (min > height[i]) {
+                sum +=(min - height[i]);
+            }
+        }
+
+        return sum;
+    }
+
+
+
+
+    /**
      * 解法一：动态规划法
      *
      * 时间复杂度：O(n)
-     * 空间负载度：O(1)
+     * 空间负载度：O(n)
      *
      * @param height 给出的表征柱子的非负数数组
      * @return 返回能接到的雨水量
      */
     public static int trapWithDp(int[] height) {
-        int ans = 0;
-        int len = height.length;
-        if(len < 3) {
-            return 0;
-        }
+        int sum = 0;
+        int[] max_left = new int[height.length];
+        int[] max_right = new int[height.length];
 
-        int[] leftMaxArr = new int[len];
-        int[] rightMaxArr = new int[len];
-        leftMaxArr[0] = height[0];
-        rightMaxArr[len - 1] = height[len - 1];
-
-        for(int i = 1; i < len; i++) {
-            leftMaxArr[i] = Math.max(rightMaxArr[i + 1], height[i]);
+        for (int i = 1; i < height.length - 1; i++) {
+            max_left[i] = Math.max(max_left[i - 1], height[i - 1]);
         }
-        for(int i = len - 2; i >= 0; i--) {
-            rightMaxArr[i] = Math.max(rightMaxArr[i + 1], height[i]);
+        for (int i = height.length - 2; i >= 0; i--) {
+            max_right[i] = Math.max(max_right[i + 1], height[i + 1]);
         }
-
-        // 计算每个位置对应的积水量并累加以获得答案
-        for(int i = 0; i < len; i++) {
-            ans += Math.min(leftMaxArr[i], rightMaxArr[i] - height[i]);
+        for (int i = 1; i < height.length - 1; i++) {
+            int min = Math.min(max_left[i], max_right[i]);
+            if (min > height[i]) {
+                sum = sum + (min - height[i]);
+            }
         }
-
-        return ans;
+        return sum;
     }
 }
