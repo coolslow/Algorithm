@@ -1,6 +1,5 @@
 package com.coolslow.top1000plus;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
