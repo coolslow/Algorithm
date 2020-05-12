@@ -48,6 +48,7 @@ public class NO39_CombinationSum {
         return lists;
     }
 
+    // 递归调用
     private static void process(int start, int[] candidates, int target, List<List<Integer>> lists, List<Integer> list) {
         if(target < 0) {
             return;
