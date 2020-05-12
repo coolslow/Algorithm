@@ -129,8 +129,8 @@ public class NO50_Powx_N {
         double ans = 1;
         double currentProduct = x;
 
-        for(long i = num; i > 0;i /= 2) {
-            if((i%2) == 1) {
+        for(long i = num; i > 0; i /= 2) {
+            if((i % 2) == 1) {
                 ans = ans * currentProduct;
             }
             currentProduct = currentProduct * currentProduct;
