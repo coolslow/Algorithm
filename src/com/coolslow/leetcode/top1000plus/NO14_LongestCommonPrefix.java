@@ -36,7 +36,7 @@ public class NO14_LongestCommonPrefix {
         if(strs == null || strs.length == 0) {
             return "";
         }
-        // 将数组中的第一个字符串设置为公共子串
+        // 将数组中的第一个字符串设置为公共前缀
         String prefix = strs[0];
         for (String str : strs) {
             // indexOf的结果为0表示相同子串的下标从0开始
