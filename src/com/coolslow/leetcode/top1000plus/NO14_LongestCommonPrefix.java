@@ -40,6 +40,7 @@ public class NO14_LongestCommonPrefix {
         String prefix = strs[0];
         for (String str : strs) {
             // indexOf的结果为0表示相同子串的下标从0开始
+            // 将每一个数组中从第二个位置开始的字符串与str[0]用indexOf方法进行比较
             while (str.indexOf(prefix) != 0) {
                 prefix = prefix.substring(0, prefix.length() - 1);
                 if (prefix.isEmpty()) {
