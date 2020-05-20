@@ -20,7 +20,14 @@ package com.coolslow.leetcode.top1000plus;
  *
  */
 public class NO1071_GreatestCommonDivisorOfString {
-
+    /**
+     * 使用辗转相除法解决
+     * reference: https://zhuanlan.zhihu.com/p/31824895
+     *
+     * @param str1 第一个字符串
+     * @param str2 第二个字符串
+     * @return 返回最大公约字符串
+     */
     public static String gcdOfString(String str1, String str2) {
         // 假设str1是N个x，str2是M个x，那么str1+str2肯定是等于str2+str1的。
         if (!(str1 + str2).equals(str2 + str1)) {
