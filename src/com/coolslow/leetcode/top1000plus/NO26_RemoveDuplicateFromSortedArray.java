@@ -18,6 +18,9 @@ package com.coolslow.leetcode.top1000plus;
  *      函数应该返回的长度是 5， 并且愿数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4
  *      你不需要考虑数组中超出新长度后面的元素。
  *
+ * 时间复杂度：O(n)
+ * 空间负载度：O(1)
+ *
  */
 public class NO26_RemoveDuplicateFromSortedArray {
     public static int removeDuplicates(int[] nums) {
