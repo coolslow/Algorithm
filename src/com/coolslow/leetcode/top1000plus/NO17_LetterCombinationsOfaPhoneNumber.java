@@ -36,7 +36,7 @@ public class NO17_LetterCombinationsOfaPhoneNumber {
     /**
      * 创建数字与字母间的Mapping关系
      */
-    Map<String, String> phone = new HashMap<>() {{
+    Map<String, String> phone = new HashMap<String, String>() {{
         put("2", "abc");
         put("3", "def");
         put("4", "ghi");
