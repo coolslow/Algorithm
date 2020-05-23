@@ -28,7 +28,7 @@ public class NO628_MaxProductOfThreeNumbers {
      * 时间复杂度：O(NlogN)，其中 N 是数组的长度。
      * 空间复杂度：O(logN)，为排序使用的空间。
      */
-    public int maximumProduct(int[] nums) {
+    public static int maximumProduct(int[] nums) {
         Arrays.sort(nums);
         return Math.max(nums[0] * nums[1] * nums[nums.length - 1], nums[nums.length - 1] * nums[nums.length - 2] * nums[nums.length - 3]);
     }
