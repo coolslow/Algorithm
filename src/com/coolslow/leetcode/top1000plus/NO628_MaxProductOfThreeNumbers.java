@@ -1,4 +1,4 @@
-package com.coolslow.top1000plus;
+package com.coolslow.leetcode.top1000plus;
 
 import java.util.Arrays;
 
