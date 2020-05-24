@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.top1000plus;
 
+import java.util.PriorityQueue;
+
 /**
  * 数组中的第K个最大元素
  *
@@ -24,4 +26,25 @@ public class NO215_KthLargestElementInArray {
      * 算法的时间复杂度为 O(NlogN)，空间复杂度为 O(1)。
      *
      */
+
+    /**
+     * 方法二：堆
+     *
+     * 思路是创建一个大顶堆，将所有数组中的元素加入堆中，并保持堆的大小小于等于k。这样堆中就保留了前k个最大的元素。
+     * 因此，堆顶的元素就是正确答案。
+     *
+     * 时间复杂度：O(NlogK)。
+     * 空间复杂度 : O(k)，用于存储堆元素。
+     */
+    public static int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> heap = new PriorityQueue<>((n1, n2) -> n1 - n2);
+
+        for(int n: nums) {
+            heap.add(n);
+            if(heap.size() > k) {
+                heap.poll();
+            }
+        }
+        return heap.poll();
+    }
 }
