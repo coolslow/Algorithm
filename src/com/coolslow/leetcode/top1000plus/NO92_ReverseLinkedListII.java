@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.top1000plus;
 
+import com.coolslow.leetcode.top1000plus.datastructure.ListNode;
+
 /**
  * 92. 反转链表II
  * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
@@ -13,5 +15,7 @@ package com.coolslow.leetcode.top1000plus;
  *
  */
 public class NO92_ReverseLinkedListII {
-
+//    public ListNode reverseBetween(ListNode head, int m, int n) {
+//
+//    }
 }
