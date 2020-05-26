@@ -28,6 +28,8 @@ import java.util.List;
 public class NO102_BinaryTreeLevelOrderTraversal {
 
     /**
+     * 迭代解法
+     *
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
      * @param root 给定的二叉树
@@ -39,8 +41,8 @@ public class NO102_BinaryTreeLevelOrderTraversal {
         }
         // 用于存储待返回的数据
         List<List<Integer>> res = new ArrayList<>();
+        // 用链表来存储给定二叉树
         LinkedList<TreeNode> queue = new LinkedList<>();
-
         queue.add(root);
         while(queue.size() > 0) {
             int size = queue.size();
@@ -58,5 +60,40 @@ public class NO102_BinaryTreeLevelOrderTraversal {
             res.add(tmp);
         }
         return res;
+    }
+
+    /**
+     * 递归实现
+     *
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(h) h 表示二叉树的高度
+     * @param root 给定的二叉树
+     * @return 返回一个按层遍历得到的数组List
+     */
+    public static List<List<Integer>> levelOrderWithDFS(TreeNode root) {
+        if(root == null) {
+            return new ArrayList<List<Integer>>();
+        }
+
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        dfs(1, root, res);
+        return res;
+    }
+
+    // 采用递归的办法对二叉树的左右子树分别遍历
+    private static void dfs(int depth, TreeNode root, List<List<Integer>> res) {
+        if(res.size() < depth) {
+            res.add(new ArrayList<Integer>());
+        }
+
+        res.get(depth - 1).add(root.val);
+
+        if(root.left != null) {
+            dfs(depth + 1, root.left, res);
+        }
+
+        if(root.right != null) {
+            dfs(depth + 1, root.right, res);
+        }
     }
 }
