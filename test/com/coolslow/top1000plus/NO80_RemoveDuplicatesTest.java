@@ -11,6 +11,10 @@ public class NO80_RemoveDuplicatesTest {
         int[] arr = new int[] { 1, 2, 2, 3, 3, 3, 5, 8 ,8};
         int result = NO80_RemoveDuplicateFromSortedArrayII.removeDuplicates(arr);
 
+        int[] arr1 = new int[] {1, 2, 3, 4, 4};
+        int result1 = NO80_RemoveDuplicateFromSortedArrayII.removeDuplicates(arr1);
+
         Assert.assertEquals(8, result);
+        Assert.assertEquals(5, result1);
     }
 }
