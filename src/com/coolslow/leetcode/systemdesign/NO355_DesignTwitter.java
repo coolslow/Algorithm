@@ -2,6 +2,7 @@ package com.coolslow.leetcode.systemdesign;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * TAG: 系统设计
@@ -42,8 +43,14 @@ import java.util.List;
  *
  */
 public class NO355_DesignTwitter {
+    private static class Tweet {
 
-    static class Twitter {
+    }
+
+    public static class Twitter {
+
+        private Map<Integer, Tweet> twitter;
+
         /** Initialize your data structure here. */
         public Twitter() {
 

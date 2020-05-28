@@ -61,6 +61,9 @@ public class NO206_ReverseLinkList {
      *
      * 第三步：为了防止形成闭环，因此 head.next = null， 达到如下效果
      *        head.next ---> head ---> null
+     *
+     * 时间复杂度：O(n)
+     * 空间负载度：O(n)，由于使用递归，将会使用隐式栈空间，递归的深度可能达到n层。
      */
     public static ListNode reverseLinkedListWithRecursive(ListNode head) {
         if(head == null || head.next == null) {
