@@ -2,12 +2,7 @@ package com.coolslow.top1000plus;
 
 import com.coolslow.leetcode.top1000plus.NO23_MergeKLinkedLists;
 import com.coolslow.leetcode.top1000plus.datastructure.ListNode;
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 public class NO23_MergeKLinkedListsTest {
 
