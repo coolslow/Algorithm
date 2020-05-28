@@ -27,7 +27,7 @@ public class NO23_MergeKLinkedLists {
      * @param lists k个链表
      * @return 返回k个合并后的链表
      */
-    public ListNode mergeKLinkedList(ListNode[] lists) {
+    public static ListNode mergeKLinkedList(ListNode[] lists) {
         int k = lists.length;
         ListNode dummyHead = new ListNode(0);
         ListNode tail = dummyHead;
