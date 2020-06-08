@@ -16,8 +16,29 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO365_WaterJugProblem {
 
+    /**
+     * GCD 方法
+     * @param x x 容量
+     * @param y y 容量
+     * @param z 给定的 z 升水
+     * @return z 升水是否能能被装满
+     */
     public boolean canMeasureWater(int x, int y, int z) {
 
-        return true;
+        if (z == 0) return true;
+        if (x + y < z) return false;
+
+        int big = Math.max(x, y);
+        int small = x + y - big;
+
+        if (small == 0) return big == z;
+
+
+        while (big % small != 0) {
+            int temp = small;
+            small = big % small;
+            big = temp;
+        }
+        return z % small == 0;
     }
 }
