@@ -70,7 +70,7 @@ public class NO355_DesignTwitter {
         public Twitter() {
             followings = new HashMap<>();
             twitter = new HashMap<>();
-            maxHeap = new PriorityQueue<>((o1, o2) -> -o1.timestamp + o2.timestamp);
+            maxHeap = new PriorityQueue<>((o1, o2) -> o2.timestamp - o1.timestamp);
         }
 
         /** Compose a new tweet. */
