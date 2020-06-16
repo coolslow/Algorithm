@@ -17,4 +17,14 @@ public class NO344_ReverseStringTest {
         char[] result = {'o', 'l', 'l', 'e', 'h'};
         Assert.assertEquals(Arrays.toString(result), Arrays.toString(test));
     }
+
+    @Test
+    public void reverseStringWithRecursionTest() {
+        char[] test = {'h', 'e', 'l', 'l', 'o'};
+        char[] result = {'o', 'l', 'l', 'e', 'h'};
+        NO344_ReverseString.reverseStringWithRecursion(test);
+        System.out.println(test);
+
+        Assert.assertEquals(Arrays.toString(result), Arrays.toString(test));
+    }
 }

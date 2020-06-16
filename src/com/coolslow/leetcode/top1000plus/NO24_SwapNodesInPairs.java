@@ -28,7 +28,7 @@ public class  NO24_SwapNodesInPairs {
      *    - 空间复杂度：O(N)，递归过程使用的堆栈空间。
      */
     public static ListNode swapPairsNodes(ListNode head) {
-        // 如果链表没有节点或者链表只有一个节点的情况
+        // 如果链表没有节点或者链表只有一个节点的情况，也是递归停止的条件
         if(head == null || head.next == null) {
             return head;
         }
