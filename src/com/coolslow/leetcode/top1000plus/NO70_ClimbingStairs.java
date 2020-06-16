@@ -27,6 +27,16 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO70_ClimbingStairs {
 
+    public static int climbStairsWithRecursion(int n) {
+        if(n <= 1) {
+            return 1;
+        }
+        if(n < 3) {
+            return n;
+        }
+        return climbStairsWithRecursion(n - 1) + climbStairsWithRecursion(n - 2);
+    }
+
     /**
      * 解题思路：
      *      - 通过题目本身理解出这是一个斐波那契问题
