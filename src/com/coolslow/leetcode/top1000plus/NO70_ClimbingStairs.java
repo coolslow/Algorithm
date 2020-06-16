@@ -27,6 +27,7 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO70_ClimbingStairs {
 
+    // 递归解法
     public static int climbStairsWithRecursion(int n) {
         if(n <= 1) {
             return 1;
