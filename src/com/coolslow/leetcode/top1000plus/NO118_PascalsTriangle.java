@@ -20,8 +20,11 @@ import java.util.List;
  *  [1, 4, 6, 4, 1]
  * ]
  *
+ * REFERENCE: https://leetcode-cn.com/problems/pascals-triangle/solution/javadi-gui-dong-tai-gui-hua-by-jeromememory/
  */
 public class NO118_PascalsTriangle {
+
+    // 动态规划解法
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> triangle = new ArrayList<>();
         // 处理为0的情况，如果为0，返回一个空的List
@@ -49,5 +52,36 @@ public class NO118_PascalsTriangle {
         }
 
         return triangle;
+    }
+
+    // 递归解法
+    public static List<List<Integer>> generateWithRecursion(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
+        // 如果给定的入参为0，则直接返回一个空的数组
+        if(numRows <= 0) {
+            return result;
+        }
+
+        // 递归退出条件，第一行，只有一个数字1
+        if(numRows == 1) {
+            result.add(new ArrayList<>());
+            result.get(0).add(1);
+
+            return result;
+        }
+
+        result = generate(numRows - 1);
+
+        List<Integer> row = new ArrayList<>();
+        row.add(1);
+
+        for(int idx = 1; idx < numRows - 1; idx++) {
+            row.add(result.get(numRows - 2).get(idx - 1) + result.get(numRows - 2).get(idx));
+        }
+
+        row.add(1);
+        result.add(row);
+
+        return result;
     }
 }
