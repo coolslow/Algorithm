@@ -7,7 +7,7 @@ import com.coolslow.DesignPatterns.Facotry.IHero;
  */
 public class Hulk implements IHero {
     @Override
-    public void heroSkill() {
+    public void skill() {
         System.out.println("绿巨人 - 智力：6, 力量：10, 格斗技巧：5");
     }
 }
