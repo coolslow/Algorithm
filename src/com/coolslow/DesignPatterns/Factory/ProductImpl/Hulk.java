@@ -1,6 +1,6 @@
-package com.coolslow.DesignPatterns.Facotry.ProductImpl;
+package com.coolslow.DesignPatterns.Factory.ProductImpl;
 
-import com.coolslow.DesignPatterns.Facotry.IHero;
+import com.coolslow.DesignPatterns.Factory.IHero;
 
 /**
  * 绿巨人

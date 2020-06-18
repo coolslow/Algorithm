@@ -1,10 +1,5 @@
 package com.coolslow;
 
-import com.coolslow.DesignPatterns.Facotry.FactoryImpl.FightFactory;
-import com.coolslow.DesignPatterns.Facotry.FactoryImpl.StrengthFactory;
-import com.coolslow.DesignPatterns.Facotry.IHero;
-import com.coolslow.DesignPatterns.Facotry.IHeroFactory;
-
 public class Main {
 
     public static void main(String[] args) {
