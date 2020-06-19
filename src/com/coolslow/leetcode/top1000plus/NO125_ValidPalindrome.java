@@ -32,7 +32,7 @@ public class NO125_ValidPalindrome {
             if ((c >= 'A') && (c <= 'Z')) {
                 sb.append((char)(c + 32));
             }
-        };
+        }
         return sb.toString().equals(sb.reverse().toString());
     }
 }
