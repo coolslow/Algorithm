@@ -73,7 +73,9 @@ public class NO540_SingleElementInSortedArray {
         int high = nums.length - 1;
         while (low < high) {
             int mid = low + (high - low) / 2;
-            if (mid % 2 == 1) mid--;
+            if (mid % 2 == 1) {
+                mid--;
+            }
             if (nums[mid] == nums[mid + 1]) {
                 low = mid + 2;
             } else {
