@@ -62,4 +62,26 @@ public class NO540_SingleElementInSortedArray {
         }
         return nums[low];
     }
+
+    /**
+     * 解法三：二分搜索（仅对偶数索引进行二分搜索）
+     * @param nums 给定的数组
+     * @return 返回单一元素
+     */
+    public int singleNoDuplicateWithDichotomyBetterMethod(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (mid % 2 == 1) {
+                mid--;
+            }
+            if (nums[mid] == nums[mid + 1]) {
+                low = mid + 2;
+            } else {
+                high = mid;
+            }
+        }
+        return nums[low];
+    }
 }
