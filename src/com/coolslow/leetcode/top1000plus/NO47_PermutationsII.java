@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.top1000plus;
 
+import java.util.List;
+
 /**
  * 47. 全排列II
  *
@@ -19,4 +21,8 @@ package com.coolslow.leetcode.top1000plus;
  *
  */
 public class NO47_PermutationsII {
+
+//    public List<List<Integer>> permuteUniqueII(int nums) {
+//
+//    }
 }
