@@ -66,14 +66,14 @@ public class NO46_Permutations {
             return res;
         }
 
-        Boolean[] used = new Boolean[len];
+        boolean[] used = new boolean[len];
         List<Integer> path = new ArrayList<>();
 
         dfs(nums, len, 0, path, used, res);
         return res;
     }
 
-    private static void dfs(int[] nums, int len, int depth, List<Integer> path, Boolean[] used, List<List<Integer>> res) {
+    private static void dfs(int[] nums, int len, int depth, List<Integer> path, boolean[] used, List<List<Integer>> res) {
         if(depth == len) {
             // 特别注意的地方如下：
             // res.add(path);
