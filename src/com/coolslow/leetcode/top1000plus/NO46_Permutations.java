@@ -27,8 +27,9 @@ public class NO46_Permutations {
         List<List<Integer>> res = new LinkedList();
 
         ArrayList<Integer> output = new ArrayList<Integer>();
-        for (int num : nums)
+        for (int num : nums) {
             output.add(num);
+        }
 
         int n = nums.length;
         backtrack(n, output, res, 0);
