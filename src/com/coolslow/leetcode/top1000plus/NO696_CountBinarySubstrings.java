@@ -41,7 +41,7 @@ public class NO696_CountBinarySubstrings {
      * 时间复杂度和空间复杂度都是 O(n)。
      */
     public int countBinarySubstrings(String s) {
-        List<Integer> counts = new ArrayList<Integer>();
+        List<Integer> counts = new ArrayList<>();
         int ptr = 0, n = s.length();
         while (ptr < n) {
             char c = s.charAt(ptr);
