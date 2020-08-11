@@ -43,4 +43,16 @@ public class NO55_JumpGame {
         }
         return false;
     }
+
+    public static boolean canJumpBetter(int[] nums) {
+        int maxLen = 0;
+        for(int i = 0; i < nums.length - 1; i++){
+            if(i <= maxLen){
+                if(maxLen < nums[i] + i){
+                    maxLen = nums[i] + i;
+                }
+            }
+        }
+        return maxLen >= nums.length - 1;
+    }
 }
