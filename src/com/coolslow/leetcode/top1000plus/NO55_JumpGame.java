@@ -30,6 +30,7 @@ public class NO55_JumpGame {
      */
     public static boolean canJump(int[] nums) {
         int n = nums.length;
+        // 表示最远到达的位置
         int farthest = 0;
 
         for (int i = 0; i < n; i++) {
