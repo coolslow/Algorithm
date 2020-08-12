@@ -1,2 +1,2 @@
 # Algorithm
-Algorithm is the cornerstone of coding.
+Collection of leetcode interview algorithm questions.
