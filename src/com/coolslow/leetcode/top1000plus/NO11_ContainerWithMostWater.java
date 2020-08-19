@@ -86,6 +86,7 @@ public class NO11_ContainerWithMostWater {
             maxArea = Math.max(maxArea, h * (right - left));
 
             // 提速关键，找到下一个更长的
+            // NOTE: 实际上直观看，如果某一侧的高度一直小于h，且两个指针没有重叠，说明这一侧的值都无需再考虑了。
             while(height[left] <= h && left < right) {
                 left++;
             }
