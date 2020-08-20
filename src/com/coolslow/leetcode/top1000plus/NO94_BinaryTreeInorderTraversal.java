@@ -29,12 +29,11 @@ public class NO94_BinaryTreeInorderTraversal {
     }
 
     private static void helper(TreeNode root, List<Integer> res) {
-        if(root !=null) {
+        if(root != null) {
             if(root.left != null) {
                 helper(root.left, res);
             }
             res.add(root.val);
-
             if(root.right != null) {
                 helper(root.right, res);
             }
