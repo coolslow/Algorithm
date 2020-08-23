@@ -40,19 +40,19 @@ public class NO622_DesignCircularQueue {
      * tailIndex = (headIndex + count - 1) mod capacity
      * capacity: 数组长度
      * count: 队列长度
-     * headIndex: 队首 head 索引
-     * tailIndex: 队尾 tail 索引
+     * head: 队首 head 索引
+     * tail: 队尾 tail 索引
      */
     public class MyCircularQueue {
         private int[] queue; // 队列
-        private int headIndex;
-        private int tailIndex;
+        private int head;
+        private int tail;
         private int capacity;
 
         public MyCircularQueue(int k) {
             this.queue = new int[k];
-            this.headIndex = -1;
-            this.tailIndex = -1;
+            this.head = -1;
+            this.tail = -1;
             this.capacity = k;
         }
 
@@ -64,11 +64,11 @@ public class NO622_DesignCircularQueue {
             }
 
             if(isEmpty()) {
-                this.headIndex = 0;
+                this.head = 0;
             }
 
-            this.tailIndex = (this.tailIndex + 1) % this.capacity;
-            this.queue[this.tailIndex] = value;
+            this.tail = (this.tail + 1) % this.capacity;
+            this.queue[this.tail] = value;
             return true;
         }
 
@@ -80,14 +80,14 @@ public class NO622_DesignCircularQueue {
             }
 
             // 头尾指针重合，表示队列已经为空了，可以直接返回
-            if (this.tailIndex == this.headIndex) {
-                this.headIndex = -1;
-                this.tailIndex = -1;
+            if (this.tail == this.head) {
+                this.head = -1;
+                this.tail = -1;
                 return true;
             }
 
             // 出队是从队头拿掉元素，因此需要重新计算headIndex下标
-            this.headIndex = (this.headIndex + 1) % this.capacity;
+            this.head = (this.head + 1) % this.capacity;
             return true;
         }
 
@@ -97,7 +97,7 @@ public class NO622_DesignCircularQueue {
                 return -1;
             }
 
-            return this.queue[this.headIndex];
+            return this.queue[this.head];
         }
 
         // 获取队尾的元素
@@ -106,15 +106,17 @@ public class NO622_DesignCircularQueue {
                 return -1;
             }
 
-            return this.queue[this.tailIndex];
+            return this.queue[this.tail];
         }
 
+        // 判断循环队列是否为空
         public boolean isEmpty() {
-            return this.headIndex == -1;
+            return this.head == -1;
         }
 
+        // 判断循环队列是否已满
         public boolean isFull() {
-            return (this.tailIndex + 1) % this.capacity == this.headIndex;
+            return (this.tail + 1) % this.capacity == this.head;
         }
     }
 }
