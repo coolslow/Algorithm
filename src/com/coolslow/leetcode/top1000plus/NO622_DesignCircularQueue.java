@@ -74,11 +74,13 @@ public class NO622_DesignCircularQueue {
 
         // 出队操作
         public boolean deQueue() {
-            if(isEmpty()) {
+            // 表示循环队列中没有元素
+            if (isEmpty()) {
                 return false;
             }
 
-            if(this.tailIndex == this.headIndex) {
+            // 头尾指针重合，表示队列已经为空了，可以直接返回
+            if (this.tailIndex == this.headIndex) {
                 this.headIndex = -1;
                 this.tailIndex = -1;
                 return true;
