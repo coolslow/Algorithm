@@ -46,41 +46,52 @@ public class NO622_DesignCircularQueue {
     public class MyCircularQueue {
         private int[] queue; // 队列
         private int headIndex;
-        private int count;
+        private int tailIndex;
         private int capacity;
 
         public MyCircularQueue(int k) {
             this.queue = new int[k];
-            this.headIndex = 0;
-            this.count = 0;
+            this.headIndex = -1;
+            this.tailIndex = -1;
             this.capacity = k;
         }
 
         // 入队操作
         public boolean enQueue(int value) {
             // 如果队列长度已经达到容积，无法入队
-            if (this.count == this.capacity) {
+            if (isFull()) {
                 return false;
             }
-            this.queue[(this.headIndex + this.count - 1) % this.capacity] = value;
-            this.count += 1;
+
+            if(isEmpty()) {
+                this.headIndex = 0;
+            }
+
+            this.tailIndex = (this.tailIndex + 1) % this.capacity;
+            this.queue[this.tailIndex] = value;
             return true;
         }
 
         // 出队操作
         public boolean deQueue() {
-            if(this.count == 0) {
+            if(isEmpty()) {
                 return false;
             }
 
+            if(this.tailIndex == this.headIndex) {
+                this.headIndex = -1;
+                this.tailIndex = -1;
+                return true;
+            }
+
+            // 出队是从队头拿掉元素，因此需要重新计算headIndex下标
             this.headIndex = (this.headIndex + 1) % this.capacity;
-            this.count -= 1;
             return true;
         }
 
         // 从队头获取元素
         public int Front() {
-            if (this.count == 0) {
+            if (isEmpty()) {
                 return -1;
             }
 
@@ -89,20 +100,19 @@ public class NO622_DesignCircularQueue {
 
         // 获取队尾的元素
         public int Rear() {
-            if(this.count == 0) {
+            if(isEmpty()) {
                 return -1;
             }
 
-            int lastIndex = (this.headIndex + this.count - 1) % this.capacity;
-            return this.queue[lastIndex];
+            return this.queue[this.tailIndex];
         }
 
         public boolean isEmpty() {
-            return this.count == 0;
+            return this.headIndex == -1;
         }
 
         public boolean isFull() {
-            return this.count == this.capacity;
+            return (this.tailIndex + 1) % this.capacity == this.headIndex;
         }
     }
 }
