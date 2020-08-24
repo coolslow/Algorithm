@@ -31,10 +31,17 @@ import java.util.Stack;
  * minStack.top();      --> 返回 0.
  * minStack.getMin();   --> 返回 -2.
  *
+ *
+ *
  */
 
 public class NO155_MiniStack {
 
+    /**
+     * 解法一：借用一个辅助栈minStack，用于存获取stack中最小值。
+     * 时间复杂度：O(1)
+     * 空间复杂度：O(N)
+     */
     public static class MinStack {
         private Stack<Integer> stack;
         private Stack<Integer> minStack;
@@ -44,14 +51,14 @@ public class NO155_MiniStack {
             minStack = new Stack<>();
         }
 
-        // 入栈操作
+        // 最小栈入栈操作
         public void push(int x) {
             stack.push(x);
             if(minStack.isEmpty() || x <= minStack.peek())
                 minStack.push(x);
         }
 
-        // 出栈操作
+        // 最小栈出栈操作
         public void pop() {
             if(stack.pop().equals(minStack.peek()))
                 minStack.pop();
