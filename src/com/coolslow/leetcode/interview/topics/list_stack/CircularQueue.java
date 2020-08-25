@@ -5,27 +5,19 @@ package com.coolslow.leetcode.interview.topics.list_stack;
  */
 public class CircularQueue {
 
-    private int[] data;
+    private int[] queue;
     private int head;
     private int tail;
     private int size;
 
     public CircularQueue(int k) {
-        data = new int[k];
+        queue = new int[k];
         head = -1;
         tail = -1;
         size = k;
     }
 
-    public boolean isFull() {
-        return ((tail + 1) % size) == head;
-    }
-
-    public boolean isEmpty() {
-        return head == -1;
-    }
-
-    // 入队操作
+    // 入队操作, 从队尾操纵
     public boolean enQueue(int value) {
         if (isFull()) {
             return false;
@@ -34,12 +26,12 @@ public class CircularQueue {
             head = 0;
         }
         tail = (tail + 1) % size;
-        data[tail] = value;
+        queue[tail] = value;
 
         return true;
     }
 
-    // 出队操作
+    // 出队操作, 从队头操纵
     public boolean deQueue() {
         if (isEmpty()) {
             return false;
@@ -54,17 +46,29 @@ public class CircularQueue {
         return true;
     }
 
+    // 获取循环队列队头元素
     public int Front() {
         if (isEmpty()) {
             return -1;
         }
-        return data[head];
+        return queue[head];
     }
 
+    // 获取循环队列队尾元素
     public int Rear() {
         if (isEmpty()) {
             return -1;
         }
-        return data[tail];
+        return queue[tail];
+    }
+
+    // 判断循环队列是否为空
+    public boolean isEmpty() {
+        return head == -1;
+    }
+
+    // 判断循环队列是否已满
+    public boolean isFull() {
+        return ((tail + 1) % size) == head;
     }
 }
