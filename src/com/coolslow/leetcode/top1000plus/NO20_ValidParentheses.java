@@ -61,6 +61,7 @@ public class NO20_ValidParentheses {
         return stack.isEmpty();
     }
 
+    // 利用Stack进行处理
     public static boolean isValidParenthesesShort(String s) {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
