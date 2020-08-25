@@ -54,14 +54,16 @@ public class NO155_MiniStack {
         // 最小栈入栈操作
         public void push(int x) {
             stack.push(x);
-            if(minStack.isEmpty() || x <= minStack.peek())
+            if (minStack.isEmpty() || x <= minStack.peek()) {
                 minStack.push(x);
+            }
         }
 
         // 最小栈出栈操作
         public void pop() {
-            if(stack.pop().equals(minStack.peek()))
+            if (stack.pop().equals(minStack.peek())) {
                 minStack.pop();
+            }
         }
 
         public int top() {
