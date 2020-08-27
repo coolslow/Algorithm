@@ -31,7 +31,7 @@ public class NO234_PalindromeLinkList {
      * }
      */
 
-    // 中规中矩的解法，将链表中的数据放入数组中，通过头尾指针对数据进行比较，相等为回文，否则不是回文。
+    // NOTE: 中规中矩的解法，将链表中的数据放入数组中，通过头尾指针对数据进行比较，相等为回文，否则不是回文。
     public boolean isPalindrome(ListNode head) {
         List<Integer> vals = new ArrayList<>();
 
