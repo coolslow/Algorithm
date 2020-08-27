@@ -47,6 +47,7 @@ public class NO225_ImplementStackUsingQueues {
                 queue2.add(queue1.poll());
             }
             int ans = queue1.peek();
+            queue2.add(queue1.poll());
 
             while(queue2.size() > 0) {
                 queue1.add(queue2.poll());
