@@ -26,6 +26,8 @@ package com.coolslow.leetcode.top1000plus;
  *      解释：没有满足要求的分组，（且 X < 2）。
  *
  */
+
+@Deprecated
 public class NO914_CardsGroupWithX {
 
     /**

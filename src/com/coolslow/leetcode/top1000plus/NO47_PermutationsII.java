@@ -27,6 +27,8 @@ import java.util.List;
  * - 接下来，如果当前节点与它的前一个节点一样，并且它的前一个节点已经被遍历过，那就不再考虑
  *
  */
+
+@Deprecated
 public class NO47_PermutationsII {
 
 //    public List<List<Integer>> permuteUniqueII(int nums) {

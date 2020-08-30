@@ -22,5 +22,7 @@ package com.coolslow.leetcode.top1000plus;
  *      偷窃到的最高金额 = 1 + 3 = 4 。
  *
  */
+
+@Deprecated
 public class NO213_HouseRobberII {
 }

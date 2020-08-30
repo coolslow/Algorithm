@@ -14,5 +14,7 @@ package com.coolslow.leetcode.top1000plus;
  *        /
  *       3
  */
+
+@Deprecated
 public class NO144_BinaryTreePreorderTraversal {
 }

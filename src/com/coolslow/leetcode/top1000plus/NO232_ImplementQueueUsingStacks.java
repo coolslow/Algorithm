@@ -27,6 +27,8 @@ package com.coolslow.leetcode.top1000plus;
  * 假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
  *
  */
+
+@Deprecated
 public class NO232_ImplementQueueUsingStacks {
 
 //    class MyQueue {

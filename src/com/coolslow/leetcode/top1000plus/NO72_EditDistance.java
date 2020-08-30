@@ -32,6 +32,8 @@ package com.coolslow.leetcode.top1000plus;
  *       最直观的方法是暴力检查所有可能的编辑方法，取最短的一个。
  *       所有可能的编辑方法达到指数级，但我们不需要进行这么多计算，因为我们只需要找到距离最短的序列而不是所有可能的序列。
  */
+
+@Deprecated
 public class NO72_EditDistance {
 
 

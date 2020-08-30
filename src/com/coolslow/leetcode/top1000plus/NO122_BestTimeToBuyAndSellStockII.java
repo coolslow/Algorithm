@@ -8,5 +8,6 @@ package com.coolslow.leetcode.top1000plus;
  * 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
  *
  */
+@Deprecated
 public class NO122_BestTimeToBuyAndSellStockII {
 }

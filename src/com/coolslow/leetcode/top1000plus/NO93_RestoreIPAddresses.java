@@ -10,6 +10,8 @@ package com.coolslow.leetcode.top1000plus;
  * 输入: "25525511135"
  * 输出: ["255.255.11.135", "255.255.111.35"]
  */
+
+@Deprecated
 public class NO93_RestoreIPAddresses {
 
 }

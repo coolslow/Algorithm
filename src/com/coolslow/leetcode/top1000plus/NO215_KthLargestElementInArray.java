@@ -17,6 +17,8 @@ import java.util.PriorityQueue;
  * 输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
  * 输出: 4
  */
+
+@Deprecated
 public class NO215_KthLargestElementInArray {
 
     /**
