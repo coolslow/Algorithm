@@ -3,7 +3,7 @@ package com.coolslow.leetcode.top1000plus.playground;
 import com.coolslow.common.Playground;
 
 @Playground(name = "爬楼梯", rank = Playground.Difficulty.Easy)
-public class ClimbingStarisPlayground {
+public class ClimbingStairsPlayground {
     public static int climbingStairs(int n) {
         if(n < 0) {
             return 0;
