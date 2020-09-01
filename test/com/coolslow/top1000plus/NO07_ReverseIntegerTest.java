@@ -1,6 +1,6 @@
 package com.coolslow.top1000plus;
 
-import com.coolslow.leetcode.top1000plus.playground.ReverseIntegerPlayground;
+import com.coolslow.leetcode.top1000plus.playground.NO07_ReverseIntegerPlayground;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,11 +15,11 @@ public class NO07_ReverseIntegerTest {
 
         System.out.println(x4/10);
 
-        int result1 = ReverseIntegerPlayground.reverse(x1);
-        int result2 = ReverseIntegerPlayground.reverse(x2);
-        int result3 = ReverseIntegerPlayground.reverse(x3);
-        int result4 = ReverseIntegerPlayground.reverse(x4);
-        int result5 = ReverseIntegerPlayground.reverse(x5);
+        int result1 = NO07_ReverseIntegerPlayground.reverse(x1);
+        int result2 = NO07_ReverseIntegerPlayground.reverse(x2);
+        int result3 = NO07_ReverseIntegerPlayground.reverse(x3);
+        int result4 = NO07_ReverseIntegerPlayground.reverse(x4);
+        int result5 = NO07_ReverseIntegerPlayground.reverse(x5);
 
         Assert.assertEquals(21, result1);
         Assert.assertEquals(0, result2);

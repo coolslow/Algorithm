@@ -4,8 +4,8 @@ import com.coolslow.common.Playground;
 import com.coolslow.common.Solution;
 import com.coolslow.common.Topics;
 
-@Playground(name = "反转整数", rank = Playground.Difficulty.Easy)
-public class ReverseIntegerPlayground {
+@Playground(name = "整数反转", rank = Playground.Difficulty.Easy)
+public class NO07_ReverseIntegerPlayground {
 
     @Solution(desc = "解法1：普通方法")
     @Topics(tags = Topics.Tags.String)
