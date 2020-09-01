@@ -50,6 +50,5 @@ public class StringMatch {
         String p = "ABCDABD";
         int res = bruteForceStringMatch(s, p);
         System.out.println(res);
-
     }
 }
