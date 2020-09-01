@@ -5,6 +5,8 @@ package com.coolslow.leetcode.interview.topics.string;
  * Desc: 字符串匹配算法详解
  * Date: 2020/9/1 3:56 下午
  * Author: ming
+ *
+ * REFERENCE: https://blog.csdn.net/v_july_v/article/details/7041827
  */
 public class StringMatch {
 
