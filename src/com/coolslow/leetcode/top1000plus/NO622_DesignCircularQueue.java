@@ -50,10 +50,10 @@ public class NO622_DesignCircularQueue {
         private int capacity;
 
         public MyCircularQueue(int k) {
-            this.queue = new int[k];
-            this.head = -1;
-            this.tail = -1;
-            this.capacity = k;
+            queue = new int[k];
+            head = -1;
+            tail = -1;
+            capacity = k;
         }
 
         // 入队操作
@@ -64,11 +64,11 @@ public class NO622_DesignCircularQueue {
             }
 
             if(isEmpty()) {
-                this.head = 0;
+                head = 0;
             }
 
-            this.tail = (this.tail + 1) % this.capacity;
-            this.queue[this.tail] = value;
+            tail = (tail + 1) % capacity;
+            queue[tail] = value;
             return true;
         }
 
@@ -80,14 +80,14 @@ public class NO622_DesignCircularQueue {
             }
 
             // 头尾指针重合，表示队列已经为空了，可以直接返回
-            if (this.tail == this.head) {
-                this.head = -1;
-                this.tail = -1;
+            if (tail == head) {
+                head = -1;
+                tail = -1;
                 return true;
             }
 
             // 出队是从队头拿掉元素，因此需要重新计算headIndex下标
-            this.head = (this.head + 1) % this.capacity;
+            head = (head + 1) % capacity;
             return true;
         }
 
@@ -97,7 +97,7 @@ public class NO622_DesignCircularQueue {
                 return -1;
             }
 
-            return this.queue[this.head];
+            return queue[head];
         }
 
         // 获取队尾的元素
@@ -106,17 +106,17 @@ public class NO622_DesignCircularQueue {
                 return -1;
             }
 
-            return this.queue[this.tail];
+            return queue[tail];
         }
 
         // 判断循环队列是否为空
         public boolean isEmpty() {
-            return this.head == -1;
+            return head == -1;
         }
 
         // 判断循环队列是否已满
         public boolean isFull() {
-            return (this.tail + 1) % this.capacity == this.head;
+            return (tail + 1) % capacity == head;
         }
     }
 }
