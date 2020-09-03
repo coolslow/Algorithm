@@ -1,6 +1,6 @@
 package com.coolslow.leetcode.top1000plus;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Title: NO40_CombinationSumII
@@ -37,7 +37,43 @@ import java.util.List;
 @Deprecated
 public class NO40_CombinationSumII {
 
-//    public static List<List<Integer>> combinationSumII(int[] candidates, int target) {
-//
-//    }
+    public static List<List<Integer>> combinationSumII(int[] candidates, int target) {
+        int len = candidates.length;
+        List<List<Integer>> res = new ArrayList<>();
+
+        if (len == 0) {
+            return res;
+        }
+
+        Arrays.sort(candidates);
+
+        // 双端队列
+        Deque<Integer> path = new ArrayDeque<>(len);
+        dfs(candidates, len, 0, target, path, res);
+
+        return res;
+    }
+
+    private static void dfs(int[] candidates, int len, int begin, int target, Deque<Integer> path, List<List<Integer>> res) {
+        if (target == 0) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = begin; i < len; i++) {
+            // 大剪枝
+            if (target - candidates[i] < 0) {
+                break;
+            }
+
+            // 小剪枝
+            if (i > begin && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+
+            path.addLast(candidates[i]);
+            dfs(candidates, len, i + 1, target - candidates[i], path, res);
+
+            path.removeLast();
+        }
+    }
 }
