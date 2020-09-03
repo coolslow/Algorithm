@@ -34,7 +34,6 @@ import java.util.*;
  *   ]
  */
 
-@Deprecated
 public class NO40_CombinationSumII {
 
     public static List<List<Integer>> combinationSumII(int[] candidates, int target) {
