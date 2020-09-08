@@ -81,7 +81,8 @@ public class NO70_ClimbingStairs {
         int pre = 1;
         int cur = 2;
         int tmp;
-        for(int i = 3; i <=n; i++) {
+        // 为什么是 <= n
+        for(int i = 3; i <= n; i++) {
             tmp = pre + cur;
             pre = cur;
             cur = tmp;
