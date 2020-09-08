@@ -36,5 +36,4 @@ package com.coolslow.leetcode.top1000plus;
 @Deprecated
 public class NO72_EditDistance {
 
-
 }
