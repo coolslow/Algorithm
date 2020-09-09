@@ -18,7 +18,6 @@ import java.util.PriorityQueue;
  * 输出: 4
  */
 
-@Deprecated
 public class NO215_KthLargestElementInArray {
 
     /**
