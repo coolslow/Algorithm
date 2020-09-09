@@ -34,7 +34,6 @@ import java.util.Arrays;
  * - 空间复杂度 O(1) ： cur 和 pre 使用常数大小的额外空间。
  */
 
-@Deprecated
 public class NO213_HouseRobberII {
 
     /**
