@@ -32,6 +32,9 @@ import java.util.Arrays;
  * 空间及时间复杂度分析：
  * - 时间复杂度 O(N) ： 两次遍历 nums 需要线性时间；
  * - 空间复杂度 O(1) ： cur 和 pre 使用常数大小的额外空间。
+ *
+ * 题解参考：
+ * - https://leetcode-cn.com/problems/house-robber-ii/solution/tong-yong-si-lu-tuan-mie-da-jia-jie-she-wen-ti-by-/
  */
 
 public class NO213_HouseRobberII {
