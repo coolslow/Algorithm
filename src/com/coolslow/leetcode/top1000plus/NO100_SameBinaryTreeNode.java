@@ -1,7 +1,6 @@
 package com.coolslow.leetcode.top1000plus;
 
 import com.coolslow.leetcode.top1000plus.datastructure.TreeNode;
-import com.sun.source.tree.Tree;
 
 /**
  * 100. 相同的树
