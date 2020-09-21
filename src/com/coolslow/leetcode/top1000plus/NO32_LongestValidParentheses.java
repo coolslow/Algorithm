@@ -87,6 +87,7 @@ public class NO32_LongestValidParentheses {
      */
     public static int longestValidParenthesesWithDp(String s) {
         int maxAns = 0;
+        // 初始化一个全为0的dp数组
         int[] dp = new int[s.length()];
         for(int i = 1; i < s.length(); i++) {
             if(s.charAt(i) == ')') {
@@ -141,6 +142,7 @@ public class NO32_LongestValidParentheses {
     }
 
     /**
+     * >>> 最优解
      * 解法四：无需额外辅助空间
      *
      * 思想：在这个方法中，利用两个计数器left和right。
