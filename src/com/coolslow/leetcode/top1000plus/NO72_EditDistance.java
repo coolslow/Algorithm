@@ -9,7 +9,7 @@ package com.coolslow.leetcode.top1000plus;
  *  2、删除一个字符
  *  3、替换一个字符
  *
- * 示例 1：
+ * 示例1：
  *      输入：word1 = "horse", word2 = "ros"
  *      输出：3
  *      解释：
@@ -17,7 +17,7 @@ package com.coolslow.leetcode.top1000plus;
  *      rorse -> rose (删除 'r')
  *      rose -> ros (删除 'e')
  *
- * 示例 2：
+ * 示例2：
  *      输入：word1 = "intention", word2 = "execution"
  *      输出：5
  *      解释：
