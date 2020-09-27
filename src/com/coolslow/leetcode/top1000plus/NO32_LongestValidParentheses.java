@@ -37,6 +37,8 @@ public class NO32_LongestValidParentheses {
 
         for(int i = 0; i < s.length(); i++) {
             for(int j = i + 2; j <= s.length(); j+= 2) {
+                // 表示字符串从下标位置i到下标位置j的这一段是否是有效的
+                // 如果有效就用当前最大长度覆盖之前的长度
                 if(isValid(s.substring(i, j))) {
                     maxLen = Math.max(maxLen, j - i);
                 }
@@ -47,15 +49,21 @@ public class NO32_LongestValidParentheses {
     }
 
     private static boolean isValid(String s) {
+        // 用一个栈来存储左右括号
         Stack<Character> stack = new Stack<>();
         for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '(') {
                 stack.push('(');
             }
-            // 如果栈部位空，且查看栈顶部元素如果 == '(' 则出栈
-            else if(!stack.empty() && stack.peek() == '(') {
+            // 如果栈不为空，且查看栈顶部元素如果 == '(' 则出栈
+            // 注释里的写法不太容易理解，也可以写成注释下面所示：
+            // else if(!stack.empty() && stack.peek() == '(') {
+            //    stack.pop();
+            // }
+            else if(s.charAt(i) == ')' && !stack.empty()) {
                 stack.pop();
-            } else {
+            }
+            else {
                 return false;
             }
         }
@@ -87,6 +95,7 @@ public class NO32_LongestValidParentheses {
      */
     public static int longestValidParenthesesWithDp(String s) {
         int maxAns = 0;
+        // 初始化一个全为0的dp数组
         int[] dp = new int[s.length()];
         for(int i = 1; i < s.length(); i++) {
             if(s.charAt(i) == ')') {
@@ -141,6 +150,7 @@ public class NO32_LongestValidParentheses {
     }
 
     /**
+     * >>> 最优解
      * 解法四：无需额外辅助空间
      *
      * 思想：在这个方法中，利用两个计数器left和right。
