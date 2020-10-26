@@ -27,5 +27,7 @@ package com.coolslow.leetcode.top1000plus;
  * 1 <= m, n <= 100
  * -----------------------------------------------------------------------
  */
+
+@Deprecated
 public class NO474_OnesAndZeroes {
 }

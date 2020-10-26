@@ -33,6 +33,10 @@ package com.coolslow.leetcode.top1000plus;
  */
 public class NO1365_HowManyNumbersAreSmallerThanTheCurrentNumber {
 
+    /**
+     * 解法一：暴力法
+     * 时间复杂度 O(n^2)，空间复杂度 O(n)
+     */
     public static int[] smallerNumbersThanCurrent(int[] nums) {
         int len = nums.length;
         int[] res = new int[len];
