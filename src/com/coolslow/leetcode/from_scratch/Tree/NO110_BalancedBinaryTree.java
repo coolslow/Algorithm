@@ -3,7 +3,7 @@ package com.coolslow.leetcode.from_scratch.Tree;
 import com.coolslow.leetcode.topics.tree.ds.TreeNode;
 
 /**
- * 平衡二叉树
+ * 101. 平衡二叉树
  *
  * 给定一个二叉树，判断它是否是高度平衡的二叉树
  *
