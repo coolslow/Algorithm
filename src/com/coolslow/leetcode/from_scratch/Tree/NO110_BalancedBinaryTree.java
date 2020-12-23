@@ -33,20 +33,58 @@ import com.coolslow.leetcode.topics.tree.ds.TreeNode;
  * NOTE: 判断一棵树是否为平衡二叉树，那么关键点是仅且仅当这棵树的左右子树都是平衡二叉树时，整棵树才满足条件，因此可以用递归的办法求解。
  */
 public class NO110_BalancedBinaryTree {
-    public static boolean isBalanced(TreeNode root) {
+
+    /**
+     * 方法一: 置顶向下的递归方法。
+     *
+     * 时间复杂度O(N^2)，N是二叉树中节点个数
+     * 空间复杂度O(N)
+     *
+     * 由于至顶向下递归，对于同一个节点，函数height会被重复调用，导致时间复杂度变高。
+     * @param root
+     * @return
+     */
+    public static boolean isBalanced_I(TreeNode root) {
         // 根节点为null，则必然是一颗平衡二叉树
         if (root == null) {
             return true;
         } else {
-            return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+            return Math.abs(height_I(root.left) - height_I(root.right)) <= 1 && isBalanced_I(root.left) && isBalanced_I(root.right);
         }
     }
     // 递归计算树的高度
-    private static int height(TreeNode node) {
+    private static int height_I(TreeNode node) {
         if(node == null) {
             return 0;
         } else {
-            return Math.max(height(node.left), height(node.right)) + 1;
+            return Math.max(height_I(node.left), height_I(node.right)) + 1;
+        }
+    }
+
+    /**
+     * 方法二: 至底向上的递归方法。
+     * 如果是自底向上递归遍历，则height函数不会被调用重复调用。
+     *
+     * 此方法的时间复杂度为O(N)，空间复杂度为O(N)
+     * 自底向上调用类似于后序遍历
+     * @param root
+     * @return
+     */
+    public static boolean isBalanced_II(TreeNode root) {
+        return height_II(root) >= 0;
+    }
+
+    private static int height_II(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        int leftHeight = height_II(root.left);
+        int rightHeight = height_II(root.right);
+
+        if(leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {
+            return -1;
+        } else {
+            return Math.max(leftHeight, rightHeight) + 1;
         }
     }
 }

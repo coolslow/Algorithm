@@ -1,5 +1,7 @@
 package com.coolslow.leetcode.from_scratch.Tree;
 
+import com.coolslow.leetcode.topics.tree.ds.TreeNode;
+
 import java.util.*;
 
 /**
