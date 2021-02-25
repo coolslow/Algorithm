@@ -2,7 +2,7 @@ package com.coolslow.leetcode.top1000plus;
 
 /**
  * Title: NO322_CoinChange
- * Desc: 硬币兑换
+ * Desc: 零钱兑换
  * Date: 2020/9/1 11:10 上午
  * Author: ming
  *
@@ -19,7 +19,8 @@ package com.coolslow.leetcode.top1000plus;
  * 输出: -1
  */
 
-@Deprecated
 public class NO322_CoinChange {
-
+//    public static int coinChange(int[] coins, int amount) {
+//
+//    }
 }
