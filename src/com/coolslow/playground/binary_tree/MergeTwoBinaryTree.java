@@ -24,6 +24,7 @@ package com.coolslow.playground.binary_tree;
  * 	 5   4   7
  */
 public class MergeTwoBinaryTree {
+    // 定义二叉树的数据结构
     public class TreeNode {
         int val;
         TreeNode left;
@@ -40,6 +41,42 @@ public class MergeTwoBinaryTree {
     }
 
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        return new TreeNode(0);
+
+        if (root1 == null) {
+            return root2;
+        }
+        if (root2 == null) {
+            return root1;
+        }
+
+        TreeNode merged = new TreeNode(root1.val + root2.val);
+        merged.left = mergeTrees(root1.left, root2.left);
+        merged.right = mergeTrees(root1.right, root2.right);
+
+        return merged;
+    }
+    // 仅仅是对方法一做了更精细的判断，本质还是深度遍历 + 递归。
+    public TreeNode mergeTreesII(TreeNode root1, TreeNode root2) {
+        TreeNode merged;
+        if (root1 == null && root2 == null) {
+            return null;
+        }
+        if (root1 != null && root2 == null) {
+            merged = new TreeNode(root1.val);
+            merged.left = mergeTreesII(root1.left, null);
+            merged.right = mergeTreesII(root1.right, null);
+        }
+        else if (root1 == null && root2 != null) {
+            merged = new TreeNode(root2.val);
+            merged.left = mergeTreesII(null, root2.left);
+            merged.right = mergeTreesII(null, root2.right);
+        }
+        else {
+            merged = new TreeNode(root1.val + root2.val);
+            merged.left = mergeTreesII(root1.left, root2.left);
+            merged.right = mergeTreesII(root1.right, root2.right);
+        }
+
+        return merged;
     }
 }
