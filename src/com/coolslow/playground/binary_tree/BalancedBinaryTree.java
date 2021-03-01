@@ -1,5 +1,7 @@
 package com.coolslow.playground.binary_tree;
 
+import com.coolslow.leetcode.top1000plus.datastructure.TreeNode;
+
 /**
  * 判断平衡二叉树
  * 输入一棵二叉树的根节点，判断该树是否为平衡二叉树。
@@ -18,5 +20,9 @@ package com.coolslow.playground.binary_tree;
  *
  * 限制：0 <= 树的节点个数 <= 1000
  */
-public class BlancedBinaryTree {
+public class BalancedBinaryTree {
+
+    public static boolean isBalanced(TreeNode root) {
+        return false;
+    }
 }
