@@ -7,7 +7,7 @@ import com.coolslow.leetcode.top1000plus.datastructure.TreeNode;
  * 输入一棵二叉树的根节点，判断该树是否为平衡二叉树。
  * 判断条件：如果某个二叉树中任意节点的左右子树的深度相差 <= 1，则其为平衡二叉树。
  *
- * 与110题：https://leetcode-cn.com/problems/balanced-binary-tree/ 相同
+ * https://leetcode-cn.com/problems/balanced-binary-tree/ 相同
  *
  * 示例1：
  * 给定二叉树 [3, 9, 20, null, null, 15, 7]
