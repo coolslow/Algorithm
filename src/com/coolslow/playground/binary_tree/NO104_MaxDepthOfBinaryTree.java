@@ -25,7 +25,7 @@ public class NO104_MaxDepthOfBinaryTree {
      * - 空间复杂度为O(height) -> 极端情况下为O(n)，其蜕变为一个链表
      *
      * @param root 树的跟节点
-     * @return
+     * @return 最大深度
      */
     public int maxDepth(TreeNode root) {
         if (root == null) {
