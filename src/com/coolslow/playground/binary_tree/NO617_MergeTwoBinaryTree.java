@@ -23,7 +23,7 @@ package com.coolslow.playground.binary_tree;
  * 	  / \   \
  * 	 5   4   7
  */
-public class MergeTwoBinaryTree {
+public class NO617_MergeTwoBinaryTree {
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
 
         if (root1 == null) {
