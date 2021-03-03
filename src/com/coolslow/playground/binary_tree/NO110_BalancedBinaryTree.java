@@ -1,7 +1,7 @@
 package com.coolslow.playground.binary_tree;
 
 /**
- * 判断平衡二叉树
+ * 110. 判断平衡二叉树
  * 输入一棵二叉树的根节点，判断该树是否为平衡二叉树。
  * 判断条件：如果某个二叉树中任意节点的左右子树的深度相差 <= 1，则其为平衡二叉树。
  *
@@ -18,5 +18,5 @@ package com.coolslow.playground.binary_tree;
  *
  * 限制：0 <= 树的节点个数 <= 1000
  */
-public class BlancedBinaryTree {
+public class NO110_BalancedBinaryTree {
 }
