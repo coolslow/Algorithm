@@ -1,5 +1,8 @@
 package com.coolslow.playground.binary_tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 给定一个二叉树，找出其最大深度。
  *
@@ -33,5 +36,46 @@ public class NO104_MaxDepthOfBinaryTree {
         }
 
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    }
+
+    public int maxDepthII(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int l = maxDepthII(root.left);
+        int r = maxDepthII(root.right);
+
+        return Math.max(l, r) + 1;
+    }
+
+    /**
+     * 广度优先搜索 (BFS)
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(width) -> 最坏情况 O(n)
+     * @param root TreeNode 根节点
+     * @return 返回最大深度
+     */
+    public int maxDepthBFS(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int depth = 0;
+        while(!queue.isEmpty()) {
+            int n = queue.size();
+            for(int i = 0; i < n; i++) {
+                TreeNode node = queue.poll();
+                if(node.left != null) {
+                    queue.offer(node.left);
+                }
+                if(node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            depth++;
+        }
+        return depth;
     }
 }
