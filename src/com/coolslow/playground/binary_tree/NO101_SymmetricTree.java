@@ -8,7 +8,8 @@ package com.coolslow.playground.binary_tree;
  */
 public class NO101_SymmetricTree {
 
-    // 实际上是100题，判断两棵树是否相等的变形
+    // 实际上是100题，判断两棵树是否相等的变形。
+    // 因为，如果是一个对称二叉树，name其左右子树必然对称。转换为比较左右两颗树是否相等。
     public boolean isSymmetric(TreeNode root) {
         return check(root, root);
     }
