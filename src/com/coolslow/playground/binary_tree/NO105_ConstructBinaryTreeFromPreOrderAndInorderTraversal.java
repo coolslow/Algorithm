@@ -42,7 +42,7 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
         }
         // 前序遍历的第一个节点就是根节点
         int preorder_root = preorder_left;
-        // 在中序遍历中定位根节点
+        // 在中序遍历中定位根节点在数组中的位置
         int inorder_root = indexMap.get(preorder[preorder_root]);
 
         // 先建立根节点
