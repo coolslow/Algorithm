@@ -21,4 +21,5 @@ package com.coolslow.leetcode.interview;
  * 3. 二叉搜索树也可以O(NlogK)解决TopK问题哦
  */
 public class NO40_FindTheTopKNums {
+
 }
