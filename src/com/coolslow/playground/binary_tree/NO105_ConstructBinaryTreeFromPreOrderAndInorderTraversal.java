@@ -42,7 +42,7 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
         }
         // 前序遍历的第一个节点就是根节点
         int preorder_root = preorder_left;
-        // 在中序遍历中定位根节点在数组中的位置
+        // 在中序遍历中定位根节点在数组中的下标位置
         int inorder_root = indexMap.get(preorder[preorder_root]);
 
         // 先建立根节点
@@ -50,8 +50,8 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
 
         // 获取左子树的节点数
         int size_left_subtree = inorder_root - inorder_left;
-        root.left = myBuildTree(preorder, inorder, preorder_left + 1, preorder_left + size_left_subtree, inorder_left, inorder_right - 1);
-        root.right = myBuildTree(preorder, inorder, preorder_left + size_left_subtree + 1, preorder_right, inorder_root + 1, inorder_right);
+        root.left = myBuildTree(preorder, inorder,preorder_left + 1,preorder_left + size_left_subtree, inorder_left,inorder_right - 1);
+        root.right = myBuildTree(preorder, inorder,preorder_left + size_left_subtree + 1, preorder_right,inorder_root + 1, inorder_right);
 
         return root;
     }
