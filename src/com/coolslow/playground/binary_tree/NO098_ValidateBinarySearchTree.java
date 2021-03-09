@@ -27,4 +27,29 @@ package com.coolslow.playground.binary_tree;
  */
 public class NO098_ValidateBinarySearchTree {
 
+//    public boolean isValidBST(TreeNode root) {
+//        if (root == null) {
+//            return true;
+//        }
+//        if (root != null && (root.val < root.left.val || root.val > root.right.val)) {
+//            return false;
+//        }
+//        return isValidBST(root.left) && isValidBST(root.right);
+//    }
+
+    public boolean isValidBST(TreeNode root) {
+
+        // 这里配置Long长型的最大和最小值来辅助判断BST树
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    private boolean isValidBST(TreeNode node, long lower, long higher) {
+        if (node == null) {
+            return true;
+        }
+        if (node.val <= lower || node.val >= higher) {
+            return false;
+        }
+        return isValidBST(node.left, lower, node.val) && isValidBST(node.right, node.val, higher);
+    }
 }
