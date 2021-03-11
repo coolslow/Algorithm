@@ -58,6 +58,8 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
 
     /**
      * 更易理解的解法
+     * 空间复杂度 O(N)
+     * 时间复杂度 O(N)
      */
     public TreeNode buildBinaryTree(int[] preorder, int[] inorder) {
         // 先获取给定的前序遍历和后续遍历数组的长度
