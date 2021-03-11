@@ -1,5 +1,7 @@
 package com.coolslow.playground.binary_tree;
 
+import java.util.LinkedList;
+
 /**
  * 226. 翻转二叉树
  *
@@ -38,7 +40,7 @@ public class NO226_InvertBinaryTree {
         return root;
     }
 
-    // 更直观的写法
+    // 更直观的深度优先遍历写法
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -53,6 +55,33 @@ public class NO226_InvertBinaryTree {
         invertTree(root.left);
         invertTree(root.right);
 
+        return root;
+    }
+
+    /**
+     * 广度优先搜索翻转二叉树
+     * @param root 二叉树
+     * @return 返回一棵翻转的二叉树
+     */
+    public TreeNode invertTreeWithBFS(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        LinkedList<TreeNode> list = new LinkedList<>();
+        list.add(root);
+        while(!list.isEmpty()) {
+            TreeNode tmp = list.poll();
+            TreeNode left = tmp.left;
+            tmp.left = tmp.right;
+            tmp.right = left;
+
+            if (tmp.left != null) {
+                list.add(tmp.left);
+            }
+            if (tmp.right != null) {
+                list.add(tmp.right);
+            }
+        }
         return root;
     }
 }
