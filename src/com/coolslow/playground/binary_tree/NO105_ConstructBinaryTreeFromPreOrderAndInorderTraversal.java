@@ -55,4 +55,45 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
 
         return root;
     }
+
+    /**
+     * 更易理解的解法
+     */
+    public TreeNode buildBinaryTree(int[] preorder, int[] inorder) {
+        // 先获取给定的前序遍历和后续遍历数组的长度
+        int preLen = preorder.length;
+        int inLen = inorder.length;
+
+        if (preLen != inLen) {
+            throw new RuntimeException("Error");
+        }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        // 将中序遍历数组中的树存入hash map，空间换时间
+        for(int i = 0; i < inLen; i++) {
+            map.put(inorder[i], i);
+        }
+
+        return buildBinaryTreeHelper(preorder, 0, preLen - 1, map, 0, inLen - 1);
+    }
+
+    private TreeNode buildBinaryTreeHelper(int[] preorder, int preLeft, int preRight, Map<Integer, Integer> map, int inLeft, int inRight) {
+        // 终止条件
+        if (preLeft > preRight || inLeft > inRight) {
+            return null;
+        }
+        // 获取根节点的值
+        int rootVal = preorder[preLeft];
+        // 构建根节点
+        TreeNode root = new TreeNode(rootVal);
+        // 获取中序遍历中根节点的坐标
+        int pIndex = map.get(rootVal);
+
+        // 递归构建左子树
+        root.left = buildBinaryTreeHelper(preorder, preLeft + 1, pIndex - inLeft + preLeft, map, inLeft, pIndex - 1);
+        // 递归构建右子树
+        root.right = buildBinaryTreeHelper(preorder, pIndex - inLeft + preLeft + 1, preRight, map, pIndex + 1, inRight);
+
+        return root;
+    }
 }

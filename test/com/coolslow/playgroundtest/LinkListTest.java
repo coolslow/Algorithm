@@ -17,6 +17,7 @@ public class LinkListTest {
         System.out.println(queue.poll());
         System.out.println(queue);
         System.out.println(queue.add(10));
+        queue.offer(123);
         System.out.println(queue);
     }
 }
