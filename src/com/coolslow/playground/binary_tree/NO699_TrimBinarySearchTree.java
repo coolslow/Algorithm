@@ -9,6 +9,8 @@ package com.coolslow.playground.binary_tree;
  *  区别，此题描述的是对 “二叉搜索树” 即：BST树 的修剪。
  *
  */
+
+@Deprecated
 public class NO699_TrimBinarySearchTree {
 
 }
