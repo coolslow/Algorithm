@@ -57,7 +57,7 @@ public class NO105_ConstructBinaryTreeFromPreOrderAndInorderTraversal {
     }
 
     /**
-     * 更易理解的解法
+     * 更易理解的递归解法
      * 空间复杂度 O(N)
      * 时间复杂度 O(N)
      */
