@@ -1,7 +1,6 @@
 package com.coolslow.leetcode.top1000plus;
 
 import com.coolslow.leetcode.top1000plus.datastructure.TreeNode;
-import com.sun.source.tree.Tree;
 
 import java.util.Deque;
 import java.util.LinkedList;

@@ -41,6 +41,7 @@ public class BreadFirstSearchBinaryTree {
                 queue.add(node.right);
             }
         }
+        // 根据当前队列的长度作为循环的边界，将
         int[] r = new int[queue.size()];
         for(int i = 0; i < queue.size(); i++) {
             r[i] = res.get(i);

@@ -1,9 +1,5 @@
 package com.coolslow.leetcode.top1000plus;
 
-import com.sun.tools.javac.util.Context;
-import sun.net.ProgressSource;
-
-import javax.swing.plaf.nimbus.State;
 import java.util.Stack;
 
 /**
