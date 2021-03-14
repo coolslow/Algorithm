@@ -36,6 +36,7 @@ public class NO448_CountGoodNodeInBinaryTree {
                 ans++;
             } else {
                 // 如果左子树的值小于根节点的值，则将左子树的值用根节点的值取代
+                // 这样的目的是方便让子树的（左右）子树的值和根节点的进行比较。
                 root.left.val = root.val;
             }
             ans += countChildNode(root.left);
