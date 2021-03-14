@@ -53,7 +53,7 @@ public class NO102_BinaryTreeLevelOrderTraversal {
                     queue.offer(node.right);
                 }
             }
-            res.add(0, level);
+            res.add(level);
         }
         return res;
     }
