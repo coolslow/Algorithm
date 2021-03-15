@@ -39,8 +39,9 @@ public class NO102_BinaryTreeLevelOrderTraversal {
         while(!queue.isEmpty()) {
             // 用于记录每一层的元素的List
             List<Integer> level = new ArrayList<>();
-            int currentLevelSize = queue.size();
-            for(int i = 0; i < currentLevelSize; i++) {
+            // 必须获取此时的队列长度
+            int size = queue.size();
+            for(int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 // size中包含几个元素，就会向ArrayList中添加几个元素
                 level.add(node.val);

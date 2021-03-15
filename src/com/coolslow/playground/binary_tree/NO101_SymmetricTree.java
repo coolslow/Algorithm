@@ -14,13 +14,16 @@ public class NO101_SymmetricTree {
         return check(root, root);
     }
 
+    // 需要将不同的退出判断的情况情况单独列出
     private boolean check(TreeNode p, TreeNode q) {
+        // 比较的节点都为null时，两颗二叉树相等
         if (p == null && q == null) {
             return true;
         }
         if (p == null || q == null) {
             return false;
         }
+        // 二叉树值相等时才，节点相等
         if (p.val != q.val) {
             return false;
         }
