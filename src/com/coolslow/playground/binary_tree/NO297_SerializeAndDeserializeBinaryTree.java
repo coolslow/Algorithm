@@ -34,7 +34,7 @@ public class NO297_SerializeAndDeserializeBinaryTree {
             }
         }
         // 取除"["和"]"以外的部分
-        res.substring(1, res.length() - 1);
+        res.setLength(res.length() - 1);
         // TreeNode结束标记
         res.append("]");
 

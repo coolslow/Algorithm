@@ -1,7 +1,5 @@
 package com.coolslow.playground;
 
-//import com.coolslow.playground.binary_tree.TreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -46,7 +44,7 @@ public class playground {
                     queue.offer(node.right);
                 }
             }
-
+            sb.substring(1, sb.length() - 1);
             sb.append("]");
 
             return sb.toString();
