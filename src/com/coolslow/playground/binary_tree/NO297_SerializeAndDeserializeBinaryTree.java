@@ -58,7 +58,8 @@ public class NO297_SerializeAndDeserializeBinaryTree {
             }
             isLeft = !isLeft;
             if (isLeft) {
-                parent = parents.poll();
+                parent = parents.peek();
+                parents.poll();
             }
         }
         return root;
