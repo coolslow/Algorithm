@@ -19,7 +19,7 @@ import java.util.Queue;
  *
  * 注意：节点总数 <= 1000
  */
-public class BreadFirstSearchBinaryTree {
+public class Offer32_BreadFirstSearchBinaryTree {
 
     public int[] bfsPrintBinaryTree(TreeNode root) {
         List<Integer> res = new ArrayList<>();
