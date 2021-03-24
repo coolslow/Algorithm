@@ -19,7 +19,7 @@ import java.util.Queue;
  * 输出：true
  *
  */
-public class NO112_PathSum {
+public class NO112_BinaryTreePathSum {
 
     /**
      * 方法一：广度优先
