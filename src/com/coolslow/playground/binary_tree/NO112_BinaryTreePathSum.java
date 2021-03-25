@@ -63,6 +63,14 @@ public class NO112_BinaryTreePathSum {
         return false;
     }
 
+    /**
+     * 方法二：递归
+     * 时间复杂度：O(N)
+     * 空间复杂度：O(H)，H是树的高度，平均情况下为O(logN)
+     * @param root
+     * @param targetNum
+     * @return
+     */
     public boolean hasPathSumII(TreeNode root, int targetNum) {
         if (root == null) {
             return false;
