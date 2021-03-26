@@ -27,19 +27,29 @@ package com.coolslow.playground.binary_tree;
  *
  */
 public class NO124_BinaryTreeMaxPathSum {
-    int sumMax = Integer.MAX_VALUE;
+    // 将初始sumMax值设置为Integer的最小值
+    int sumMax = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         getMax(root);
         return sumMax;
     }
 
+    /**
+     * 处理二叉树最大路径和的方法
+     * @param node 根节点
+     * @return 返回最大路径和
+     */
     private int getMax(TreeNode node) {
-        if (node  == null) {
+        // 当节点为空时，返回0
+        if (node == null) {
             return 0;
         }
-        int leftMax = Math.max(getMax(node.left), 0);
-        int rightMax = Math.max(getMax(node.right), 0);
 
+        // 对左子树递归
+        int leftMax = Math.max(getMax(node.left), 0);
+        // 对右子树递归
+        int rightMax = Math.max(getMax(node.right), 0);
+        // 计算当前的值
         int tmpRes = node.val + leftMax + rightMax;
         sumMax = Math.max(sumMax, tmpRes);
 
