@@ -29,8 +29,8 @@ package com.coolslow.playground.binary_tree;
 public class NO124_BinaryTreeMaxPathSum {
     int sumMax = Integer.MAX_VALUE;
     public int maxPathSum(TreeNode root) {
-
-        return 0;
+        getMax(root);
+        return sumMax;
     }
 
     private int getMax(TreeNode node) {
