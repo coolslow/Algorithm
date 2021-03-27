@@ -1,7 +1,7 @@
 package com.coolslow.playground.binary_tree;
 
 /**
- * 235. 二叉树的最近公共祖先
+ * 235. 二叉搜索树（BST）的最近公共祖先
  *
  * 给定一颗二叉树，找到该二叉树中两个指定节点的最近公共祖先。
  * 示例：
@@ -16,7 +16,7 @@ package com.coolslow.playground.binary_tree;
  * 输出：3
  * 解释：节点5和节点1的最近公共祖先是节点3
  */
-public class NO235_LowestCommonAncestorOfBinaryTree {
+public class NO235_LowestCommonAncestorOfSearchBinaryTree {
 
     /**
      * 思路：从根节点开始遍历。
