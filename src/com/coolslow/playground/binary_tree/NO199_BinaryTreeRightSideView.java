@@ -27,7 +27,7 @@ public class NO199_BinaryTreeRightSideView {
      * @param root
      * @return
      */
-    public List<Integer> rightSideView(TreeNode root) {
+    public List<Integer> rightSideViewBFS(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null) {
             return res;
@@ -53,5 +53,30 @@ public class NO199_BinaryTreeRightSideView {
         }
 
         return res;
+    }
+
+    /**
+     * 方法二：深度优先遍历
+     * @param root
+     * @return
+     */
+    public List<Integer> rightSideViewDFS(TreeNode root) {
+        dfs(root, 0);
+        return res;
+    }
+    // 声明一个全局的list，用于存放返回结果
+    List<Integer> res = new ArrayList<>();
+
+    // 递归遍历整棵树（先遍历右子树，再遍历左子树）
+    private void dfs(TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (depth == res.size()) {
+            res.add(root.val);
+        }
+        depth++;
+        dfs(root.right, depth);
+        dfs(root.left, depth);
     }
 }
