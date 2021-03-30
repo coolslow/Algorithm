@@ -62,8 +62,8 @@ public class NO222_CountCompleteBinaryTreeNodes {
 
     /**
      * 利用题目中 “完全二叉树” 的条件进行处理
-     * @param root
-     * @return
+     * @param root 给定的一棵完全二叉树
+     * @return 完全二叉树的节点个数
      */
     public int countNodesBestMatch(TreeNode root) {
         int count = 0, height = treeHeight(root);
