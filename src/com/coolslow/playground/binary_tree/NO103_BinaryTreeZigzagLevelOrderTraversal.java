@@ -22,6 +22,7 @@ import java.util.*;
 
 public class NO103_BinaryTreeZigzagLevelOrderTraversal {
 
+    // 使用双端队列的方式处理锯齿形层序遍历
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();
         if (root == null) {
@@ -55,6 +56,42 @@ public class NO103_BinaryTreeZigzagLevelOrderTraversal {
             isOrderLeft = !isOrderLeft;
         }
 
+        return list;
+    }
+
+    // 使用基本的方式处理锯齿形层序遍历
+    public List<List<Integer>> zigzagLevelOrderII(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean isLeft = true;
+
+        while(!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for(int i = 0; i < size; i++) {
+                TreeNode cur = queue.poll();
+                level.add(cur.val);
+
+                if(cur.left != null) {
+                    queue.offer(cur.left);
+                }
+
+                if(cur.right != null) {
+                    queue.offer(cur.right);
+                }
+
+                if(!isLeft) {
+                    // 利用Collections的reverse方法逆序当前层的数组顺序
+                    Collections.reverse(level);
+                }
+            }
+            isLeft = !isLeft;
+            list.add(level);
+        }
         return list;
     }
 }
