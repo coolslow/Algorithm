@@ -83,11 +83,10 @@ public class NO103_BinaryTreeZigzagLevelOrderTraversal {
                 if(cur.right != null) {
                     queue.offer(cur.right);
                 }
-
-                if(!isLeft) {
-                    // 利用Collections的reverse方法逆序当前层的数组顺序
-                    Collections.reverse(level);
-                }
+            }
+            if(!isLeft) {
+                // 利用Collections的reverse方法逆序当前层的数组顺序
+                Collections.reverse(level);
             }
             isLeft = !isLeft;
             list.add(level);
