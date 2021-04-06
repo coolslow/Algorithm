@@ -14,7 +14,7 @@ import java.util.Set;
  * 输入：[2, 3, 1, 0, 2, 5, 3]
  * 输出：2 或 3
  */
-public class Offer03_FindReportNumberInArray {
+public class Offer03_FindRepeatNumberInArray {
 
     // 最暴力的求解方式
     // 时间复杂度O(n^2)
