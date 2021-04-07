@@ -22,9 +22,12 @@ public class DequeTest {
         deque.add(2);
         deque.add(3);
         deque.add(4);
+        deque.add(5);
         System.out.println(deque);
+        System.out.println(deque.size());
 
         System.out.println(deque.getFirst());
         System.out.println(deque.getLast());
+        System.out.println(deque.peek());
     }
 }
