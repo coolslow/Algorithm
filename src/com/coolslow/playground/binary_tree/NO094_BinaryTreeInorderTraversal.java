@@ -52,7 +52,7 @@ public class NO094_BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversalII(TreeNode root) {
         // 声明一个List，用于存放要返回的数据
         List<Integer> res = new ArrayList<>();
-        // 声明一个双端队列
+        // 声明一个双端链表
         Deque<TreeNode> stack = new LinkedList<>();
         while(root != null || !stack.isEmpty()) {
             while (root != null) {
