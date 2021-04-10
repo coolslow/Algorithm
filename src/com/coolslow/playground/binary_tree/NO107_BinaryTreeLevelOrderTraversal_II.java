@@ -50,6 +50,7 @@ public class NO107_BinaryTreeLevelOrderTraversal_II {
                     queue.offer(node.right);
                 }
             }
+            // 始终从list的第一个位置添加数据
             list.add(0, res);
         }
 
