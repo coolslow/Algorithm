@@ -24,21 +24,26 @@ package com.coolslow.playground.binary_tree;
  *   /
  *  1
  * 输出：4
+ *
+ * 关键：二叉树的中序遍历的逆序是递减序列。
  */
-public class Offer54_TheKthMaxNumInBinarySearchTree {
+public class Offer54_TheKthMaxNumInBinaryTree {
 
-    // 时间复杂度：O(n^2)
-    // 空间复杂度：O(n)
-    public int numTrees(int n) {
-        int[] g = new int[n + 1];
-        g[0] = 1;
-        g[1] = 1;
+    int res, k;
+    public int KthLargest(TreeNode root, int k) {
+        this.k = k;
+        dfs(root);
+        return res;
+    }
 
-        for(int i = 2; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
-                g[i] += g[j - 1] * g[i - j];
-            }
+    private void dfs(TreeNode root) {
+        if (root == null) return;
+        dfs(root.right);
+
+        if (k == 0) return;
+        if(--k == 0) {
+            res = root.val;
         }
-        return g[n];
+        dfs(root.left);
     }
 }
