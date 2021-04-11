@@ -11,5 +11,9 @@ public class ArrayListTest {
     public void testArrayList() {
         List<Integer> list = new ArrayList<>();
         System.out.println(list.size());
+
+        list.add(0, 1);
+        list.add(0, 2);
+        System.out.println(list);
     }
 }

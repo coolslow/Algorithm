@@ -11,5 +11,7 @@ package com.coolslow.playground.binary_tree;
  *
  * 返回 true，它们的叶子节点都为：[2, 3, 5]
  */
+
+@Deprecated
 public class NO872_LeafSimilarTrees {
 }
